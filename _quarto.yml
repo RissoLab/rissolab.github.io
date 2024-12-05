@@ -2,18 +2,27 @@ project:
   type: website
 
 website:
-  title: "rissolab.github.io"
+  title: "RissoLab"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: research.qmd
+        text: Research Interests & Output
+      - href: people.qmd
+        text: People
+      - href: projects.qmd
+        text: Current Funded Projects
+      - href: jobs.qmd
+        text: Work with us
+      - href: news.qmd
+        text: News & Events
+
 
 format:
   html:
-    theme: cosmo
+    theme: sandstone
     css: styles.css
     toc: true
-
 editor: visual
 
