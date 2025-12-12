@@ -2,4 +2,83 @@
 title: "Publications"
 ---
 
+# Co-authorship network
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Co-authorship network based on publications; script generated with the help of ChatGPT"
+
+# Required packages
+library(RefManageR)
+library(dplyr)
+library(stringr)
+library(purrr)
+library(igraph)
+library(tidygraph)
+library(ggraph)
+
+# Path to BibTeX file
+bib_file <- "content/pubs.bib"
+
+# Read BibTeX
+bib <- ReadBib(bib_file, check = FALSE)
+
+# Extract authors for each entry
+papers <- lapply(bib, function(entry) {
+    if (is.null(entry$author)) return(NULL)
+    authors <- as.character(entry$author)
+    authors <- str_split(authors, " and ", simplify = TRUE)
+    authors <- trimws(authors)
+    return(authors)
+})
+
+# Remove empty entries
+papers <- papers[!sapply(papers, is.null)]
+
+# Count papers per author
+author_counts <- papers %>%
+    unlist() %>%
+    table() %>%
+    as.data.frame() %>%
+    rename(author = ".", paper_count = "Freq")
+author_counts <- author_counts[author_counts$author != "others", ]
+
+# Build co-author edges
+edges <- map_df(papers, function(auth_vec) {
+    if (length(auth_vec) < 2) return(NULL)
+    t(combn(auth_vec, 2)) %>% 
+        as.data.frame() %>% 
+        rename(from = V1, to = V2)
+})
+edges <- edges[edges$from != "others" & edges$to != "others", ]
+
+# Build graph
+g <- graph_from_data_frame(edges, directed = FALSE)
+
+# Add author paper counts as vertex attribute
+V(g)$paper_count <- author_counts$paper_count[match(V(g)$name, author_counts$author)]
+
+# Filter authors with ≥ 3 papers
+g_filtered <- induced_subgraph(g, vids = V(g)[paper_count >= 5])
+
+# Node size scaled by publication count
+node_sizes <- V(g_filtered)$paper_count   # adjust scaling factor as needed
+
+# Convert to tidygraph
+tg <- as_tbl_graph(g_filtered)
+
+# Enhanced ggraph plot
+ggraph(tg, layout = "fr") +
+  geom_edge_link(alpha = 0.25, color = "grey60") +
+  geom_node_point(aes(size = paper_count), color = "steelblue") +
+  geom_node_text(aes(label = name), repel = TRUE, size = 3) +
+  scale_size(range = c(3, 15)) +
+  theme_graph() +
+  theme(legend.position = "none")
+```
+
+# Complete list of publications
+
 <script src="https://bibbase.org/show?bib=https%3A%2F%2Fbibbase.org%2Fnetwork%2Ffiles%2FKkByu8uHcEr482MkC&noBootstrap=1&jsonp=1"></script>
