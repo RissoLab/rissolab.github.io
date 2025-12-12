@@ -19,14 +19,14 @@ website:
         text: Research
       - href: people.qmd
         text: People
-      - href: workwithus.qmd
+      - href: work.qmd
         text: Work with us
       - href: events.qmd
-        text: Events
+        text: News & Events
       - href: publications.qmd
         text: Publications
-      - href: news.qmd
-        text: News
+      - href: blog.qmd
+        text: Blog
       - href: contact.qmd
         text: Contact
   page-footer: 
