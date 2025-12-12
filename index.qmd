@@ -1,11 +1,18 @@
 ---
-title: "rissolab.github.io"
+title: "Welcome to the Risso Lab"
 ---
 
-This is a Quarto website.
+In the Risso Lab we develop, implement and apply statistical models to high-throughput biomedical data. Currently, our main focus is on single-cell and spatial transcriptomics.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+![](/images/sticker.png){fig-align="center" width="300px"}
 
-```{r}
-1 + 1
-```
+
+We are located at the [Department of Statistical Sciences](https://stat.unipd.it) of the [University of Padova](https://unipd.it), Italy, and led by Prof. Davide Risso.
+
+We work at the intersection of statistics, bioinformatics and computational biology, with a strong emphasis on reproducible research and open-source software development. Our projects span from methodological research to applied data analysis in collaboration with experimental biologists and a large network of international collaborators. Current funded projects include the ERC Consolidator Grant [SPECOLA](https://cordis.europa.eu/project/id/101171662) and the CZI EOSS Grant [GPU-accelerated Computing in Bioconductor](https://waldronlab.io/czieoss6-biocgpu/).
+
+Our main goals are:
+
+- **Develop statistical and computational methods** for emerging high-throughput technologies, including methods that enhance the comprehension of data from such techniques, such as quality control and data normalization, as well as methods to extract actionable information from the data, such as inferential models and methods for the visualization and interpretation of the results.
+- **Implement scalable, user-friendly, open-source software packages** that make our methods easily accessible to the scientific community, following best practices in software development and documentation. This is achieved through the constant engagement with the [Bioconductor community](https://bioconductor.org/).
+- **Contribute to biological discoveries in diverse fields**, including developmental biology, neuroscience, and cancer biology, through collaborations with experimental biologists locally and internationally.

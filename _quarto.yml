@@ -1,19 +1,55 @@
 project:
   type: website
 
-website:
-  title: "rissolab.github.io"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+date: last-modified
 
+website:
+  title: "Risso Lab"
+  open-graph:
+    locale:
+       en_US
+    site-name:
+      "Risso Lab"
+  navbar:
+    background: "#005F6B"
+    foreground: "white"
+    search: true
+    left:
+      - href: research.qmd
+        text: Research
+      - href: people.qmd
+        text: People
+      - href: workwithus.qmd
+        text: Work with us
+      - href: events.qmd
+        text: Events
+      - href: publications.qmd
+        text: Publications
+      - href: news.qmd
+        text: News
+      - href: contact.qmd
+        text: Contact
+  page-footer: 
+    center: "Copyright (c) 2025, Davide Risso; </br> last updated: {{< meta date >}}"
+  favicon: "images/sticker.png"
+  image: "images/sticker.png"
 format:
   html:
-    theme: cosmo
+    theme:
+      - materia
     css: styles.css
+    linkcolor: "#2A57A3"
+    toc-color: "#2A57A3"
     toc: true
+    grid:
+      sidebar-width: 150px
+      body-width: 750px
+      margin-width: 300px
+    date-format: iso
+    include-in-header:
+      - text: |
+          <meta http-equiv="Cache-Control" content="max-age=1800, must-revalidate"> 
+    lightbox: true
 
 editor: visual
 
