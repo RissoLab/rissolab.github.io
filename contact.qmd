@@ -1,0 +1,15 @@
+---
+title: Contact
+---
+
+::::: grid
+::: g-col-8
+**Davide Risso, PhD** </br> Professor of Statistics </br> Department of Statistical Sciences </br> University of Padova
+
+[Github](https://github.com/drisso) \| [Google Scholar](https://scholar.google.com/citations?user=4amGfSYAAAAJ&hl=en) \| [ORCID](https://orcid.org/0000-0001-8508-5012) \| [Email](mailto:davide.risso@unipd.it)
+:::
+
+::: g-col-4
+![](/images/people/dr.jpeg){fig-align="center" height="200px"}
+:::
+:::::
