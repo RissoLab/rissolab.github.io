@@ -6,4 +6,3 @@ listing:
   type: default
   categories: true
 ---
-

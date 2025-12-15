@@ -1,0 +1,57 @@
+---
+title: People
+---
+
+::::: grid
+::: g-col-8
+**Davide Risso, PhD** </br> Professor of Statistics </br> Department of Statistical Sciences </br> University of Padova
+
+[Github](https://github.com/drisso) \| [Google Scholar](https://scholar.google.com/citations?user=4amGfSYAAAAJ&hl=en) \| [ORCID](https://orcid.org/0000-0001-8508-5012) \| [Email](mailto:davide.risso@unipd.it)
+:::
+
+::: g-col-4
+![](/images/people/dr.jpeg){fig-align="center" height="200px"}
+:::
+:::::
+
+# Postdocs
+
+|     |     |
+|:---:|:---:|
+| ![](/images/people/default.png){fig-align="center" height="200px"} </br> Amin Zadenoori |  ![](/images/people/default.png){fig-align="center" height="200px"} </br> Carissa Chen   |
+
+# PhD Students
+
+|     |     |
+|:---:|:---:|
+| ![](/images/people/default.png){fig-align="center" height="200px"} </br> Daniela Corbetta  |  ![](/images/people/default.png){fig-align="center" height="200px"} </br> Alex Cecchetto |
+| ![](/images/people/default.png){fig-align="center" height="200px"} </br> Ilaria Billato </br> co-supervisor (Dept. of Biology)  |  ![](/images/people/default.png){fig-align="center" height="200px"} </br> Elena Zuin </br> co-supervisor (Dept. of Biology) |
+| ![](/images/people/default.png){fig-align="center" height="200px"} </br> Sophie Grace Parolin  | ![](/images/people/default.png){fig-align="center" height="200px"} </br> Emma Menna </br> co-supervisor (Dept. of Biomedical Sciences)  |
+
+
+# Research Assistants
+
+|     |     |
+|:---:|:---:|
+| ![](/images/people/default.png){fig-align="center" height="200px"} </br> Valerio Reffo  |  |
+
+# Friends of the Lab
+
+|     |     |
+|:---:|:---:|
+| ![](/images/people/cipciop.webp){fig-align="center" height="200px"} </br> Francesco Denti \& Andrea Sottosanti | ![](/images/people/romualdi.jpg){fig-align="center" height="200px"} </br> [Romualdi Lab](https://romualdi.bio.unipd.it/people/) |
+| ![](/images/people/sales.jpeg){fig-align="center" height="200px"} </br>  [Sales Lab](https://sales.bio.unipd.it/index.html)  | ![](/images/people/calura.jpeg){fig-align="center" height="200px"} </br> [Calura Lab](https://github.com/CaluraLab) |
+
+# Alumni
+
+| Name | Position in the lab | Current position |
+|----------------------|----------------------|-----------------------------|
+| Kim Nguyen | Postdoc | Researcher at National Research Council (Naples) |
+| Dario Righelli | Postdoc | Assistant Professor at Univerity of Naples |
+| [Andrea Sottosanti](https://andreasottosanti.github.io/) | Postdoc | Assistant Professor at University of Padova |
+| [Cristian Castiglione](https://cristiancastiglione.github.io/) | Postdoc | Postdoc at Bocconi University |
+| Erika Banzato | PhD Student | Postdoc at University of Padova |
+| Simone Modolo | Research Assistant |  |
+| Sara Agavni' Castiglioni | Research Assistant |  |
+| Laura Perin | Research Assistant |  |
+| [Luca Cibinel](https://www.mn.uio.no/math/english/people/aca/lucaci/) | Research Assistant | PhD student at University of Oslo |
