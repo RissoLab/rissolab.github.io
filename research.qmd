@@ -1,0 +1,49 @@
+---
+title: Research Interests
+---
+
+The Risso Lab has extensive expertise in the analysis of high-throughput biological data, both from a method development and a collaborative perspective.  Currently, our main focus is on single-cell and spatial omics, including transcriptomics, epigenomics and proteomics.
+
+A diverse network of collaborators allows us to work with real data, tackling problems of significance for biomedical research, while being embedded in a statistics department allows us to leverage the latest developments in statistical methodology and computational techniques.
+
+Here is a selected list of our latest work in our main areas of interest.
+
+# Spatial transcriptomics
+
+* Sottosanti, Denti, Risso (2025) [Spatially Regularized Gaussian Mixtures for Clustering Spatial Transcriptomic Data](https://doi.org/10.1007/s00357-025-09527-0). _Journal of Classification_.
+
+* Sottosanti, Risso (2023) [Co-clustering of spatially resolved transcriptomic data](https://doi.org/10.1214/22-aoas1677). _Annals of Applied Statistics_.
+
+* Righelli, Sottosanti, Risso (2023) [Designing spatial transcriptomics experiments](https://doi.org/10.1038/s41592-023-01801-6). _Nature Methods_.
+
+# Single-cell omics
+
+* Billato, Pagés, Carey, Waldron, Sales, Romualdi, Risso (2025) [Benchmarking large-scale single-cell RNA-seq analysis](https://doi.org/10.1101/2025.10.28.681564). _bioRxiv_.
+
+* Castiglione, Segers, Clement, Risso (2024) [Stochastic gradient descent estimation of generalized matrix factorization models with application to single-cell RNA sequencing data](https://doi.org/10.48550/arXiv.2412.20509). _arXiv_.
+
+* Corbetta, Finos, Geistlinger, Risso (2024) [Conformal inference for cell type annotation with graph-structured constraints](https://doi.org/10.48550/arXiv.2410.23786). _arXiv_.
+
+# Bioconductor software
+
+* [Orchestrating Spatial Transcriptomics Analysis with Bioconductor](https://bioconductor.org/books/release/OSTA/)
+
+* [GPU-accelerated Computing in Bioconductor](https://waldronlab.io/czieoss6-biocgpu/)
+
+* Selected [Bioconductor](https://bioconductor.org/) packages developed in the Risso Lab: [SingleCellExperiment](https://bioconductor.org/packages/SingleCellExperiment/), [SpatialExperiment](https://bioconductor.org/packages/SpatialExperiment/), [SpaceTrooper](https://bioconductor.org/packages/SpaceTrooper/), [RUVSeq](https://bioconductor.org/packages/RUVSeq/), [zinbwave](https://bioconductor.org/packages/zinbwave/), [scone](https://bioconductor.org/packages/scone/).
+
+# Collaborative work in neurobiology, development, and cancer biology
+
+* Ford, Zuin, Righelli, Medina, Schoch, Singletary, Muheim, Frank, Hicks, Risso, Peixoto (2024) [A global transcriptional atlas of the effect of acute sleep deprivation in the mouse frontal cortex.](https://doi.org/10.1016/j.isci.2024.110752) _iScience_.
+
+* Van den Berge, Bakalar, Chou, Kunda, Risso, Street, Purdom, Dudoit, Ngai,  Heavner (2025) [A Latent Activated Olfactory Stem Cell State Revealed by Single-Cell Transcriptomic and Epigenomic Profiling](https://doi.org/10.1101/2023.10.26.564041). _bioRxiv_.
+
+* Modzelewski, Shao, Chen, Lee, Qi, Noon, Tjokro, Sales, Biton, Anand, Speed, Xuan, Wang, Risso, He (2021) [A mouse-specific retrotransposon drives a conserved Cdk2ap1 isoform essential for development](https://doi.org/10.1016/j.cell.2021.09.021). _Cell_.
+
+# Graphical models
+
+* Nguyen, Chiogna, Risso, Banzato (2025) [Guided structure learning of DAGs for count data](https://doi.org/10.1177/1471082X241266738). _Statistical Modelling_.
+
+* Nguyen, Van den Berge, Chiogna, Risso (2023) [Structure learning for zero-inflated counts with an application to single-cell RNA sequencing data](https://doi.org/10.1214/23-AOAS1732). _Annals of Applied Statistics_.
+
+* Banzato, Chiogna, Djordjilović, Risso (2023) [A Bartlett-type correction for likelihood ratio tests with application to testing equality of Gaussian graphical models](https://doi.org/10.1016/j.spl.2022.109732). _Statistics and Probability Letters_.
