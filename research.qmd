@@ -36,7 +36,7 @@ Here is a selected list of our latest work in our main areas of interest.
 
 * Ford, Zuin, Righelli, Medina, Schoch, Singletary, Muheim, Frank, Hicks, Risso, Peixoto (2024) [A global transcriptional atlas of the effect of acute sleep deprivation in the mouse frontal cortex.](https://doi.org/10.1016/j.isci.2024.110752) _iScience_.
 
-* Van den Berge, Bakalar, Chou, Kunda, Risso, Street, Purdom, Dudoit, Ngai,  Heavner (2025) [A Latent Activated Olfactory Stem Cell State Revealed by Single-Cell Transcriptomic and Epigenomic Profiling](https://doi.org/10.1101/2023.10.26.564041). _bioRxiv_.
+* Van den Berge, Bakalar, Chou, Kunda, Risso, Street, Purdom, Dudoit, Ngai,  Heavner (2026) [A Latent Activated Olfactory Stem Cell State Revealed by Single-Cell Transcriptomic and Epigenomic Profiling](https://doi.org/10.1016/j.stemcr.2025.102778). _Stem Cell Reports_.
 
 * Modzelewski, Shao, Chen, Lee, Qi, Noon, Tjokro, Sales, Biton, Anand, Speed, Xuan, Wang, Risso, He (2021) [A mouse-specific retrotransposon drives a conserved Cdk2ap1 isoform essential for development](https://doi.org/10.1016/j.cell.2021.09.021). _Cell_.
 

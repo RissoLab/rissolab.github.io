@@ -14,19 +14,23 @@ title: People
 :::
 :::::
 
-# Postdocs
-
+# Software Developer
 |     |     |
 |:---:|:---:|
-| ![](/images/people/default.png){fig-align="center" height="200px"} </br> Amin Zadenoori |  ![](/images/people/default.png){fig-align="center" height="200px"} </br> Carissa Chen   |
+| ![](/images/people/default.png){fig-align="center" height="200px"} </br> Riccardo Ceccaroni  |  |
+
+# Postdocs
+
+|     |     |     |
+|:---:|:---:|:---:|
+| ![](/images/people/default.png){fig-align="center" height="200px"} </br> Amin Zadenoori |  ![](/images/people/default.png){fig-align="center" height="200px"} </br> Carissa Chen   |![](/images/people/default.png){fig-align="center" height="200px"} </br> Matteo Calgaro |   
 
 # PhD Students
 
 |     |     |
 |:---:|:---:|
-| ![](/images/people/default.png){fig-align="center" height="200px"} </br> Daniela Corbetta  |  ![](/images/people/default.png){fig-align="center" height="200px"} </br> Alex Cecchetto |
-| ![](/images/people/default.png){fig-align="center" height="200px"} </br> Ilaria Billato </br> co-supervisor (Dept. of Biology)  |  ![](/images/people/default.png){fig-align="center" height="200px"} </br> Elena Zuin </br> co-supervisor (Dept. of Biology) |
-| ![](/images/people/default.png){fig-align="center" height="200px"} </br> Sophie Grace Parolin  | ![](/images/people/default.png){fig-align="center" height="200px"} </br> Emma Menna </br> co-supervisor (Dept. of Biomedical Sciences)  |
+| ![](/images/people/default.png){fig-align="center" height="200px"} </br> Alex Cecchetto  |  ![](/images/people/default.png){fig-align="center" height="200px"} </br> Sophie Grace Parolin |
+| ![](/images/people/default.png){fig-align="center" height="200px"} </br> Elena Zuin </br> co-supervisor (Dept. of Biology)  |  ![](/images/people/default.png){fig-align="center" height="200px"} </br> Emma Menna </br> co-supervisor (Dept. of Biomedical Sciences) |
 
 
 # Research Assistants
@@ -46,12 +50,14 @@ title: People
 
 | Name | Position in the lab | Current position |
 |----------------------|----------------------|-----------------------------|
+| Daniela Corbetta | PhD Student | Postdoc at Institut de Mathématiques de Toulouse |
+| Ilaria Billato | PhD Student | Postdoc at University of Padova |
 | Kim Nguyen | Postdoc | Researcher at National Research Council (Naples) |
-| Dario Righelli | Postdoc | Assistant Professor at Univerity of Naples |
+| Dario Righelli | Postdoc | Assistant Professor at Univerity of Padova |
 | [Andrea Sottosanti](https://andreasottosanti.github.io/) | Postdoc | Assistant Professor at University of Padova |
 | [Cristian Castiglione](https://cristiancastiglione.github.io/) | Postdoc | Postdoc at Bocconi University |
 | Erika Banzato | PhD Student | Postdoc at University of Padova |
-| Simone Modolo | Research Assistant |  |
-| Sara Agavni' Castiglioni | Research Assistant |  |
-| Laura Perin | Research Assistant |  |
+| Simone Modolo | Research Assistant | Associate Biostatistician at Evotec |
+| Sara Agavni' Castiglioni | Research Assistant | Data Scientist at Nutcracker |
+| Laura Perin | Research Assistant | Data Analyst at iubenda |
 | [Luca Cibinel](https://www.mn.uio.no/math/english/people/aca/lucaci/) | Research Assistant | PhD student at University of Oslo |
