@@ -1,16 +1,51 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "rissolab.github.io",
+    "objectID": "people.html",
+    "href": "people.html",
+    "title": "People",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Davide Risso, PhD  Professor of Statistics  Department of Statistical Sciences  University of Padova\nGithub | Google Scholar | ORCID | Email\n\n\n\n\n\n\n\n\n\n\nSoftware Developer\n\n\n\n\n\n\n\n  Riccardo Ceccaroni\n\n\n\n\n\n\nPostdocs\n\n\n\n\n\n\n\n\n  Amin Zadenoori\n  Carissa Chen\n  Matteo Calgaro\n\n\n\n\n\nPhD Students\n\n\n\n\n\n\n\n  Alex Cecchetto\n  Sophie Grace Parolin\n\n\n  Elena Zuin  co-supervisor (Dept. of Biology)\n  Emma Menna  co-supervisor (Dept. of Biomedical Sciences)\n\n\n\n\n\nResearch Assistants\n\n\n\n\n\n\n\n  Valerio Reffo\n\n\n\n\n\n\nFriends of the Lab\n\n\n\n  Francesco Denti & Andrea Sottosanti\n  Romualdi Lab\n\n\n  Sales Lab\n  Calura Lab\n\n\n\n\n\nAlumni\n\n\n\nName\nPosition in the lab\nCurrent position\n\n\n\n\nDaniela Corbetta\nPhD Student\nPostdoc at Institut de Mathématiques de Toulouse\n\n\nIlaria Billato\nPhD Student\nPostdoc at University of Padova\n\n\nKim Nguyen\nPostdoc\nResearcher at National Research Council (Naples)\n\n\nDario Righelli\nPostdoc\nAssistant Professor at Univerity of Padova\n\n\nAndrea Sottosanti\nPostdoc\nAssistant Professor at University of Padova\n\n\nCristian Castiglione\nPostdoc\nPostdoc at Bocconi University\n\n\nErika Banzato\nPhD Student\nPostdoc at University of Padova\n\n\nSimone Modolo\nResearch Assistant\nAssociate Biostatistician at Evotec\n\n\nSara Agavni’ Castiglioni\nResearch Assistant\nData Scientist at Nutcracker\n\n\nLaura Perin\nResearch Assistant\nData Analyst at iubenda\n\n\nLuca Cibinel\nResearch Assistant\nPhD student at University of Oslo"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "work.html",
+    "href": "work.html",
+    "title": "Work with Us",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Open Positions\nWhile we currently do not have specific openings, we are always interested in hearing from motivated individuals eager to contribute to our research endeavors. If you are interested in joining the group, reach out via email.\n\n\nPhD Scholarships\nPhD admission is managed at the Department level. Call for applications are typically announced in the Spring for enrollment in the following academic year. For more information, please visit the Department of Statistical Sciences PhD program page.\n\n\nCollaborators\nThe following non-exhaustive list includes researchers with whom we have active collaborations and that may offer opportunities to pursue interdisciplinary research projects:\n\nSandrine Dudoit - UC Berkeley\nElizabeth Purdom - UC Berkeley\nWolfgang Huber - EMBL\nLucia Peixoto - Washington State University\nLevi Waldron - City University of New York\nLieven Clement - Ghent University"
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "Davide Risso, PhD  Professor of Statistics  Department of Statistical Sciences  University of Padova\nGithub | Google Scholar | ORCID | Email"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research Interests",
+    "section": "",
+    "text": "The Risso Lab has extensive expertise in the analysis of high-throughput biological data, both from a method development and a collaborative perspective. Currently, our main focus is on single-cell and spatial omics, including transcriptomics, epigenomics and proteomics.\nA diverse network of collaborators allows us to work with real data, tackling problems of significance for biomedical research, while being embedded in a statistics department allows us to leverage the latest developments in statistical methodology and computational techniques.\nHere is a selected list of our latest work in our main areas of interest.\n\nSpatial transcriptomics\n\nSottosanti, Denti, Risso (2025) Spatially Regularized Gaussian Mixtures for Clustering Spatial Transcriptomic Data. Journal of Classification.\nSottosanti, Risso (2023) Co-clustering of spatially resolved transcriptomic data. Annals of Applied Statistics.\nRighelli, Sottosanti, Risso (2023) Designing spatial transcriptomics experiments. Nature Methods.\n\n\n\nSingle-cell omics\n\nBillato, Pagés, Carey, Waldron, Sales, Romualdi, Risso (2025) Benchmarking large-scale single-cell RNA-seq analysis. bioRxiv.\nCastiglione, Segers, Clement, Risso (2024) Stochastic gradient descent estimation of generalized matrix factorization models with application to single-cell RNA sequencing data. arXiv.\nCorbetta, Finos, Geistlinger, Risso (2024) Conformal inference for cell type annotation with graph-structured constraints. arXiv.\n\n\n\nBioconductor software\n\nOrchestrating Spatial Transcriptomics Analysis with Bioconductor\nGPU-accelerated Computing in Bioconductor\nSelected Bioconductor packages developed in the Risso Lab: SingleCellExperiment, SpatialExperiment, SpaceTrooper, RUVSeq, zinbwave, scone.\n\n\n\nCollaborative work in neurobiology, development, and cancer biology\n\nFord, Zuin, Righelli, Medina, Schoch, Singletary, Muheim, Frank, Hicks, Risso, Peixoto (2024) A global transcriptional atlas of the effect of acute sleep deprivation in the mouse frontal cortex. iScience.\nVan den Berge, Bakalar, Chou, Kunda, Risso, Street, Purdom, Dudoit, Ngai, Heavner (2026) A Latent Activated Olfactory Stem Cell State Revealed by Single-Cell Transcriptomic and Epigenomic Profiling. Stem Cell Reports.\nModzelewski, Shao, Chen, Lee, Qi, Noon, Tjokro, Sales, Biton, Anand, Speed, Xuan, Wang, Risso, He (2021) A mouse-specific retrotransposon drives a conserved Cdk2ap1 isoform essential for development. Cell.\n\n\n\nGraphical models\n\nNguyen, Chiogna, Risso, Banzato (2025) Guided structure learning of DAGs for count data. Statistical Modelling.\nNguyen, Van den Berge, Chiogna, Risso (2023) Structure learning for zero-inflated counts with an application to single-cell RNA sequencing data. Annals of Applied Statistics.\nBanzato, Chiogna, Djordjilović, Risso (2023) A Bartlett-type correction for likelihood ratio tests with application to testing equality of Gaussian graphical models. Statistics and Probability Letters."
+  },
+  {
+    "objectID": "events.html",
+    "href": "events.html",
+    "title": "News & Events",
+    "section": "",
+    "text": "CSAMA 2026: Biological Data Science Summer School\n\n\n\n\n\n\nEvents\n\n\nBioconductor\n\n\n\nBrixen (Bressanone), Italy, 24-30 May, 2026.\n\n\n\n\n\n2025-12-15\n\n\nDavide Risso\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to the Risso Lab",
+    "section": "",
+    "text": "In the Risso Lab we develop, implement and apply statistical models to high-throughput biomedical data. Currently, our main focus is on single-cell and spatial transcriptomics.\n\n\n\n\n\nWe are located at the Department of Statistical Sciences of the University of Padova, Italy, and led by Prof. Davide Risso.\nWe work at the intersection of statistics, bioinformatics and computational biology, with a strong emphasis on reproducible research and open-source software development. Our projects span from methodological research to applied data analysis in collaboration with experimental biologists and a large network of international collaborators. Current funded projects include the ERC Consolidator Grant SPECOLA and the CZI EOSS Grant GPU-accelerated Computing in Bioconductor.\nOur main goals are:\n\nDevelop statistical and computational methods for emerging high-throughput technologies, including methods that enhance the comprehension of data from such techniques, such as quality control and data normalization, as well as methods to extract actionable information from the data, such as inferential models and methods for the visualization and interpretation of the results.\nImplement scalable, user-friendly, open-source software packages that make our methods easily accessible to the scientific community, following best practices in software development and documentation. This is achieved through the constant engagement with the Bioconductor community.\nContribute to biological discoveries in diverse fields, including developmental biology, neuroscience, and cancer biology, through collaborations with experimental biologists locally and internationally."
+  },
+  {
+    "objectID": "news/csama2026/index.html",
+    "href": "news/csama2026/index.html",
+    "title": "CSAMA 2026: Biological Data Science Summer School",
+    "section": "",
+    "text": "The one-week intensive summer school Biological Data Science teaches advanced computational analyses of modern molecular data types in biology and biomedicine, including single cell and spatial omics. It comprises lectures covering underlying theory and concepts, practical hands-on exercises, and informal discussion sessions. Lecture topics include modern biotechnologies for quantitative measurements, statistical analysis, visualisation, and computational tools. Hands-on exercises are looking at state-of-the-art datasets, using the R / Bioconductor environment. At the end of the course, you should be better able to design, implement and interpret analyses on your own (multi-)omic, single and/or spatial data, adapt and combine different tools, and make informed and scientifically sound choices about analysis strategies.\nConfirmed faculty:\n\nVince Carey (Harvard Medical School)\nHelena L. Crowell (CNAG Barcelona)\nLaurent Gatto (UC Louvain)\nRobert Gentleman (Harvard T.H. Chan School of Public Health)\nWolfgang Huber (EMBL)\nJohannes Reiner (Eurac Research)\nDavide Risso (University of Padova)\nCharlotte Soneson (Friedrich Miescher Institute for Biomedical Research)\n\nDeatils and registration"
   }
 ]
