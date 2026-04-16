@@ -43,7 +43,7 @@ title: People
 
 |     |     |
 |:---:|:---:|
-| ![](/images/people/cipciop.webp){fig-align="center" height="200px"} </br> Francesco Denti \& Andrea Sottosanti | ![](/images/people/romualdi.jpg){fig-align="center" height="200px"} </br> [Romualdi Lab](https://romualdi.bio.unipd.it/people/) |
+| ![](/images/people/sottodenti.jpg){fig-align="center" height="200px"} </br> Francesco Denti \& Andrea Sottosanti | ![](/images/people/romualdi.jpg){fig-align="center" height="200px"} </br> [Romualdi Lab](https://romualdi.bio.unipd.it/people/) |
 | ![](/images/people/sales.jpeg){fig-align="center" height="200px"} </br>  [Sales Lab](https://sales.bio.unipd.it/index.html)  | ![](/images/people/calura.jpeg){fig-align="center" height="200px"} </br> [Calura Lab](https://github.com/CaluraLab) |
 
 # Alumni
