@@ -1,0 +1,42 @@
+export type RegularPage = {
+  frontmatter: {
+    title: string;
+    image?: string;
+    description?: string;
+    meta_title?: string;
+    layout?: string;
+    draft?: boolean;
+  };
+  content: string;
+  slug?: string;
+};
+
+export type Post = {
+  frontmatter: {
+    title: string;
+    meta_title?: string;
+    description?: string;
+    image?: string;
+    categories: string[];
+    author: string;
+    tags: string[];
+    date?: string;
+    draft?: boolean;
+  };
+  slug?: string;
+  content?: string;
+};
+
+export type Feature = {
+  button: Button;
+  image: string;
+  bulletpoints: string[];
+  content: string;
+  title: string;
+};
+
+export type Button = {
+  enable: boolean;
+  label: string;
+  link: string;
+};

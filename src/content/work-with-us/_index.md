@@ -1,0 +1,26 @@
+---
+title: "Work with Us"
+meta_title: "Work with Us"
+description: "Open positions, PhD scholarships and collaboration opportunities at the Risso Lab."
+image: ""
+draft: false
+---
+
+## Open Positions
+
+While we currently do not have specific openings, we are always interested in hearing from motivated individuals eager to contribute to our research endeavors. If you are interested in joining the group, reach out via email.
+
+## PhD Scholarships
+
+PhD admission is managed at the Department level. Calls for applications are typically announced in the Spring for enrollment in the following academic year. For more information, please visit the [Department of Statistical Sciences PhD program page](https://stat.unipd.it/ricerca/ammissione).
+
+## Collaborators
+
+The following non-exhaustive list includes researchers with whom we have active collaborations and that may offer opportunities to pursue interdisciplinary research projects:
+
+- [Sandrine Dudoit](https://www.stat.berkeley.edu/~sandrine) - UC Berkeley
+- [Elizabeth Purdom](https://www.stat.berkeley.edu/~epurdom/) - UC Berkeley
+- [Wolfgang Huber](https://www.huber.embl.de/) - EMBL
+- [Lucia Peixoto](https://labs.wsu.edu/peixoto-lab/) - Washington State University
+- [Levi Waldron](https://waldronlab.io/) - City University of New York
+- [Lieven Clement](https://statomics.github.io/) - Ghent University

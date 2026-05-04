@@ -1,0 +1,97 @@
+import PeopleCard from "@/components/PeopleCard";
+import { getListPage, getSinglePage } from "@/lib/contentParser";
+import PageHeader from "@/partials/PageHeader";
+import SeoMeta from "@/partials/SeoMeta";
+
+const sortByWeight = (items: any[]) =>
+  items.sort(
+    (a, b) => (a.frontmatter.weight ?? 999) - (b.frontmatter.weight ?? 999),
+  );
+
+const People = () => {
+  const peopleIndex = getListPage("people/_index.md");
+  const people = getSinglePage("people");
+  const { title, meta_title, description, image, alumni = [] } =
+    peopleIndex.frontmatter;
+  const members = sortByWeight(
+    people.filter((person) => person.frontmatter.group === "members"),
+  );
+  const friends = sortByWeight(
+    people.filter((person) => person.frontmatter.group === "friends"),
+  );
+
+  return (
+    <>
+      <SeoMeta
+        title={title}
+        meta_title={meta_title}
+        description={description}
+        image={image}
+      />
+      <PageHeader title={title} />
+      <section className="section-sm pb-0">
+        <div className="container">
+          <div className="row justify-center">
+            {members.map((person) => (
+              <div className="mb-14 md:col-6 lg:col-4" key={person.slug}>
+                <PeopleCard data={person} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="section-sm pb-0">
+        <div className="container">
+          <h2 className="mb-12 text-center">Friends of the Lab</h2>
+          <div className="row justify-center">
+            {friends.map((person) => (
+              <div className="mb-14 md:col-6 lg:col-4" key={person.slug}>
+                <PeopleCard data={person} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="section-sm">
+        <div className="container">
+          <div className="content">
+            <h2>Alumni</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Position in the lab</th>
+                  <th>Current position</th>
+                </tr>
+              </thead>
+              <tbody>
+                {alumni.map(
+                  (person: {
+                    name: string;
+                    position: string;
+                    current_position: string;
+                    link?: string;
+                  }) => (
+                    <tr key={person.name}>
+                      <td>
+                        {person.link ? (
+                          <a href={person.link}>{person.name}</a>
+                        ) : (
+                          person.name
+                        )}
+                      </td>
+                      <td>{person.position}</td>
+                      <td>{person.current_position}</td>
+                    </tr>
+                  ),
+                )}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default People;
