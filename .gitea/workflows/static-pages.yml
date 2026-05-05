@@ -18,9 +18,23 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
+        env:
+          GITEA_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -eu
+          remote_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
+
+          git init "$GITHUB_WORKSPACE"
+          cd "$GITHUB_WORKSPACE"
+          git remote add origin "$remote_url"
+
+          if [ -n "${GITEA_TOKEN:-}" ]; then
+            git -c http.extraHeader="Authorization: token ${GITEA_TOKEN}" fetch --depth=1 origin "$GITHUB_SHA"
+          else
+            git fetch --depth=1 origin "$GITHUB_SHA"
+          fi
+
+          git checkout --detach FETCH_HEAD
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
