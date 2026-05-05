@@ -6,7 +6,7 @@ import config from "@/config/config.json";
 import menu from "@/config/menu.json";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 
 //  child navigation link interface
@@ -29,10 +29,18 @@ const Header = () => {
   const { navigation_button, settings } = config;
   // get current path
   const pathname = usePathname();
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+
+  const closeMobileNav = () => {
+    setIsNavOpen(false);
+    setOpenSubmenu(null);
+  };
 
   // scroll to top on route change
   useEffect(() => {
     window.scroll(0, 0);
+    closeMobileNav();
   }, [pathname]);
 
   return (
@@ -45,7 +53,13 @@ const Header = () => {
           <Logo />
         </div>
         {/* navbar toggler */}
-        <input id="nav-toggle" type="checkbox" className="hidden" />
+        <input
+          id="nav-toggle"
+          type="checkbox"
+          className="hidden"
+          checked={isNavOpen}
+          onChange={(event) => setIsNavOpen(event.target.checked)}
+        />
         <label
           htmlFor="nav-toggle"
           className="order-3 cursor-pointer flex items-center lg:hidden text-text-dark dark:text-white lg:order-1"
@@ -84,6 +98,10 @@ const Header = () => {
                     type="checkbox"
                     id={`submenu-${menu.name}`}
                     className="peer hidden lg:hidden"
+                    checked={openSubmenu === menu.name}
+                    onChange={(event) =>
+                      setOpenSubmenu(event.target.checked ? menu.name : null)
+                    }
                   />
                   <label
                     htmlFor={`submenu-${menu.name}`}
@@ -106,6 +124,7 @@ const Header = () => {
                       <li className="nav-dropdown-item" key={`children-${i}`}>
                         <Link
                           href={child.url}
+                          onClick={closeMobileNav}
                           className={`nav-dropdown-link block ${
                             (pathname === `${child.url}/` ||
                               pathname === child.url) &&
@@ -122,6 +141,7 @@ const Header = () => {
                 <li className="nav-item">
                   <Link
                     href={menu.url}
+                    onClick={closeMobileNav}
                     className={`nav-link block ${
                       (pathname === `${menu.url}/` || pathname === menu.url) &&
                       "active"
@@ -138,6 +158,7 @@ const Header = () => {
               <Link
                 className="btn btn-outline-primary btn-sm"
                 href={navigation_button.link}
+                onClick={closeMobileNav}
                 target={
                   navigation_button.link.startsWith("http") ? "_blank" : "_self"
                 }

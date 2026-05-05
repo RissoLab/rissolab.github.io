@@ -46,7 +46,7 @@ const People = () => {
           <div className="row justify-center">
             {friends.map((person) => (
               <div className="mb-14 md:col-6 lg:col-4" key={person.slug}>
-                <PeopleCard data={person} />
+                <PeopleCard data={person} imageShape="rectangle" />
               </div>
             ))}
           </div>

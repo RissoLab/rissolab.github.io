@@ -1,16 +1,26 @@
 import Social from "@/components/Social";
 import ImageFallback from "@/helpers/ImageFallback";
 
-const PeopleCard = ({ data }: { data: any }) => {
+const PeopleCard = ({
+  data,
+  imageShape = "circle",
+}: {
+  data: any;
+  imageShape?: "circle" | "rectangle";
+}) => {
   const { title, role, description, image, link, social = [] } =
     data.frontmatter;
+  const imageClass =
+    imageShape === "rectangle"
+      ? "h-[120px] w-[180px] rounded"
+      : "h-[120px] w-[120px] rounded-full";
 
   const portrait = image && (
     <ImageFallback
-      className="mx-auto mb-6 h-[120px] w-[120px] rounded-full object-cover transition-transform duration-300 ease-out hover:scale-110"
+      className={`mx-auto mb-6 ${imageClass} object-cover transition-transform duration-300 ease-out hover:scale-110`}
       src={image}
       alt={title}
-      width={120}
+      width={imageShape === "rectangle" ? 180 : 120}
       height={120}
     />
   );
