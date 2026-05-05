@@ -7,7 +7,12 @@ import Footer from "@/partials/Footer";
 import Header from "@/partials/Header";
 import Providers from "@/partials/Providers";
 import "@/styles/main.css";
-import { GoogleTagManager } from "@next/third-parties/google";
+import {
+  GoogleAnalytics,
+  GoogleTagManager,
+} from "@next/third-parties/google";
+
+const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   // import google font css
@@ -20,6 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       {config.google_tag_manager.enable && (
         <GoogleTagManager gtmId={config.google_tag_manager.gtm_id} />
       )}
+      {googleAnalyticsId && <GoogleAnalytics gaId={googleAnalyticsId} />}
 
       {/* head */}
       <head>
