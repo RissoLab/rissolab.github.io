@@ -16,6 +16,7 @@ concurrency:
 
 jobs:
   build-and-publish:
+    if: ${{ github.server_url == 'https://github.com' }}
     runs-on: ubuntu-latest
 
     steps:

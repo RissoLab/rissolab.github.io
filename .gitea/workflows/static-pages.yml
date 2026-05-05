@@ -1,0 +1,64 @@
+name: Build static site
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+concurrency:
+  group: static-pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-publish:
+    if: ${{ github.server_url != 'https://github.com' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static site
+        run: npm run build:static
+        env:
+          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ vars.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}
+          SITE_URL: ${{ vars.SITE_URL }}
+
+      - name: Publish to gh-pages
+        env:
+          GITEA_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -eu
+          if [ -z "${GITEA_TOKEN:-}" ]; then
+            echo "GITEA_TOKEN is empty. Check that the runner exposes secrets.GITHUB_TOKEN with repository write permissions."
+            exit 1
+          fi
+
+          worktree="$(mktemp -d)"
+          cp -R out/. "$worktree/"
+          cd "$worktree"
+
+          git init
+          git config user.name "${GITHUB_ACTOR:-gitea-actions}"
+          git config user.email "gitea-actions@localhost"
+          git add .
+          git commit -m "Deploy static site"
+          git branch -M gh-pages
+
+          remote_url="$(git -C "$GITHUB_WORKSPACE" config --get remote.origin.url)"
+          authenticated_remote="$(printf '%s' "$remote_url" | sed "s#^https://#https://${GITHUB_ACTOR:-gitea-actions}:${GITEA_TOKEN}@#")"
+          git remote add origin "$authenticated_remote"
+          git push --force origin gh-pages
