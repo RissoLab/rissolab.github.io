@@ -15,7 +15,7 @@ const { blog_folder, pagination } = config.settings;
 export const dynamicParams = false;
 
 // generate static params
-export const generateStaticParams = () => {
+export function generateStaticParams() {
   const allPost: Post[] = getSinglePage(blog_folder);
   const allSlug: string[] = allPost.map((item) => item.slug!);
   const totalPages = Math.ceil(allSlug.length / pagination);
@@ -27,11 +27,15 @@ export const generateStaticParams = () => {
     });
   }
 
+  if (paths.length === 0 && process.env.NEXT_OUTPUT === "export") {
+    paths.push({ page: "2" });
+  }
+
   return paths;
-};
+}
 
 // for all regular pages
-const Posts = async (props: { params: Promise<{ page: number }> }) => {
+const Posts = async (props: { params: Promise<{ page: string }> }) => {
   const params = await props.params;
   const postIndex: Post = getListPage(`${blog_folder}/_index.md`);
   const { title, meta_title, description, image } = postIndex.frontmatter;
