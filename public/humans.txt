@@ -1,0 +1,13 @@
+/* ---------------------------------------------
+ *  If you made it this far,
+ *  you're probably curious too.
+ *  And that matters.
+ *
+ *  Built by a curious mind.
+ * ---------------------------------------------
+ *   Developer : Riccardo Ceccaroni
+ *   Site      : rceccaroni.it
+ *   Contact   : riccardo.ceccaroni.95@gmail.com
+ *   Location  : Rome, Italy
+ *   Year      : 2026
+ */

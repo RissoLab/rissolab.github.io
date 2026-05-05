@@ -6,28 +6,30 @@
 
 @theme {
   /* === Colors === */
-  --color-primary: #121212;
-  --color-body: #fff;
-  --color-border: #eaeaea;
-  --color-light: #f6f6f6;
-  --color-dark: #040404;
-  --color-text: #444444;
-  --color-text-dark: #040404;
-  --color-text-light: #717171;
+  --color-primary: #3792ad;
+  --color-secondary: #8aca25;
+  --color-body: #ffffff;
+  --color-border: #add2dd;
+  --color-light: #ebf4f7;
+  --color-dark: #003242;
+  --color-text: #393e4c;
+  --color-text-dark: #070707;
+  --color-text-light: #5d657c;
 
   /* === Darkmode Colors === */
-  --color-darkmode-primary: #fff;
-  --color-darkmode-body: #1c1c1c;
-  --color-darkmode-border: #3E3E3E;
-  --color-darkmode-light: #222222;
-  --color-darkmode-dark: #fff;
-  --color-darkmode-text: #B4AFB6;
-  --color-darkmode-text-dark: #fff;
-  --color-darkmode-text-light: #B4AFB6;
+  --color-darkmode-primary: #8bc0cf;
+  --color-darkmode-secondary: #bbe081;
+  --color-darkmode-body: #070707;
+  --color-darkmode-border: #393e4c;
+  --color-darkmode-light: #102a33;
+  --color-darkmode-dark: #f9f9f9;
+  --color-darkmode-text: #e7e8ea;
+  --color-darkmode-text-dark: #ffffff;
+  --color-darkmode-text-light: #add2dd;
 
   /* === Font Families === */
-  --font-primary: Heebo, sans-serif;
-  --font-secondary: Signika, sans-serif;
+  --font-primary: Atkinson Hyperlegible, sans-serif;
+  --font-secondary: Atkinson Hyperlegible, sans-serif;
 
   /* === Font Sizes === */
   --text-base: 16px;

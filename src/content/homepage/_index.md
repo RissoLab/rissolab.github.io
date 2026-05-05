@@ -12,7 +12,7 @@ banner:
 # Features
 features:
   - title: "Statistical Methods for Biomedical Data"
-    image: "/images/service-1.png"
+    image: "/images/home-statistical-methods.svg"
     content: "We work at the intersection of statistics, bioinformatics and computational biology, with a strong emphasis on reproducible research and open-source software development."
     bulletpoints:
       - "Statistical and computational methods for emerging high-throughput technologies"
@@ -24,19 +24,19 @@ features:
       link: ""
 
   - title: "Open-Source Software"
-    image: "/images/service-2.png"
+    image: "/images/home-open-source-software.svg"
     content: "We implement scalable, user-friendly software packages that make our methods accessible to the scientific community."
     bulletpoints:
       - "Active engagement with the Bioconductor community"
       - "Packages for single-cell, spatial and bulk sequencing analysis"
       - "Reproducible workflows and documented research software"
     button:
-      enable: true
-      label: "Research"
-      link: "/research"
+      enable: false
+      label: ""
+      link: ""
 
   - title: "Collaborative Biological Discovery"
-    image: "/images/service-3.png"
+    image: "/images/home-collaborative-discovery.svg"
     content: "Our projects span methodological research and applied data analysis in collaboration with experimental biologists and international partners."
     bulletpoints:
       - "Developmental biology, neuroscience and cancer biology"
