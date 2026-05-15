@@ -1,0 +1,20 @@
+.gitea/workflows/static-pages.yml
+  s_dee55982dac21e::t_ee31553b0ded68 1,10,14,18-19,21,23,25-28,40,43-44,46-47,50-59,61-62,64-83
+  s_dee55982dac21e::t_7d7cd67e10abcf 48-49,60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "2d938743a3186f6701d8d14f684b13731763a568",
+  "prompts": {},
+  "sessions": {
+    "s_dee55982dac21e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e2b13-6bba-77b2-b4a8-b1f43a30f7f0",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
