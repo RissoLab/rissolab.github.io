@@ -1,0 +1,23 @@
+next.config.mjs
+  s_dee55982dac21e::t_780348b8a22441 3-4,8
+.gitea/workflows/static-pages.yml
+  s_dee55982dac21e::t_58d311563e1774 48
+scripts/llmsGenerator.mjs
+  s_dee55982dac21e::t_1b3ad1d2b1815d 777,779-782
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "5f5d9118df3dfa41b29a861551025abdc62ae0e8",
+  "prompts": {},
+  "sessions": {
+    "s_dee55982dac21e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e2b13-6bba-77b2-b4a8-b1f43a30f7f0",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
