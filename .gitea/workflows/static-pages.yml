@@ -1,40 +1,31 @@
-name: Build static site
+name: Publish to gitea.io
 
 on:
   push:
     branches:
       - main
-      - master
   workflow_dispatch:
 
 concurrency:
-  group: static-pages
+  group: gitea-io
   cancel-in-progress: true
 
 jobs:
-  build-and-publish:
-    if: ${{ github.server_url != 'https://github.com' }}
+  publish:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout source
+        shell: bash
         env:
-          GITEA_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITEA_TOKEN: ${{ gitea.token }}
         run: |
-          set -eu
-          remote_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
+          set -euo pipefail
 
-          git init "$GITHUB_WORKSPACE"
-          cd "$GITHUB_WORKSPACE"
-          git remote add origin "$remote_url"
-
-          if [ -n "${GITEA_TOKEN:-}" ]; then
-            git -c http.extraHeader="Authorization: token ${GITEA_TOKEN}" fetch --depth=1 origin "$GITHUB_SHA"
-          else
-            git fetch --depth=1 origin "$GITHUB_SHA"
-          fi
-
-          git checkout --detach FETCH_HEAD
+          git init .
+          git remote add origin "http://x-access-token:${GITEA_TOKEN}@nowwhat.stat.unipd.it/gitea/${{ gitea.repository }}.git"
+          git fetch --prune --tags origin "+refs/heads/*:refs/remotes/origin/*"
+          git checkout --force "${{ gitea.sha }}"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -46,33 +37,47 @@ jobs:
         run: npm ci
 
       - name: Build static site
-        run: npm run build:static
+        shell: bash
         env:
           NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ vars.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}
-          SITE_URL: ${{ vars.SITE_URL }}
-
-      - name: Publish to gh-pages
-        env:
-          GITEA_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          set -eu
-          if [ -z "${GITEA_TOKEN:-}" ]; then
-            echo "GITEA_TOKEN is empty. Check that the runner exposes secrets.GITHUB_TOKEN with repository write permissions."
-            exit 1
-          fi
+          set -euo pipefail
 
-          worktree="$(mktemp -d)"
-          cp -R out/. "$worktree/"
-          cd "$worktree"
+          OWNER="${{ gitea.repository_owner }}"
+          REPO="$(basename "${{ gitea.repository }}")"
+          export BASE_PATH="/gitea.io/${OWNER}/${REPO}"
+          export SITE_URL="https://nowwhat.stat.unipd.it"
 
-          git init
-          git config user.name "${GITHUB_ACTOR:-gitea-actions}"
-          git config user.email "gitea-actions@localhost"
-          git add .
-          git commit -m "Deploy static site"
-          git branch -M gh-pages
+          node -e '
+            const fs = require("fs");
+            const path = "src/config/config.json";
+            const config = JSON.parse(fs.readFileSync(path, "utf8"));
+            config.site.base_url = process.env.SITE_URL;
+            config.site.base_path = process.env.BASE_PATH;
+            fs.writeFileSync(path, `${JSON.stringify(config, null, 2)}\n`);
+          '
 
-          remote_url="$(git -C "$GITHUB_WORKSPACE" config --get remote.origin.url)"
-          authenticated_remote="$(printf '%s' "$remote_url" | sed "s#^https://#https://${GITHUB_ACTOR:-gitea-actions}:${GITEA_TOKEN}@#")"
-          git remote add origin "$authenticated_remote"
-          git push --force origin gh-pages
+          npm run build:static
+
+      - name: Install rsync
+        run: |
+          apt-get update
+          apt-get install -y rsync
+
+      - name: Publish to gitea.io
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          OWNER="${{ gitea.repository_owner }}"
+          REPO="$(basename "${{ gitea.repository }}")"
+          TARGET="/volume1/web/gitea.io/${OWNER}/${REPO}"
+
+          echo "Publishing to ${TARGET}"
+
+          mkdir -p "${TARGET}"
+
+          rsync -av --delete \
+            out/ "${TARGET}/"
+
+          echo "Published at https://nowwhat.stat.unipd.it/gitea.io/${OWNER}/${REPO}/"
