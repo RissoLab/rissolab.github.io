@@ -774,8 +774,12 @@ async function generateLlmsFiles() {
   cleanupGeneratedFiles(outputDir);
   console.log("");
 
-  const siteUrl = config.site.base_url.replace(/\/$/, "");
+  const configuredSiteUrl = config.site.base_url.replace(/\/$/, "");
   const basePath = (config.site.base_path || "/").replace(/\/$/, "") || "/";
+  const siteUrl =
+    basePath !== "/" && configuredSiteUrl.endsWith(basePath)
+      ? configuredSiteUrl.slice(0, -basePath.length)
+      : configuredSiteUrl;
   const siteName = config.site.title;
   const siteDescription = config.metadata?.meta_description || "";
 
