@@ -2,6 +2,7 @@
 
 import config from "@/config/config.json";
 import useMounted from "@/hooks/useMounted";
+import { withBasePath } from "@/lib/utils/basePath";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
@@ -69,7 +70,7 @@ const Logo = ({ src }: { src?: string }) => {
         <Image
           width={imgWidth * 2}
           height={imgHeight * 2}
-          src={logoPath}
+          src={withBasePath(logoPath)}
           alt={title || "Site logo"}
           priority
           style={{

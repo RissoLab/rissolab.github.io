@@ -1,5 +1,6 @@
 "use client";
 
+import { withBasePath } from "@/lib/utils/basePath";
 import { plainify, titleify } from "@/lib/utils/textConverter";
 import Image from "next/image";
 
@@ -148,7 +149,7 @@ const SearchResult = ({
                     {item.frontmatter.image && (
                       <div className="search-result-item-image">
                         <Image
-                          src={item.frontmatter.image}
+                          src={withBasePath(item.frontmatter.image)}
                           alt={item.frontmatter.title}
                           width={100}
                           height={100}

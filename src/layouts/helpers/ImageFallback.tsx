@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 "use client";
 
+import { withBasePath } from "@/lib/utils/basePath";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -15,7 +16,7 @@ const ImageFallback = (props: any) => {
   return (
     <Image
       {...rest}
-      src={imgSrc}
+      src={typeof imgSrc === "string" ? withBasePath(imgSrc) : imgSrc}
       onError={() => {
         setImgSrc(fallback);
       }}
