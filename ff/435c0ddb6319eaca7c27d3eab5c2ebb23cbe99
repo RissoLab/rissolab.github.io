@@ -1,0 +1,27 @@
+src/layouts/components/SearchResult.tsx
+  s_dee55982dac21e::t_3b1da9b27c2a4e 152
+  s_dee55982dac21e::t_bc5bd4d49f5118 3
+src/layouts/helpers/ImageFallback.tsx
+  s_dee55982dac21e::t_2efac9359a492e 4
+  s_dee55982dac21e::t_0af4f058a03a20 19
+src/lib/utils/basePath.ts
+  s_dee55982dac21e::t_474dfb24979d33 1-15
+src/layouts/components/Logo.tsx
+  s_dee55982dac21e::t_d8081ca3f3c5b3 5,73
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "ff435c0ddb6319eaca7c27d3eab5c2ebb23cbe99",
+  "prompts": {},
+  "sessions": {
+    "s_dee55982dac21e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e2b13-6bba-77b2-b4a8-b1f43a30f7f0",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
