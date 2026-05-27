@@ -26,6 +26,197 @@
   @apply h-5 w-5;
 }
 
+/* people honeycomb */
+.people-honeycomb {
+  --hex-gap: clamp(0.25rem, 1vw, 0.75rem);
+  --hex-size: clamp(165px, 43vw, 215px);
+  --hex-overlap: calc(var(--hex-size) * -0.265);
+  --hex-row-items: 2;
+  @apply mx-auto max-w-full;
+}
+
+.people-honeycomb--lg,
+.people-honeycomb--xl {
+  @apply hidden;
+}
+
+.people-honeycomb--sm {
+  @apply block;
+}
+
+.people-honeycomb__row {
+  width: calc(
+    (var(--hex-size) * var(--hex-row-items)) +
+      (var(--hex-gap) * (var(--hex-row-items) - 1))
+  );
+  gap: var(--hex-gap);
+  @apply mx-auto flex justify-start;
+}
+
+.people-honeycomb__row + .people-honeycomb__row {
+  margin-top: var(--hex-overlap);
+}
+
+.people-honeycomb__cell {
+  width: var(--hex-size);
+  flex: 0 0 var(--hex-size);
+}
+
+.people-hex-card {
+  aspect-ratio: 0.8660254 / 1;
+  clip-path: polygon(
+    50% 0,
+    93.301% 25%,
+    93.301% 75%,
+    50% 100%,
+    6.699% 75%,
+    6.699% 25%
+  );
+  @apply relative bg-primary p-[6px] text-center dark:bg-darkmode-primary;
+}
+
+.people-hex-card__inner {
+  clip-path: inherit;
+  @apply flex h-full w-full items-center justify-center bg-light dark:bg-darkmode-light;
+}
+
+.people-hex-card__content {
+  @apply flex h-full w-full flex-col items-center justify-center px-7 py-5;
+}
+
+.people-hex-card__image {
+  @apply h-14 w-14 rounded-full;
+}
+
+.people-hex-card__title {
+  overflow-wrap: anywhere;
+  @apply mb-0.5 text-[11px] leading-tight text-text-dark dark:text-darkmode-text-dark;
+}
+
+.people-hex-card__role {
+  overflow-wrap: anywhere;
+  @apply mb-0.5 text-[8.5px] font-medium leading-tight text-text-dark dark:text-darkmode-text-light;
+}
+
+.people-hex-card__description {
+  overflow-wrap: anywhere;
+  @apply mb-0.5 text-[7.5px] leading-tight text-text dark:text-darkmode-text;
+}
+
+.people-hex-card__social {
+  @apply mt-0.5 flex max-w-[86%] flex-wrap justify-center gap-1;
+}
+
+.people-hex-card__social li {
+  @apply inline-flex;
+}
+
+.people-hex-card__social li a {
+  @apply flex h-4 w-4 items-center justify-center rounded-sm bg-primary text-white dark:bg-darkmode-primary dark:text-text-dark;
+}
+
+.people-hex-card__social li a svg {
+  @apply h-2.5 w-2.5;
+}
+
+@media (min-width: 640px) {
+  .people-honeycomb {
+    --hex-overlap: calc(var(--hex-size) * -0.265);
+  }
+
+  .people-hex-card__content {
+    @apply px-8 py-7;
+  }
+
+  .people-hex-card__image {
+    @apply h-16 w-16;
+  }
+
+  .people-hex-card__title {
+    @apply text-[13px];
+  }
+
+  .people-hex-card__role {
+    @apply text-[10px];
+  }
+
+  .people-hex-card__description {
+    @apply text-[8.5px] leading-tight;
+  }
+
+  .people-hex-card__social li a {
+    @apply h-5 w-5;
+  }
+
+  .people-hex-card__social li a svg {
+    @apply h-3 w-3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .people-honeycomb {
+    --hex-size: clamp(220px, 26vw, 285px);
+    --hex-overlap: calc(var(--hex-size) * -0.265);
+  }
+
+  .people-honeycomb--lg {
+    @apply block;
+  }
+
+  .people-honeycomb--sm,
+  .people-honeycomb--xl {
+    @apply hidden;
+  }
+
+  .people-hex-card__content {
+    @apply px-10 py-10;
+  }
+
+  .people-hex-card__image {
+    @apply h-20 w-20;
+  }
+
+  .people-hex-card__title {
+    @apply mb-1 text-base;
+  }
+
+  .people-hex-card__role {
+    @apply text-xs;
+  }
+
+  .people-hex-card__description {
+    @apply mb-1 text-[10px] leading-snug;
+  }
+
+  .people-hex-card__social li a {
+    @apply h-6 w-6;
+  }
+
+  .people-hex-card__social li a svg {
+    @apply h-3.5 w-3.5;
+  }
+}
+
+@media (min-width: 1280px) {
+  .people-honeycomb {
+    --hex-size: clamp(220px, 21vw, 285px);
+    --hex-row-items: 4;
+  }
+
+  .people-honeycomb--xl {
+    @apply block;
+  }
+
+  .people-honeycomb--sm,
+  .people-honeycomb--lg {
+    @apply hidden;
+  }
+
+  .people-hex-card__image {
+    @apply h-24 w-24;
+  }
+}
+
 /* notice */
 .notice {
   @apply mb-6 rounded-lg border px-8 py-6;
