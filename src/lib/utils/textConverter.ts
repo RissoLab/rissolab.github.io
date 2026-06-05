@@ -1,6 +1,21 @@
 import { slug } from "github-slugger";
 import { marked } from "marked";
 
+const renderer = new marked.Renderer();
+const defaultLinkRenderer = renderer.link.bind(renderer);
+
+renderer.link = (link) => {
+  const html = defaultLinkRenderer(link);
+
+  if (link.href.startsWith("#")) {
+    return html;
+  }
+
+  return html.replace(/^<a /, '<a target="_blank" rel="noopener noreferrer" ');
+};
+
+marked.use({ renderer });
+
 // slugify
 export const slugify = (content: string) => {
   return slug(content);

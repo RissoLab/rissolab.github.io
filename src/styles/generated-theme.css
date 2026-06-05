@@ -28,8 +28,8 @@
   --color-darkmode-text-light: #add2dd;
 
   /* === Font Families === */
-  --font-primary: Atkinson Hyperlegible, sans-serif;
-  --font-secondary: Atkinson Hyperlegible, sans-serif;
+  --font-primary: Inter, sans-serif;
+  --font-secondary: Manrope, sans-serif;
 
   /* === Font Sizes === */
   --text-base: 16px;

@@ -33,9 +33,9 @@
   },
   "fonts": {
     "font_family": {
-      "primary": "Atkinson+Hyperlegible:wght@400;700",
+      "primary": "Inter:wght@400;500;600;700",
       "primary_type": "sans-serif",
-      "secondary": "Atkinson+Hyperlegible:wght@700",
+      "secondary": "Manrope:wght@600;700",
       "secondary_type": "sans-serif"
     },
     "font_size": {

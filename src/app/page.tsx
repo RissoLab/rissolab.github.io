@@ -47,7 +47,7 @@ const Home = () => {
               )}
             </div>
             {banner.image && (
-              <div className="col-12">
+              <div className="col-12 lg:mt-20">
                 <ImageFallback
                   src={banner.image}
                   className="mx-auto w-56 md:w-72 h-auto"

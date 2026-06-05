@@ -1,12 +1,8 @@
 "use client";
 
 import Logo from "@/components/Logo";
-import Social from "@/components/Social";
 import config from "@/config/config.json";
-import menu from "@/config/menu.json";
-import social from "@/config/social.json";
 import { markdownify } from "@/lib/utils/textConverter";
-import Link from "next/link";
 
 const Footer = () => {
   const { copyright } = config.params;
@@ -15,20 +11,8 @@ const Footer = () => {
     <footer className="bg-light dark:bg-darkmode-light">
       <div className="container">
         <div className="row items-center py-10">
-          <div className="mb-8 text-center lg:col-3 lg:mb-0 lg:text-left">
+          <div className="text-center lg:col-12">
             <Logo />
-          </div>
-          <div className="mb-8 text-center lg:col-6 lg:mb-0">
-            {/*<ul>
-              {menu.footer.map((menu) => (
-                <li className="m-3 inline-block" key={menu.name}>
-                  <Link href={menu.url}>{menu.name}</Link>
-                </li>
-              ))}
-            </ul>*/}
-          </div>
-          <div className="mb-8 text-center lg:col-3 lg:mb-0 lg:mt-0 lg:text-right">
-            <Social source={social.main} className="social-icons" />
           </div>
         </div>
       </div>

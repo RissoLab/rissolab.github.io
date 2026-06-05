@@ -105,7 +105,7 @@ const PostSingle = async (props: { params: Promise<{ single: string }> }) => {
               </div>
               <div className="row items-start justify-between">
                 <div className="mb-10 flex items-center lg:col-5 lg:mb-0">
-                  <h5 className="mr-3">Tags :</h5>
+                  <h5 className="mr-3 whitespace-nowrap">Tags:</h5>
                   <ul>
                     {tags?.map((tag: string) => (
                       <li key={tag} className="inline-block">
@@ -120,7 +120,7 @@ const PostSingle = async (props: { params: Promise<{ single: string }> }) => {
                   </ul>
                 </div>
                 <div className="flex items-center lg:col-4">
-                  <h5 className="mr-3">Share :</h5>
+                  <h5 className="mr-3 whitespace-nowrap">Share:</h5>
                   <Share
                     className="social-icons"
                     title={title}

@@ -13,7 +13,7 @@ const BlogCard = ({ data }: { data: Post }) => {
     <div className="bg-body dark:bg-darkmode-body">
       {image && (
         <ImageFallback
-          className="mb-6 w-full rounded"
+          className="mb-6 max-h-[240px] w-full rounded object-contain sm:max-h-[360px]"
           src={image}
           alt={title}
           width={445}

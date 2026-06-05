@@ -1,5 +1,8 @@
+"use client";
+
 import Social from "@/components/Social";
 import ImageFallback from "@/helpers/ImageFallback";
+import { KeyboardEvent, MouseEvent, useEffect, useState } from "react";
 
 const PeopleCard = ({
   data,
@@ -10,6 +13,8 @@ const PeopleCard = ({
   imageShape?: "circle" | "rectangle";
   cardShape?: "default" | "hexagon";
 }) => {
+  const [showHexSocial, setShowHexSocial] = useState(false);
+  const [canToggleHexSocial, setCanToggleHexSocial] = useState(false);
   const {
     title,
     role,
@@ -18,6 +23,23 @@ const PeopleCard = ({
     link,
     social = [],
   } = data.frontmatter;
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 919px)");
+    const updateCanToggle = () => {
+      setCanToggleHexSocial(mediaQuery.matches);
+      if (!mediaQuery.matches) {
+        setShowHexSocial(false);
+      }
+    };
+
+    updateCanToggle();
+    mediaQuery.addEventListener("change", updateCanToggle);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateCanToggle);
+    };
+  }, []);
   const imageClass =
     cardShape === "hexagon"
       ? "people-hex-card__image"
@@ -38,8 +60,46 @@ const PeopleCard = ({
   );
 
   if (cardShape === "hexagon") {
+    const hasSocial = social.length > 0;
+    const toggleHexSocial = () => {
+      if (hasSocial && canToggleHexSocial) {
+        setShowHexSocial((current) => !current);
+      }
+    };
+    const handleHexClick = (event: MouseEvent<HTMLDivElement>) => {
+      if ((event.target as HTMLElement).closest("a")) {
+        return;
+      }
+      toggleHexSocial();
+    };
+    const handleHexKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggleHexSocial();
+      }
+    };
+    const hexCardClass = [
+      "people-hex-card",
+      hasSocial ? "people-hex-card--has-social" : "",
+      showHexSocial ? "people-hex-card--social-open" : "",
+    ]
+      .filter(Boolean)
+      .join(" ");
+
     return (
-      <div className="people-hex-card">
+      <div
+        aria-expanded={
+          hasSocial && canToggleHexSocial ? showHexSocial : undefined
+        }
+        aria-label={
+          hasSocial && canToggleHexSocial ? `${title} social links` : undefined
+        }
+        className={hexCardClass}
+        onClick={handleHexClick}
+        onKeyDown={handleHexKeyDown}
+        role={hasSocial && canToggleHexSocial ? "button" : undefined}
+        tabIndex={hasSocial && canToggleHexSocial ? 0 : undefined}
+      >
         <div className="people-hex-card__inner">
           <div className="people-hex-card__content">
             {link ? (

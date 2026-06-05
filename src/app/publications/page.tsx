@@ -1,25 +1,12 @@
 import MDXContent from "@/helpers/MDXContent";
+import PublicationsList, {
+  type BibPublication,
+} from "@/layouts/components/PublicationsList";
 import { getListPage } from "@/lib/contentParser";
 import PageHeader from "@/partials/PageHeader";
 import SeoMeta from "@/partials/SeoMeta";
 import fs from "fs";
 import path from "path";
-
-type BibPublication = {
-  id: string;
-  type: string;
-  order: number;
-  title?: string;
-  author?: string;
-  journal?: string;
-  booktitle?: string;
-  institution?: string;
-  volume?: string;
-  number?: string;
-  pages?: string;
-  publisher?: string;
-  year?: string;
-};
 
 const splitEntries = (source: string) => {
   const entries: string[] = [];
@@ -116,16 +103,6 @@ const cleanBibValue = (value: string) =>
     .replace(/\s+/g, " ")
     .trim();
 
-const formatAuthors = (authors = "") => {
-  const formatted = authors.split(/\s+and\s+/).map((author) => {
-    if (author.toLowerCase() === "others") return "et al.";
-    const parts = author.split(",").map((part) => part.trim());
-    return parts.length === 2 ? `${parts[1]} ${parts[0]}` : author;
-  });
-
-  return formatted.join(", ");
-};
-
 const getPublications = () => {
   const bibPath = path.join(process.cwd(), "src/content/publications/pubs.bib");
   const bibtex = fs.readFileSync(bibPath, "utf-8");
@@ -154,41 +131,7 @@ const Publications = () => {
         <div className="container">
           <div className="content">
             <MDXContent content={content} />
-            <div className="not-prose mt-8 space-y-5">
-              {publications.map((publication) => {
-                const venue =
-                  publication.journal ||
-                  publication.booktitle ||
-                  publication.institution;
-                const details = [
-                  venue,
-                  publication.volume && `vol. ${publication.volume}`,
-                  publication.number && `no. ${publication.number}`,
-                  publication.pages && `pp. ${publication.pages}`,
-                ].filter(Boolean);
-
-                return (
-                  <article
-                    className="rounded border border-border bg-light p-5 dark:border-darkmode-border dark:bg-darkmode-light"
-                    key={`${publication.id}-${publication.title}`}
-                  >
-                    <h2 className="h5 mb-3 text-text-dark dark:text-darkmode-text-dark">
-                      {publication.title}
-                    </h2>
-                    {publication.author && (
-                      <p className="mb-2 text-text dark:text-darkmode-text">
-                        {formatAuthors(publication.author)}
-                      </p>
-                    )}
-                    <p className="mb-0 text-sm text-text-light dark:text-darkmode-text-light">
-                      {details.join(", ")}
-                      {details.length > 0 && publication.year ? " - " : ""}
-                      {publication.year}
-                    </p>
-                  </article>
-                );
-              })}
-            </div>
+            <PublicationsList publications={publications} />
           </div>
         </div>
       </section>
