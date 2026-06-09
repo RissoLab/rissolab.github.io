@@ -84,7 +84,7 @@ const PublicationsList = ({
 
         return (
           <article
-            className="rounded-xl bg-body shadow-sm transition-transform duration-200 ease-out hover:scale-[1.01] dark:bg-darkmode-body"
+            className="glass-card rounded-xl transition-transform duration-200 ease-out hover:scale-[1.01]"
             key={itemId}
             onMouseEnter={() => {
               clearHoverTimer();

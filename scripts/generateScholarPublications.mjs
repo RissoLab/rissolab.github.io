@@ -4,19 +4,33 @@ import path from "path";
 
 const CONTENT_DIR = path.join(process.cwd(), "src", "content");
 const CACHE_DIR = path.join(process.cwd(), ".cache", "scholar-publications");
-const OUTPUT_PATH = path.join(CONTENT_DIR, "publications", "pubs.bib");
+const OUTPUT_PATH =
+  process.env.PUBLICATIONS_OUTPUT_PATH ||
+  path.join(CONTENT_DIR, "publications", "pubs.bib");
 const SCHOLAR_BASE_URL = "https://scholar.google.com";
 const CROSSREF_WORKS_URL = "https://api.crossref.org/works";
 const SCHOLAR_USER_PAGE_SIZE = 100;
-const SCHOLAR_REQUEST_DELAY_MS = 750;
-const SCHOLAR_MAX_RETRIES = 3;
+const SCHOLAR_REQUEST_DELAY_MS = Number(
+  process.env.PUBLICATIONS_SCHOLAR_DELAY_MS || 8000,
+);
+const SCHOLAR_REQUEST_JITTER_MS = Number(
+  process.env.PUBLICATIONS_SCHOLAR_JITTER_MS || 4000,
+);
+const SCHOLAR_MAX_RETRIES = Number(
+  process.env.PUBLICATIONS_SCHOLAR_MAX_RETRIES || 1,
+);
 const SCHOLAR_MAX_429_DELAY_MS = 10 * 60 * 1000;
-const CROSSREF_REQUEST_DELAY_MS = 250;
+const CROSSREF_REQUEST_DELAY_MS = Number(
+  process.env.PUBLICATIONS_CROSSREF_DELAY_MS || 500,
+);
 const CROSSREF_MAX_RETRIES = 3;
 const CROSSREF_MAX_429_DELAY_MS = 5 * 60 * 1000;
 const CACHE_TTL_DAYS = Number(process.env.PUBLICATIONS_CACHE_TTL_DAYS || 14);
 const CACHE_TTL_MS = CACHE_TTL_DAYS * 24 * 60 * 60 * 1000;
 const FORCE_REFRESH = process.env.PUBLICATIONS_FORCE_REFRESH === "1";
+const FETCH_SCHOLAR_DETAILS = process.env.PUBLICATIONS_SCHOLAR_DETAILS === "1";
+const ENRICH_CROSSREF = process.env.PUBLICATIONS_CROSSREF !== "0";
+const REPLACE_EXISTING = process.env.PUBLICATIONS_REPLACE_EXISTING === "1";
 
 const htmlDecodeMap = {
   amp: "&",
@@ -108,6 +122,11 @@ const isFreshCache = (cacheEntry) =>
 const staleCacheMessage = (source, url) =>
   `Using stale ${source} cache after request failure: ${url}`;
 
+const isValidScholarHtml = (html) =>
+  html.includes("gsc_") &&
+  !html.includes("/sorry/") &&
+  !html.toLowerCase().includes("unusual traffic");
+
 const retryAfterDelay = (response, attempt, baseDelay, maxDelay) => {
   const retryAfter = response.headers.get("retry-after");
 
@@ -161,7 +180,10 @@ const fetchScholarPage = async (url, attempt = 1) => {
     return cached.payload;
   }
 
-  await delay(SCHOLAR_REQUEST_DELAY_MS);
+  await delay(
+    SCHOLAR_REQUEST_DELAY_MS +
+      Math.round(Math.random() * SCHOLAR_REQUEST_JITTER_MS),
+  );
 
   try {
     const response = await fetch(url, {
@@ -173,6 +195,17 @@ const fetchScholarPage = async (url, attempt = 1) => {
 
     if (!response.ok) {
       if (response.status === 429) {
+        if (cached) {
+          console.warn(staleCacheMessage("Scholar", url));
+          return cached.payload;
+        }
+
+        if (attempt >= SCHOLAR_MAX_RETRIES) {
+          throw new Error(
+            `Scholar rate limit reached. Stop and retry later, or use the existing cache: ${url}`,
+          );
+        }
+
         const waitMs = retryAfterDelay(
           response,
           attempt,
@@ -200,6 +233,18 @@ const fetchScholarPage = async (url, attempt = 1) => {
     }
 
     const html = await response.text();
+
+    if (!isValidScholarHtml(html)) {
+      if (cached) {
+        console.warn(staleCacheMessage("Scholar", url));
+        return cached.payload;
+      }
+
+      throw new Error(
+        `Scholar returned a verification page instead of publication data: ${url}`,
+      );
+    }
+
     writeCache("scholar", url, html);
     return html;
   } catch (error) {
@@ -231,6 +276,15 @@ const fetchCrossrefJson = async (url, attempt = 1) => {
 
     if (!response.ok) {
       if (response.status === 429) {
+        if (cached) {
+          console.warn(staleCacheMessage("Crossref", url));
+          return cached.payload;
+        }
+
+        if (attempt >= CROSSREF_MAX_RETRIES) {
+          throw new Error(`Crossref rate limit reached: ${url}`);
+        }
+
         const waitMs = retryAfterDelay(
           response,
           attempt,
@@ -360,8 +414,19 @@ const collectScholarPublications = async (scholarId) => {
     start += SCHOLAR_USER_PAGE_SIZE;
   }
 
-  const detailedPublications = [];
+  if (!FETCH_SCHOLAR_DETAILS) {
+    return publications.map((publication) => ({
+      ...publication,
+      details: {
+        authors: publication.authorSummary,
+        publication: publication.venueSummary,
+        title: publication.title,
+        year: publication.year,
+      },
+    }));
+  }
 
+  const detailedPublications = [];
   for (const publication of publications) {
     const html = await fetchScholarPage(
       detailsUrl(scholarId, publication.citationId),
@@ -392,22 +457,15 @@ const isLikelySameTitle = (sourceTitle = "", candidateTitle = "") => {
   const source = normalizeTitle(sourceTitle);
   const candidate = normalizeTitle(candidateTitle);
 
-  if (!source || !candidate) {
-    return false;
-  }
-
-  return (
-    source === candidate ||
-    source.includes(candidate) ||
-    candidate.includes(source)
-  );
+  return Boolean(source && candidate && source === candidate);
 };
 
 const crossrefUrl = (title) => {
   const params = new URLSearchParams({
     "query.title": title,
-    rows: "1",
-    select: "DOI,URL,abstract,title",
+    rows: "5",
+    select:
+      "DOI,URL,abstract,title,author,container-title,publisher,published,volume,issue,page,type",
   });
 
   return `${CROSSREF_WORKS_URL}?${params.toString()}`;
@@ -422,15 +480,60 @@ const findCrossrefDetails = async (publication) => {
 
   try {
     const data = await fetchCrossrefJson(crossrefUrl(title));
-    const item = data?.message?.items?.[0];
-    const crossrefTitle = item?.title?.[0];
+    const sourceYear = Number(publication.details.year || publication.year);
+    const sourceVenue = normalizeTitle(
+      publication.details.publication || publication.venueSummary,
+    );
+    const candidates = (data?.message?.items || [])
+      .filter((item) => {
+        const crossrefYear = Number(item?.published?.["date-parts"]?.[0]?.[0]);
+        const hasCompatibleYear =
+          !sourceYear ||
+          !crossrefYear ||
+          Math.abs(sourceYear - crossrefYear) <= 1;
 
-    if (!item || !isLikelySameTitle(title, crossrefTitle)) {
+        return isLikelySameTitle(title, item?.title?.[0]) && hasCompatibleYear;
+      })
+      .map((item) => {
+        const crossrefYear = Number(item?.published?.["date-parts"]?.[0]?.[0]);
+        const crossrefVenue = normalizeTitle(item["container-title"]?.[0]);
+        let score = 0;
+
+        if (sourceYear && crossrefYear === sourceYear) score += 4;
+        if (
+          sourceVenue &&
+          crossrefVenue &&
+          (sourceVenue.includes(crossrefVenue) ||
+            crossrefVenue.includes(sourceVenue))
+        ) {
+          score += 6;
+        }
+        if (item.type === "journal-article") score += 2;
+        if (item.abstract) score += 1;
+
+        return { item, score };
+      })
+      .sort((a, b) => b.score - a.score);
+    const item = candidates[0]?.item;
+
+    if (!item) {
       return {};
     }
 
     return {
       abstract: item.abstract ? stripHtml(item.abstract) : undefined,
+      authors: item.author
+        ?.map((author) =>
+          [author.given, author.family].filter(Boolean).join(" "),
+        )
+        .join(", "),
+      journal: item["container-title"]?.[0],
+      number: item.issue,
+      pages: item.page,
+      publisher: item.publisher,
+      type: item.type,
+      volume: item.volume,
+      year: item.published?.["date-parts"]?.[0]?.[0]?.toString(),
       doi: item.DOI,
       url: item.URL,
     };
@@ -443,6 +546,10 @@ const findCrossrefDetails = async (publication) => {
 };
 
 const enrichPublications = async (publications) => {
+  if (!ENRICH_CROSSREF) {
+    return publications;
+  }
+
   const enrichedPublications = [];
 
   for (const publication of publications) {
@@ -489,15 +596,24 @@ const bibEscape = (value = "") =>
     .replace(/\}/g, "\\}")
     .replace(/&/g, "\\&");
 
-const bibType = (details) => {
+const bibType = (details, crossref = {}) => {
   const publication = (details.publication || "").toLowerCase();
   const journal = details.journal || details["journal name"];
+  const crossrefType = crossref.type || "";
 
-  if (journal || publication.includes("journal")) {
+  if (
+    journal ||
+    publication.includes("journal") ||
+    crossrefType === "journal-article"
+  ) {
     return "article";
   }
 
-  if (details.conference || details["conference name"]) {
+  if (
+    details.conference ||
+    details["conference name"] ||
+    crossrefType === "proceedings-article"
+  ) {
     return "inproceedings";
   }
 
@@ -521,15 +637,18 @@ const bibFields = (publication) => {
   const fields = {
     title: details.title || publication.title,
     author: formatBibAuthors(
-      details.authors || details.author || publication.authorSummary,
+      crossref.authors ||
+        details.authors ||
+        details.author ||
+        publication.authorSummary,
     ),
-    journal: details.journal || details.publication,
+    journal: details.journal || crossref.journal || details.publication,
     booktitle: details.conference || details.book || details["conference name"],
-    volume: details.volume,
-    number: details.issue,
-    pages: details.pages,
-    publisher: details.publisher,
-    year: details.year || publication.year,
+    volume: details.volume || crossref.volume,
+    number: details.issue || crossref.number,
+    pages: details.pages || crossref.pages,
+    publisher: details.publisher || crossref.publisher,
+    year: details.year || publication.year || crossref.year,
     doi: details.doi || crossref.doi,
     url: details.url || crossref.url,
     abstract: details.description || crossref.abstract,
@@ -543,7 +662,7 @@ const toBibtex = (publications) => {
 
   return `${publications
     .map((publication) => {
-      const type = bibType(publication.details);
+      const type = bibType(publication.details, publication.crossref);
       const key = citationKey(publication, usedKeys);
       const fields = bibFields(publication)
         .map(([field, value]) => `  ${field}={${bibEscape(value)}},`)
@@ -552,6 +671,123 @@ const toBibtex = (publications) => {
       return `@${type}{${key},\n${fields}\n}`;
     })
     .join("\n\n")}\n`;
+};
+
+const splitBibtexEntries = (source) => {
+  const entries = [];
+  let start = -1;
+  let depth = 0;
+
+  for (let index = 0; index < source.length; index += 1) {
+    const character = source[index];
+
+    if (character === "@" && depth === 0) {
+      start = index;
+    }
+    if (start !== -1 && character === "{") {
+      depth += 1;
+    }
+    if (start !== -1 && character === "}") {
+      depth -= 1;
+
+      if (depth === 0) {
+        entries.push(source.slice(start, index + 1).trim());
+        start = -1;
+      }
+    }
+  }
+
+  return entries;
+};
+
+const bibtexEntryTitle = (entry) => {
+  const title = entry.match(/\btitle\s*=\s*\{([^}]*)\}/i)?.[1];
+  return normalizeTitle(title);
+};
+
+const bibtexEntryField = (entry, field) =>
+  entry.match(new RegExp(`\\n\\s*${field}\\s*=\\s*\\{([^}]*)\\},?`, "i"))?.[1];
+
+const isUsableEnrichmentField = (field, value) => {
+  if (!value) return false;
+  if (field === "url") return /^https?:\/\//i.test(value);
+  if (field === "abstract") return value.trim().length >= 80;
+  return true;
+};
+
+const setBibtexEntryField = (entry, field, value) => {
+  const fieldPattern = new RegExp(
+    `(\\n\\s*${field}\\s*=\\s*\\{)[^}]*\\},?`,
+    "i",
+  );
+
+  if (fieldPattern.test(entry)) {
+    return entry.replace(fieldPattern, (_, prefix) => `${prefix}${value}},`);
+  }
+
+  const entryWithTrailingComma = entry.replace(/([^,\n])\n}$/, "$1,\n}");
+  return entryWithTrailingComma.replace(/\n}$/, `\n  ${field}={${value}},\n}`);
+};
+
+const enrichExistingEntry = (existingEntry, generatedEntry) => {
+  const fields = ["doi", "url", "abstract"];
+  let enrichedEntry = existingEntry;
+
+  for (const field of fields) {
+    if (
+      isUsableEnrichmentField(field, bibtexEntryField(enrichedEntry, field))
+    ) {
+      continue;
+    }
+
+    const value = bibtexEntryField(generatedEntry, field);
+
+    if (isUsableEnrichmentField(field, value)) {
+      enrichedEntry = setBibtexEntryField(enrichedEntry, field, value);
+    }
+  }
+
+  return enrichedEntry;
+};
+
+const mergeWithExistingBibtex = (generatedBibtex) => {
+  if (REPLACE_EXISTING || !fs.existsSync(OUTPUT_PATH)) {
+    return generatedBibtex;
+  }
+
+  const existingEntries = splitBibtexEntries(
+    fs.readFileSync(OUTPUT_PATH, "utf-8"),
+  );
+  const generatedEntries = splitBibtexEntries(generatedBibtex);
+  const generatedByTitle = new Map(
+    generatedEntries.map((entry) => [bibtexEntryTitle(entry), entry]),
+  );
+  const existingTitles = new Set(existingEntries.map(bibtexEntryTitle));
+  let enrichedCount = 0;
+  const enrichedExistingEntries = existingEntries.map((entry) => {
+    const generatedEntry = generatedByTitle.get(bibtexEntryTitle(entry));
+
+    if (!generatedEntry) {
+      return entry;
+    }
+
+    const enrichedEntry = enrichExistingEntry(entry, generatedEntry);
+
+    if (enrichedEntry !== entry) {
+      enrichedCount += 1;
+    }
+
+    return enrichedEntry;
+  });
+  const newEntries = generatedEntries.filter(
+    (entry) => !existingTitles.has(bibtexEntryTitle(entry)),
+  );
+
+  console.log(
+    `Preserved ${existingEntries.length} existing BibTeX entries, enriched ${enrichedCount}, and found ${newEntries.length} new entr${newEntries.length === 1 ? "y" : "ies"}.`,
+  );
+
+  return `${[...enrichedExistingEntries, ...newEntries].join("\n\n")}\n`;
 };
 
 const uniquePublications = (publications) => {
@@ -581,10 +817,14 @@ const generateScholarPublications = async () => {
     throw new Error("No Google Scholar ids found in content markdown files");
   }
 
-  const publications = await enrichPublications(
-    uniquePublications(
-      (await Promise.all(scholarIds.map(collectScholarPublications))).flat(),
-    ),
+  const scholarPublications = [];
+
+  for (const scholarId of scholarIds) {
+    scholarPublications.push(...(await collectScholarPublications(scholarId)));
+  }
+
+  const publications = (
+    await enrichPublications(uniquePublications(scholarPublications))
   ).sort((a, b) => {
     const yearDiff =
       Number(b.details.year || b.year || 0) -
@@ -600,9 +840,25 @@ const generateScholarPublications = async () => {
     throw new Error("No Google Scholar publications found");
   }
 
-  fs.writeFileSync(OUTPUT_PATH, toBibtex(publications));
+  fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
+  const temporaryOutputPath = `${OUTPUT_PATH}.tmp`;
+  fs.writeFileSync(
+    temporaryOutputPath,
+    mergeWithExistingBibtex(toBibtex(publications)),
+  );
+  fs.renameSync(temporaryOutputPath, OUTPUT_PATH);
   console.log(
     `Updated ${OUTPUT_PATH} with ${publications.length} BibTeX entries from ${scholarIds.length} Google Scholar profile(s)`,
+  );
+  console.log(
+    FETCH_SCHOLAR_DETAILS
+      ? "Scholar detail requests were enabled."
+      : "Used Scholar profile pages only.",
+  );
+  console.log(
+    ENRICH_CROSSREF
+      ? "Crossref supplied additional metadata."
+      : "Crossref enrichment was disabled.",
   );
 };
 

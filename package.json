@@ -16,6 +16,8 @@
     "format": "prettier -w ./src",
     "generate-json": "node scripts/jsonGenerator.mjs",
     "update-publications": "node scripts/generateScholarPublications.mjs",
+    "update-publications:scholar-only": "PUBLICATIONS_CROSSREF=0 node scripts/generateScholarPublications.mjs",
+    "update-publications:full": "PUBLICATIONS_SCHOLAR_DETAILS=1 node scripts/generateScholarPublications.mjs",
     "generate-llms": "node scripts/llmsGenerator.mjs",
     "remove-darkmode": "node scripts/removeDarkmode.mjs && yarn format"
   },

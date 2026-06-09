@@ -12,6 +12,11 @@
   @apply mx-auto xl:!max-w-[1320px] px-4;
 }
 
+/* translucent inner content cards */
+.glass-card {
+  @apply border border-white/60 bg-white/70 shadow-sm backdrop-blur-md dark:border-white/10 dark:bg-darkmode-body/55;
+}
+
 /* social icons */
 .social-icons {
   @apply space-x-4;

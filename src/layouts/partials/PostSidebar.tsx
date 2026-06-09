@@ -15,7 +15,7 @@ const PostSidebar = ({
       {/* <!-- categories --> */}
       <div className="mb-8">
         <h5 className="mb-6">Categories</h5>
-        <div className="rounded-3xl bg-light p-8 dark:bg-darkmode-light">
+        <div className="glass-card rounded-3xl p-8">
           <ul className="space-y-4">
             {categories.map((category: string) => {
               const count = allCategories.filter(
@@ -38,7 +38,7 @@ const PostSidebar = ({
       {/* <!-- tags --> */}
       <div className="mb-8">
         <h5 className="mb-6">Tags</h5>
-        <div className="rounded-3xl bg-light p-6 dark:bg-darkmode-light">
+        <div className="glass-card rounded-3xl p-6">
           <ul>
             {tags.map((tag: string) => {
               return (

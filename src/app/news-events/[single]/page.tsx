@@ -125,7 +125,7 @@ const PostSingle = async (props: { params: Promise<{ single: string }> }) => {
                     className="social-icons"
                     title={title}
                     description={description}
-                    slug={post.slug!}
+                    slug={`${blog_folder}/${post.slug!}`}
                   />
                 </div>
               </div>

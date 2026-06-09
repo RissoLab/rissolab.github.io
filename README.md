@@ -114,12 +114,12 @@ Configuration is in `src/config/config.json` under `llms`:
 
 `include` overrides `exclude` — use `exclude` to remove broad sections, then `include` to add back specific pages.
 
-| Pattern | Matches |
-|---|---|
-| `/blog` | exact `/blog` |
-| `/blog/` | `/blog` and everything under it |
-| `/blog/*` | one segment under `/blog/` (e.g. `/blog/post-1`) |
-| `/blog/**` | any depth under `/blog/` |
+| Pattern    | Matches                                          |
+| ---------- | ------------------------------------------------ |
+| `/blog`    | exact `/blog`                                    |
+| `/blog/`   | `/blog` and everything under it                  |
+| `/blog/*`  | one segment under `/blog/` (e.g. `/blog/post-1`) |
+| `/blog/**` | any depth under `/blog/`                         |
 
 Exclude all blog pages, then add back only single posts:
 
@@ -180,3 +180,34 @@ Copyright (c) 2023 - Present, Designed & Developed by [Zeon Studio](https://zeon
 ## 💻 Need Custom Development Services?
 
 If you need a custom theme, theme customization, or complete website development services from scratch you can [Hire Us](https://zeon.studio/).
+
+## Updating publications
+
+The default command reads Google Scholar profile pages sequentially, reuses the
+local cache, and asks Crossref for additional metadata:
+
+```bash
+yarn update-publications
+```
+
+For the lowest Google Scholar request volume, skip Crossref enrichment:
+
+```bash
+yarn update-publications:scholar-only
+```
+
+Per-publication Google Scholar detail requests are disabled by default because
+they commonly trigger rate limiting. Enable them only when necessary:
+
+```bash
+yarn update-publications:full
+```
+
+Useful environment variables:
+
+- `PUBLICATIONS_FORCE_REFRESH=1`: ignore fresh cache entries.
+- `PUBLICATIONS_CACHE_TTL_DAYS=30`: keep cached responses longer.
+- `PUBLICATIONS_SCHOLAR_DELAY_MS=12000`: increase the delay between Scholar requests.
+- `PUBLICATIONS_SCHOLAR_MAX_RETRIES=1`: limit retries after rate limiting.
+- `PUBLICATIONS_OUTPUT_PATH=/tmp/pubs.bib`: write to a temporary file.
+- `PUBLICATIONS_REPLACE_EXISTING=1`: replace rather than preserve existing BibTeX records.

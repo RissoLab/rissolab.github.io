@@ -10,7 +10,7 @@ const BlogCard = ({ data }: { data: Post }) => {
   const { summary_length, blog_folder } = config.settings;
   const { title, image, author, categories, date } = data.frontmatter;
   return (
-    <div className="h-full rounded-3xl bg-light p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 dark:bg-darkmode-light">
+    <div className="glass-card h-full rounded-3xl p-6 transition-transform duration-200 hover:-translate-y-1">
       {image && (
         <ImageFallback
           className="mb-6 max-h-[240px] w-full rounded-3xl object-contain sm:max-h-[360px]"

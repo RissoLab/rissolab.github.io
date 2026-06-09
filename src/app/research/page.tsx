@@ -34,7 +34,7 @@ const ResearchAreaCard = ({
   icon: string;
 }) => {
   return (
-    <article className="h-full rounded-3xl bg-body p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 dark:bg-darkmode-body md:p-8">
+    <article className="glass-card h-full rounded-3xl p-6 transition-transform duration-200 hover:-translate-y-1 md:p-8">
       <div className="mb-5 flex items-center gap-4">
         <div className="flex h-18 w-18 shrink-0 items-center justify-center rounded-3xl bg-transparent border-2 text-2xl text-primary dark:text-darkmode-primary">
           <DynamicIcon icon={icon} aria-hidden="true" />

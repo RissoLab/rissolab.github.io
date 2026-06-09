@@ -74,7 +74,7 @@ const Home = () => {
             {features.map((feature, index: number) => (
               <div
                 key={index}
-                className="rounded-3xl bg-body p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 dark:bg-darkmode-body md:p-10 lg:p-12"
+                className="glass-card rounded-3xl p-6 transition-transform duration-200 hover:-translate-y-1 md:p-10 lg:p-12"
               >
                 <div className="row items-center justify-between">
                   <div
