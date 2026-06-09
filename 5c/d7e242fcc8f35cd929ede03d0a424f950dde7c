@@ -1,0 +1,74 @@
+src/app/work-with-us/page.tsx
+  h_c24d027b38481a 63
+  s_12c837d3ae96b9::t_5c86f66b1abcbd 34
+  s_12c837d3ae96b9::t_1c239c73922d98 1-2,4-5,7-33,35-43,46-62,64-77
+src/layouts/partials/Header.tsx
+  s_12c837d3ae96b9::t_1c0749a9d8d3f8 34,47-55,58-60
+src/layouts/components/BlogCard.tsx
+  s_12c837d3ae96b9::t_018dce55a4c830 13,16
+src/app/contact/page.tsx
+  h_c24d027b38481a 26
+src/styles/base.css
+  s_12c837d3ae96b9::t_b5474c4fd757a1 15
+  s_12c837d3ae96b9::t_3bceb351f35ab2 18-19
+src/app/news-events/[single]/page.tsx
+  s_12c837d3ae96b9::t_018dce55a4c830 69
+src/app/research/page.tsx
+  s_12c837d3ae96b9::t_5c86f66b1abcbd 38
+  s_12c837d3ae96b9::t_64adcff7d06f1f 2,29-35,40,53,73-77
+  h_c24d027b38481a 37,39,70-71
+  s_12c837d3ae96b9::t_610858e85f6cdd 1,4-5,7-28,36,41-52,54-69,72,78-85
+src/styles/navigation.css
+  s_12c837d3ae96b9::t_1c0749a9d8d3f8 2-5
+  s_12c837d3ae96b9::t_0083b52716c9fd 6
+src/app/layout.tsx
+  s_12c837d3ae96b9::t_65b6a11bbf1503 9,23
+  s_12c837d3ae96b9::t_b5474c4fd757a1 10,14-19,21,58
+src/content/work-with-us/_index.md
+  s_12c837d3ae96b9::t_1c239c73922d98 7-10
+src/config/theme.json
+  s_12c837d3ae96b9::t_b5474c4fd757a1 36-37,39
+src/app/publications/page.tsx
+  h_c24d027b38481a 135
+  s_12c837d3ae96b9::t_25423fbd6aca74 130,132,134
+src/app/page.tsx
+  s_12c837d3ae96b9::t_6fa1245e7cbf67 71-74,76-77,79,126,128
+  s_12c837d3ae96b9::t_b5474c4fd757a1 30,34
+  s_12c837d3ae96b9::t_8f14228ab30de9 80,83-96,99,101-103,105-125
+  s_12c837d3ae96b9::t_a7683e1597b405 130-131
+  s_12c837d3ae96b9::t_3f079391b2d614 104
+  s_12c837d3ae96b9::t_023699b8aeec82 81-82,97-98
+src/app/people/page.tsx
+  h_c24d027b38481a 113-114
+src/styles/components.css
+  s_12c837d3ae96b9::t_82550299467d8b 115
+src/content/research/_index.md
+  h_c24d027b38481a 12
+  s_12c837d3ae96b9::t_64adcff7d06f1f 7-11
+src/layouts/partials/PostSidebar.tsx
+  s_12c837d3ae96b9::t_018dce55a4c830 18,41
+src/layouts/components/PublicationsList.tsx
+  s_12c837d3ae96b9::t_25423fbd6aca74 66
+  h_c24d027b38481a 87
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "5cd7e242fcc8f35cd929ede03d0a424f950dde7c",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_12c837d3ae96b9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019eac41-73ee-72f1-b80f-a4821b4a7a1e",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
