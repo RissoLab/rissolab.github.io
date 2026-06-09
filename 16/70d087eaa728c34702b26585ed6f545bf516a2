@@ -1,0 +1,62 @@
+src/config/config.json
+  h_c24d027b38481a 4
+README.md
+  s_12c837d3ae96b9::t_462d680ce48777 213
+  s_12c837d3ae96b9::t_88e82b2fdb570c 184-212
+  s_12c837d3ae96b9::t_fc8de2166e0436 117-122,183
+src/layouts/partials/PostSidebar.tsx
+  s_12c837d3ae96b9::t_760556c442499a 18,41
+src/app/research/page.tsx
+  s_12c837d3ae96b9::t_760556c442499a 37
+package.json
+  s_12c837d3ae96b9::t_88e82b2fdb570c 19
+  s_12c837d3ae96b9::t_f917ac6c323349 20
+src/styles/components.css
+  s_12c837d3ae96b9::t_760556c442499a 15-16,18-19
+  s_12c837d3ae96b9::t_8adbd9e16386ac 17
+src/app/news-events/[single]/page.tsx
+  s_12c837d3ae96b9::t_3ece72a8ead922 128
+scripts/generateScholarPublications.mjs
+  s_12c837d3ae96b9::t_f917ac6c323349 7-9,13-21,23-25,31,183-186,198-208,417-427,429,467-468,525,529-536,599,602,604-608,612-616,642-643,645,647-651,665,820-823,853-855
+  s_12c837d3ae96b9::t_2f3f332b0cb3ea 526-528
+  s_12c837d3ae96b9::t_945a434bd59489 460,483,706-709,731-736,740-744,747-750,760-763,766-782,787,790
+  s_12c837d3ae96b9::t_0ec654fc4c24b3 32,549-552
+  s_12c837d3ae96b9::t_9e76ce9e99aea3 495,729,737-739
+  s_12c837d3ae96b9::t_462d680ce48777 33,640-641,676-705,751-759,764-765,783-786,788-789,791-792,845-848
+  s_12c837d3ae96b9::t_7736c868af47ec 125-129,236-247,279-287,843-844,849
+  s_12c837d3ae96b9::t_b359927b3f815a 856-862
+  s_12c837d3ae96b9::t_94153978b4214b 826-827
+  s_12c837d3ae96b9::t_6795e36f36ce7d 466,484-494,496-519,710-728,730,745-746
+src/app/page.tsx
+  s_12c837d3ae96b9::t_760556c442499a 77
+src/layouts/components/BlogCard.tsx
+  s_12c837d3ae96b9::t_760556c442499a 13
+src/layouts/components/PublicationsList.tsx
+  s_12c837d3ae96b9::t_760556c442499a 87
+src/content/publications/pubs.bib
+  s_12c837d3ae96b9::t_ef35a9e5cf38d9 1029
+  s_12c837d3ae96b9::t_afb9fde06e1361 1017-1028,1030
+src/app/work-with-us/page.tsx
+  s_12c837d3ae96b9::t_760556c442499a 33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "1670d087eaa728c34702b26585ed6f545bf516a2",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_12c837d3ae96b9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019eac41-73ee-72f1-b80f-a4821b4a7a1e",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
