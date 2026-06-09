@@ -30,6 +30,7 @@ export type Post = {
 export type Feature = {
   button: Button;
   image: string;
+  layout?: "package-honeycomb";
   bulletpoints: string[];
   content: string;
   title: string;

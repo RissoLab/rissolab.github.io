@@ -3,7 +3,7 @@
 banner:
   title: "Welcome to the Risso Lab"
   content: "We develop, implement and apply statistical models to high-throughput biomedical data, with a current focus on single-cell and spatial transcriptomics."
-  image: "/images/sticker.png"
+  image: "/images/sticker.webp"
   button:
     enable: false
     label: ""
@@ -24,7 +24,8 @@ features:
       link: ""
 
   - title: "Open-Source Software"
-    image: "/images/home-open-source-software.svg"
+    image: ""
+    layout: "package-honeycomb"
     content: "We implement scalable, user-friendly software packages that make our methods accessible to the scientific community."
     bulletpoints:
       - "Active engagement with the Bioconductor community"

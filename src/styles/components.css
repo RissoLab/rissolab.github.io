@@ -26,6 +26,48 @@
   @apply h-5 w-5;
 }
 
+/* package honeycomb */
+.package-honeycomb {
+  aspect-ratio: 1.08;
+  max-height: 480px;
+  @apply mx-auto flex w-full max-w-[620px] items-center justify-center overflow-hidden;
+}
+
+.package-honeycomb__rows {
+  @apply flex flex-col items-center justify-center;
+}
+
+.package-honeycomb__row {
+  width: calc(
+    var(--package-tile-size) +
+      ((var(--package-row-slots) - 1) * var(--package-tile-size) * 0.866)
+  );
+  @apply flex items-center justify-start;
+}
+
+.package-honeycomb__row + .package-honeycomb__row {
+  margin-top: calc(var(--package-tile-size) * -0.25);
+}
+
+.package-honeycomb__cell + .package-honeycomb__cell {
+  margin-left: calc(var(--package-tile-size) * -0.134);
+}
+
+.package-honeycomb__cell {
+  width: var(--package-tile-size);
+  aspect-ratio: 1;
+  clip-path: polygon(50% 0, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
+  @apply shrink-0 overflow-hidden;
+}
+
+.package-honeycomb__cell img {
+  @apply h-full w-full object-cover;
+}
+
+.package-honeycomb__cell--empty {
+  visibility: hidden;
+}
+
 /* people honeycomb */
 .people-honeycomb {
   --hex-gap: clamp(0.25rem, 1vw, 0.75rem);

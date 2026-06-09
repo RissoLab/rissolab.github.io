@@ -10,6 +10,11 @@ const nextConfig = {
   output: process.env.NEXT_OUTPUT || "standalone",
   images: {
     unoptimized: process.env.NEXT_OUTPUT === "export",
+    localPatterns: [
+      {
+        pathname: "/images/**",
+      },
+    ],
   },
 };
 

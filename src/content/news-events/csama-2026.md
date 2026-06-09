@@ -3,7 +3,7 @@ title: "CSAMA 2026: Biological Data Science Summer School"
 meta_title: "CSAMA 2026"
 description: "Brixen (Bressanone), Italy, 24-30 May, 2026."
 date: 2025-12-15T00:00:00Z
-image: "/images/news/CSAMA2026.png"
+image: "/images/news/CSAMA2026.webp"
 categories: ["Events", "Bioconductor"]
 author: "Davide Risso"
 tags: ["csama", "bioconductor", "summer-school"]

@@ -9,7 +9,7 @@ contact:
   role: "Professor of Statistics"
   department: "Department of Statistical Sciences"
   institution: "University of Padova"
-  image: "/images/people/dr.jpeg"
+  image: "/images/people/dr.webp"
   social:
     - name: "Github"
       id: "drisso"

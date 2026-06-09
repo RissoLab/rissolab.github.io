@@ -4,7 +4,7 @@
     "base_url": "https://nextplate.netlify.app",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/favicon.png",
+    "favicon": "/images/favicon.webp",
     "logo": "",
     "logo_darkmode": "",
     "logo_width": "150",
@@ -37,12 +37,12 @@
   "navigation_button": {
     "enable": true,
     "label": "Github",
-    "link": "https://github.com/zeon-studio/nextplate"
+    "link": "https://github.com/RissoLab"
   },
 
   "google_tag_manager": {
-    "enable": false,
-    "gtm_id": "GTM-XXXXXX"
+    "enable": true,
+    "gtm_id": "G-G1CYC8PD0S"
   },
 
   "disqus": {
@@ -53,7 +53,7 @@
 
   "metadata": {
     "meta_author": "Themefisher",
-    "meta_image": "/images/og-image.png",
+    "meta_image": "/images/og-image.webp",
     "meta_description": "Next Boilerplate"
   },
 

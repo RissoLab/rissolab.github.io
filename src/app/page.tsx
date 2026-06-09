@@ -3,6 +3,7 @@ import MDXContent from "@/helpers/MDXContent";
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
 import SeoMeta from "@/partials/SeoMeta";
+import PackageHoneycomb from "@/components/PackageHoneycomb";
 import { Button, Feature } from "@/types";
 import Link from "next/link";
 import { FaCheck } from "react-icons/fa";
@@ -79,12 +80,16 @@ const Home = () => {
                   index % 2 !== 0 && "md:order-2"
                 }`}
               >
-                <ImageFallback
-                  src={feature.image}
-                  height={480}
-                  width={520}
-                  alt={feature.title}
-                />
+                {feature.layout === "package-honeycomb" ? (
+                  <PackageHoneycomb />
+                ) : (
+                  <ImageFallback
+                    src={feature.image}
+                    height={480}
+                    width={520}
+                    alt={feature.title}
+                  />
+                )}
               </div>
               <div
                 className={`md:col-7 lg:col-6 ${
