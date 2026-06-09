@@ -33,9 +33,10 @@
   },
   "fonts": {
     "font_family": {
-      "primary": "Inter:wght@400;500;600;700",
+      "sans": "var(--font-inter)",
+      "primary": "var(--font-inter)",
       "primary_type": "sans-serif",
-      "secondary": "Manrope:wght@600;700",
+      "secondary": "var(--font-inter)",
       "secondary_type": "sans-serif"
     },
     "font_size": {

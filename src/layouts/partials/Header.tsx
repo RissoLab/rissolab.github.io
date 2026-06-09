@@ -31,6 +31,7 @@ const Header = () => {
   const pathname = usePathname();
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const closeMobileNav = () => {
     setIsNavOpen(false);
@@ -43,9 +44,20 @@ const Header = () => {
     closeMobileNav();
   }, [pathname]);
 
+  useEffect(() => {
+    const updateHeader = () => setIsScrolled(window.scrollY > 0);
+
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+
+    return () => window.removeEventListener("scroll", updateHeader);
+  }, []);
+
   return (
     <header
-      className={`header z-30 ${settings.sticky_header && "sticky top-0"}`}
+      className={`header z-30 ${settings.sticky_header && "sticky top-0"} ${
+        isScrolled ? "header-scrolled" : ""
+      }`}
     >
       <nav className="navbar container">
         {/* logo */}

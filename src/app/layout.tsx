@@ -1,26 +1,26 @@
 import SearchModal from "@/components/SearchModal";
 import config from "@/config/config.json";
-import theme from "@/config/theme.json";
 import Announcement from "@/helpers/Announcement";
 import TwSizeIndicator from "@/helpers/TwSizeIndicator";
 import Footer from "@/partials/Footer";
 import Header from "@/partials/Header";
 import Providers from "@/partials/Providers";
 import "@/styles/main.css";
-import {
-  GoogleAnalytics,
-  GoogleTagManager,
-} from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { Inter } from "next/font/google";
 
 const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
-  // import google font css
-  const pf = theme.fonts.font_family.primary;
-  const sf = theme.fonts.font_family.secondary;
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700", "800"],
+});
 
+export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html suppressHydrationWarning={true} lang="en">
+    <html suppressHydrationWarning={true} lang="en" className={inter.variable}>
       {/* google tag manager */}
       {config.google_tag_manager.enable && (
         <GoogleTagManager gtmId={config.google_tag_manager.gtm_id} />
@@ -50,25 +50,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           media="(prefers-color-scheme: dark)"
           content="#000"
         />
-
-        {/* google font css */}
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href={`https://fonts.googleapis.com/css2?family=${pf}${
-            sf ? "&family=" + sf : ""
-          }&display=swap`}
-          rel="stylesheet"
-        />
       </head>
 
       {/* body */}
       <body
         suppressHydrationWarning={true}
-        className="min-h-screen flex flex-col"
+        className="flex min-h-screen flex-col font-sans"
       >
         <Providers>
           <Announcement />

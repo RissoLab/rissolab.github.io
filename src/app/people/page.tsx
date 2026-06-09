@@ -110,8 +110,8 @@ const People = () => {
       </section>
       <section className="section-sm">
         <div className="container">
-          <div className="content">
-            <h2>Alumni</h2>
+          <div className="content ">
+            <h2 className="text-center">Alumni</h2>
             <table>
               <thead>
                 <tr>

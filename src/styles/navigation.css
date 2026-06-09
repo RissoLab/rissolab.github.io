@@ -1,5 +1,9 @@
 .header {
-  @apply bg-body dark:bg-darkmode-body py-6;
+  @apply bg-body py-6 transition-[background-color,box-shadow,border-color] duration-300 dark:bg-darkmode-body;
+}
+
+.header-scrolled {
+  @apply bg-body/80 shadow-sm backdrop-blur-xl dark:bg-darkmode-body/80;
 }
 
 /* navbar items */

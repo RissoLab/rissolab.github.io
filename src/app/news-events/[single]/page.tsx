@@ -66,7 +66,7 @@ const PostSingle = async (props: { params: Promise<{ single: string }> }) => {
                     height={320}
                     width={640}
                     alt={title}
-                    className="mx-auto max-h-[320px] w-auto rounded object-contain"
+                    className="mx-auto max-h-[320px] w-auto rounded-3xl object-contain"
                   />
                 </div>
               )}

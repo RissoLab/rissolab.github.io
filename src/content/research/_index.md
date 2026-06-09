@@ -4,6 +4,12 @@ meta_title: "Research Interests"
 description: "Research areas and selected work from the Risso Lab."
 image: ""
 draft: false
+icons:
+  Spatial Transcriptomics: "FaTableCells"
+  Single-Cell Omics: "FaMicroscope"
+  Bioconductor Software: "FaCode"
+  Collaborative Work in Neurobiology, Development, and Cancer Biology: "FaBrain"
+  Graphical Models: "FaCircleNodes"
 ---
 
 The Risso Lab has extensive expertise in the analysis of high-throughput biological data, both from a method development and a collaborative perspective. Currently, our main focus is on single-cell and spatial omics, including transcriptomics, epigenomics and proteomics.

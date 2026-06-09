@@ -27,11 +27,11 @@ const Home = () => {
           <div className="row justify-center">
             <div className="lg:col-7 md:col-9 mb-8 text-center">
               <h1
-                className="mb-4 text-h3 lg:text-h1"
+                className="mb-4 text-h3 font-extrabold leading-[1.05] tracking-[-0.04em] lg:text-h1"
                 dangerouslySetInnerHTML={markdownify(banner.title)}
               />
               <p
-                className="mb-8"
+                className="mb-8 text-base font-medium leading-relaxed text-text-light dark:text-darkmode-text-light md:text-lg"
                 dangerouslySetInnerHTML={markdownify(banner.content ?? "")}
               />
               {banner.button!.enable && (
@@ -68,63 +68,67 @@ const Home = () => {
         </div>
       </section>
 
-      {features.map((feature, index: number) => (
-        <section
-          key={index}
-          className={`section-sm ${index % 2 === 0 && "bg-gradient"}`}
-        >
-          <div className="container">
-            <div className="row items-center justify-between">
+      <section className="py-12 xl:py-16">
+        <div className="container">
+          <div className="space-y-6 rounded-3xl bg-light p-5 dark:bg-darkmode-light md:p-8 lg:p-10">
+            {features.map((feature, index: number) => (
               <div
-                className={`mb:md-0 mb-6 md:col-5 ${
-                  index % 2 !== 0 && "md:order-2"
-                }`}
+                key={index}
+                className="rounded-3xl bg-body p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 dark:bg-darkmode-body md:p-10 lg:p-12"
               >
-                {feature.layout === "package-honeycomb" ? (
-                  <PackageHoneycomb />
-                ) : (
-                  <ImageFallback
-                    src={feature.image}
-                    height={480}
-                    width={520}
-                    alt={feature.title}
-                  />
-                )}
-              </div>
-              <div
-                className={`md:col-7 lg:col-6 ${
-                  index % 2 !== 0 && "md:order-1"
-                }`}
-              >
-                <h2
-                  className="mb-4"
-                  dangerouslySetInnerHTML={markdownify(feature.title)}
-                />
-                <p
-                  className="mb-8 text-lg"
-                  dangerouslySetInnerHTML={markdownify(feature.content)}
-                />
-                <ul>
-                  {feature.bulletpoints.map((bullet: string) => (
-                    <li className="relative mb-4 pl-6" key={bullet}>
-                      <FaCheck className={"absolute left-0 top-1.5"} />
-                      <span dangerouslySetInnerHTML={markdownify(bullet)} />
-                    </li>
-                  ))}
-                </ul>
-                {feature.button.enable && (
-                  <Link
-                    className="btn btn-primary mt-5"
-                    href={feature.button.link}
+                <div className="row items-center justify-between">
+                  <div
+                    className={`order-2 mt-6 md:col-5 md:mt-0 ${
+                      index % 2 !== 0 ? "md:order-2" : "md:order-1"
+                    }`}
                   >
-                    {feature.button.label}
-                  </Link>
-                )}
+                    {feature.layout === "package-honeycomb" ? (
+                      <PackageHoneycomb />
+                    ) : (
+                      <ImageFallback
+                        src={feature.image}
+                        height={480}
+                        width={520}
+                        alt={feature.title}
+                      />
+                    )}
+                  </div>
+                  <div
+                    className={`order-1 md:col-7 lg:col-6 ${
+                      index % 2 !== 0 ? "md:order-1" : "md:order-2"
+                    }`}
+                  >
+                    <h2
+                      className="mb-4"
+                      dangerouslySetInnerHTML={markdownify(feature.title)}
+                    />
+                    <p
+                      className="mb-8 text-lg"
+                      dangerouslySetInnerHTML={markdownify(feature.content)}
+                    />
+                    <ul>
+                      {feature.bulletpoints.map((bullet: string) => (
+                        <li className="relative mb-4 pl-6" key={bullet}>
+                          <FaCheck className={"absolute left-0 top-1.5"} />
+                          <span dangerouslySetInnerHTML={markdownify(bullet)} />
+                        </li>
+                      ))}
+                    </ul>
+                    {feature.button.enable && (
+                      <Link
+                        className="btn btn-primary mt-5"
+                        href={feature.button.link}
+                      >
+                        {feature.button.label}
+                      </Link>
+                    )}
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        </section>
-      ))}
+        </div>
+      </section>
     </>
   );
 };

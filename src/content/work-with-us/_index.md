@@ -4,6 +4,10 @@ meta_title: "Work with Us"
 description: "Open positions, PhD scholarships and collaboration opportunities at the Risso Lab."
 image: ""
 draft: false
+icons:
+  Open Positions: "FaBriefcase"
+  PhD Scholarships: "FaGraduationCap"
+  Collaborators: "FaPeopleGroup"
 ---
 
 ## Open Positions

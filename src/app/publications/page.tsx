@@ -127,10 +127,12 @@ const Publications = () => {
         image={image}
       />
       <PageHeader title={title} />
-      <section className="section">
+      <section className="section-sm">
         <div className="container">
-          <div className="content">
+          <div className="content mx-auto mb-12 max-w-4xl text-lg">
             <MDXContent content={content} />
+          </div>
+          <div className="rounded-3xl bg-light p-5 dark:bg-darkmode-light md:p-8 lg:p-10">
             <PublicationsList publications={publications} />
           </div>
         </div>

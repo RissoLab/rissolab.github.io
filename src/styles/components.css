@@ -112,7 +112,7 @@
 
 .people-hex-card__inner {
   clip-path: inherit;
-  @apply flex h-full w-full items-center justify-center bg-light dark:bg-darkmode-light;
+  @apply flex h-full w-full items-center justify-center bg-body dark:bg-darkmode-body;
 }
 
 .people-hex-card__content {

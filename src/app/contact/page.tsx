@@ -23,7 +23,7 @@ const Contact = async () => {
         <div className="container">
           <div className="row justify-center">
             <div className="lg:col-8">
-              <div className="row items-center rounded bg-light p-8 dark:bg-darkmode-light">
+              <div className="row items-center rounded-3xl bg-light p-8 dark:bg-darkmode-light">
                 <div className="mb-8 text-center md:col-4 md:mb-0">
                   <ImageFallback
                     src={contact.image}

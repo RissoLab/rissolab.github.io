@@ -28,8 +28,9 @@
   --color-darkmode-text-light: #add2dd;
 
   /* === Font Families === */
-  --font-primary: Inter, sans-serif;
-  --font-secondary: Manrope, sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-primary: var(--font-inter), sans-serif;
+  --font-secondary: var(--font-inter), sans-serif;
 
   /* === Font Sizes === */
   --text-base: 16px;

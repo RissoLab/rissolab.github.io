@@ -63,7 +63,7 @@ const PublicationsList = ({
   useEffect(() => clearHoverTimer, []);
 
   return (
-    <div className="not-prose mt-8 space-y-5">
+    <div className="not-prose space-y-5">
       {publications.map((publication) => {
         const itemId = `${publication.id}-${publication.title}`;
         const isOpen = openPublicationId === itemId;
@@ -84,7 +84,7 @@ const PublicationsList = ({
 
         return (
           <article
-            className="rounded border border-border bg-light transition-transform duration-200 ease-out hover:scale-[1.01] dark:border-darkmode-border dark:bg-darkmode-light"
+            className="rounded-xl bg-body shadow-sm transition-transform duration-200 ease-out hover:scale-[1.01] dark:bg-darkmode-body"
             key={itemId}
             onMouseEnter={() => {
               clearHoverTimer();
