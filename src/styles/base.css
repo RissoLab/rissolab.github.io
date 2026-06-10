@@ -17,7 +17,7 @@ body {
     radial-gradient(circle at 92% 22%, rgb(138 202 37 / 0.12), transparent 28rem),
     radial-gradient(circle at 50% 100%, rgb(55 146 173 / 0.14), transparent 38rem);
 }
-/*
+
 body::after {
   position: fixed;
   inset: 0;
@@ -31,7 +31,7 @@ body::after {
 .dark body::after {
   opacity: 0.32;
 }
-*/
+
 body::before {
   position: fixed;
   inset: 0;
