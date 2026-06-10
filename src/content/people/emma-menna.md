@@ -1,10 +1,12 @@
 ---
 title: "Emma Menna"
 role: "PhD Student"
-description: "Co-supervised with the Department of Biomedical Sciences."
+description: "Department of Statistical Sciences, University of Padova."
 image: "/images/people/default.webp"
 group: "members"
 weight: 9
-social: []
+social:
+  - name: "Email"
+    id: "emma.menna@studenti.unipd.it"
 draft: false
 ---

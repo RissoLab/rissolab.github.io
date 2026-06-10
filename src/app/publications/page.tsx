@@ -132,7 +132,7 @@ const Publications = () => {
           <div className="content mx-auto mb-12 max-w-4xl text-lg">
             <MDXContent content={content} />
           </div>
-          <div className="rounded-3xl bg-light p-5 dark:bg-darkmode-light md:p-8 lg:p-10">
+          <div className="rounded-3xl  md:p-8 lg:p-10"> {/*bg-light p-5 dark:bg-darkmode-light*/}
             <PublicationsList publications={publications} />
           </div>
         </div>

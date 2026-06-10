@@ -59,7 +59,7 @@ const WorkWithUs = () => {
       <PageHeader title={title} />
       <section className="section-sm">
         <div className="container">
-          <div className="rounded-3xl bg-light p-5 dark:bg-darkmode-light md:p-8 lg:p-10">
+          <div className="rounded-3xl  md:p-8 lg:p-10"> {/*bg-light p-5 dark:bg-darkmode-light*/}
             <div className="grid auto-rows-fr gap-6 md:grid-cols-2 lg:grid-cols-2">
               {sections.map((section) => (
                 <WorkWithUsCard

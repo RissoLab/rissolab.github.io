@@ -1,7 +1,7 @@
 ---
 title: "Francesco Denti & Andrea Sottosanti"
-role: "Friends of the Lab"
-description: "Collaborators on spatial transcriptomics methodology."
+role: ""
+description: ""
 image: "/images/people/sottodenti.webp"
 group: "friends"
 weight: 1

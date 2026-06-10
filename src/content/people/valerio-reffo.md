@@ -1,10 +1,12 @@
 ---
 title: "Valerio Reffo"
 role: "Research Assistant"
-description: "Supports data analysis and research projects."
+description: "Department of Statistical Sciences, University of Padova."
 image: "/images/people/default.webp"
 group: "members"
 weight: 10
-social: []
+social:
+  - name: "Email"
+    id: "valerio.reffo@unipd.it"
 draft: false
 ---

@@ -67,7 +67,7 @@ const Research = () => {
           <div className="content mx-auto mb-12 max-w-4xl text-lg">
             <MDXContent content={intro} />
           </div>
-          <div className="rounded-3xl bg-light p-5 dark:bg-darkmode-light md:p-8 lg:p-10">
+          <div className="rounded-3xl md:p-8 lg:p-10"> {/* bg-light p-5 dark:bg-darkmode-light*/}
             <div className="grid auto-rows-fr gap-6 lg:grid-cols-2">
               {areas.map((area) => (
                 <ResearchAreaCard

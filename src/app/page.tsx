@@ -70,7 +70,7 @@ const Home = () => {
 
       <section className="py-12 xl:py-16">
         <div className="container">
-          <div className="space-y-6 rounded-3xl bg-light p-5 dark:bg-darkmode-light md:p-8 lg:p-10">
+          <div className="space-y-6 rounded-3xl  md:p-8 lg:p-10"> {/*bg-light p-5 dark:bg-darkmode-light*/}
             {features.map((feature, index: number) => (
               <div
                 key={index}

@@ -1,7 +1,7 @@
 ---
 title: "Romualdi Lab"
-role: "Friends of the Lab"
-description: "Collaborating lab at the University of Padova."
+role: ""
+description: ""
 image: "/images/people/romualdi.webp"
 link: "https://romualdi.bio.unipd.it/people/"
 group: "friends"

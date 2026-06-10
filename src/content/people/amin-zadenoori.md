@@ -1,10 +1,12 @@
 ---
 title: "Amin Zadenoori"
 role: "Postdoctoral Researcher"
-description: "Works on statistical and computational methods for biomedical data."
+description: "Department of Statistical Sciences, University of Padova."
 image: "/images/people/default.webp"
 group: "members"
 weight: 3
-social: []
+social:
+  - name: "Email"
+    id: "amin.zadenoori@unipd.it"
 draft: false
 ---

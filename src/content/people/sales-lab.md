@@ -1,7 +1,7 @@
 ---
 title: "Sales Lab"
-role: "Friends of the Lab"
-description: "Collaborating lab in bioinformatics and computational biology."
+role: ""
+description: ""
 image: "/images/people/sales.webp"
 link: "https://sales.bio.unipd.it/index.html"
 group: "friends"

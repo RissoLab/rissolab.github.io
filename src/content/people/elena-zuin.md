@@ -1,10 +1,12 @@
 ---
 title: "Elena Zuin"
 role: "PhD Student"
-description: "Co-supervised with the Department of Biology."
+description: "Department of Statistical Sciences, University of Padova."
 image: "/images/people/default.webp"
 group: "members"
 weight: 8
-social: []
+social:
+  - name: "Email"
+    id: "@unipd.it"
 draft: false
 ---

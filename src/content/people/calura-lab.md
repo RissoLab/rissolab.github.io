@@ -1,7 +1,7 @@
 ---
 title: "Calura Lab"
-role: "Friends of the Lab"
-description: "Collaborating lab working on computational biology and data-driven biomedical research."
+role: ""
+description: ""
 image: "/images/people/calura.webp"
 link: "https://github.com/CaluraLab"
 group: "friends"
