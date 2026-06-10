@@ -12,7 +12,7 @@ icons:
 
 ## Open Positions
 
-While we currently do not have specific openings, we are always interested in hearing from motivated individuals eager to contribute to our research endeavors. If you are interested in joining the group, reach out via email.
+While we currently do not have specific openings, we are always interested in hearing from motivated individuals eager to contribute to our research endeavors. If you are interested in joining the group, [reach out via email](/contact).
 
 ## PhD Scholarships
 
