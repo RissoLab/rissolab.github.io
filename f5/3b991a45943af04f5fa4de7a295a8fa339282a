@@ -1,0 +1,48 @@
+src/content/people/valerio-reffo.md
+  h_c24d027b38481a 4,9-10
+src/app/research/page.tsx
+  h_c24d027b38481a 70
+src/content/people/calura-lab.md
+  h_c24d027b38481a 3-4
+src/content/people/amin-zadenoori.md
+  h_c24d027b38481a 4,9-10
+src/content/people/matteo-calgaro.md
+  h_c24d027b38481a 4,9-10
+src/content/people/sophie-grace-parolin.md
+  h_c24d027b38481a 4,9-10
+src/content/people/alex-cecchetto.md
+  h_c24d027b38481a 4,9-10
+src/content/publications/pubs.bib
+  h_c24d027b38481a 1-1116
+src/content/people/francesco-denti-and-andrea-sottosanti.md
+  h_c24d027b38481a 3-4
+src/content/people/sales-lab.md
+  h_c24d027b38481a 3-4
+src/app/page.tsx
+  h_c24d027b38481a 73
+src/content/people/romualdi-lab.md
+  h_c24d027b38481a 3-4
+src/content/people/carissa-chen.md
+  h_c24d027b38481a 4,9-10
+src/content/people/elena-zuin.md
+  h_c24d027b38481a 4,9-10
+src/app/publications/page.tsx
+  h_c24d027b38481a 135
+src/content/people/emma-menna.md
+  h_c24d027b38481a 4,9-10
+src/content/people/riccardo-ceccaroni.md
+  h_c24d027b38481a 4-6,10-11
+src/app/work-with-us/page.tsx
+  h_c24d027b38481a 62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "f53b991a45943af04f5fa4de7a295a8fa339282a",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
