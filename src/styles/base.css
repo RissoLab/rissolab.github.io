@@ -4,6 +4,37 @@ html {
 
 body {
   @apply bg-body text-base dark:bg-darkmode-body font-primary font-normal leading-relaxed text-text dark:text-darkmode-text;
+  background-image:
+    radial-gradient(circle at 8% 4%, rgb(55 146 173 / 0.22), transparent 28rem),
+    radial-gradient(circle at 92% 22%, rgb(138 202 37 / 0.16), transparent 26rem),
+    radial-gradient(circle at 50% 100%, rgb(55 146 173 / 0.12), transparent 34rem);
+  background-attachment: fixed;
+}
+
+.dark body {
+  background-image:
+    radial-gradient(circle at 8% 4%, rgb(55 146 173 / 0.28), transparent 30rem),
+    radial-gradient(circle at 92% 22%, rgb(138 202 37 / 0.12), transparent 28rem),
+    radial-gradient(circle at 50% 100%, rgb(55 146 173 / 0.14), transparent 38rem);
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.18) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, black, transparent 72%);
+}
+
+.dark body::before {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.025) 1px, transparent 1px);
 }
 
 h1,

@@ -5,19 +5,19 @@
   @apply visible opacity-100;
 }
 .search-modal-overlay {
-  @apply fixed top-0 left-0 w-full h-full bg-black opacity-50;
+  @apply fixed top-0 left-0 h-full w-full bg-dark/45 backdrop-blur-sm dark:bg-black/65;
 }
 .search-wrapper {
-  @apply bg-white dark:bg-darkmode-body w-[660px] max-w-[96%] mt-24 rounded shadow-lg relative z-10;
+  @apply relative z-10 mt-24 w-[660px] max-w-[96%] rounded-3xl border border-white/70 bg-white/65 shadow-2xl backdrop-blur-2xl dark:border-white/10 dark:bg-darkmode-body/70;
 }
 .search-wrapper-header {
   @apply p-4 relative;
 }
 .search-wrapper-header-input {
-  @apply border border-solid w-full focus:ring-0 focus:border-dark border-border rounded-[4px] h-12 pr-4 pl-10 transition duration-200 outline-none dark:bg-darkmode-light dark:text-darkmode-text dark:border-darkmode-border dark:focus:border-darkmode-primary;
+  @apply h-12 w-full rounded-xl border border-solid border-white/70 bg-white/55 pr-4 pl-10 outline-none transition duration-200 focus:border-primary focus:ring-0 dark:border-white/10 dark:bg-white/5 dark:text-darkmode-text dark:focus:border-darkmode-primary;
 }
 .search-wrapper-body {
-  @apply dark:bg-darkmode-light dark:shadow-none max-h-[calc(100vh-350px)] overflow-y-auto bg-light shadow-[inset_0_2px_18px_#ddd] p-4 rounded;
+  @apply max-h-[calc(100vh-350px)] overflow-y-auto rounded-2xl bg-white/30 p-4 dark:bg-white/[0.025];
 }
 .search-wrapper-footer {
   @apply text-xs select-none leading-none md:flex items-center px-3.5 py-2 hidden;
@@ -41,7 +41,7 @@
   @apply text-lg text-text-dark dark:text-darkmode-text-dark mb-[5px] px-3;
 }
 .search-result-item {
-  @apply rounded border bg-white dark:bg-darkmode-body dark:border-darkmode-border flex items-start mb-1 p-4 scroll-my-[30px] border-solid border-border relative;
+  @apply relative mb-2 flex scroll-my-[30px] items-start rounded-2xl border border-solid border-white/70 bg-white/55 p-4 backdrop-blur-md dark:border-white/10 dark:bg-white/5;
 }
 .search-result-item mark {
   @apply bg-yellow-200 rounded-[2px];

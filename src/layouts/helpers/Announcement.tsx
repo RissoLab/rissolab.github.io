@@ -76,11 +76,11 @@ const Announcement: React.FC = () => {
   }
 
   return (
-    <div className="relative z-999 bg-body dark:bg-darkmode-body shadow-[1px_0_10px_7px_rgba(154,154,154,0.11)] px-4 py-4 pr-12 md:text-lg transition-all duration-300">
+    <div className="relative z-999 border-b border-white/60 bg-white/50 px-4 py-4 pr-12 shadow-sm backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-darkmode-body/50 md:text-lg">
       <p dangerouslySetInnerHTML={markdownify(content)} />
       <button
         onClick={handleClose}
-        className="absolute top-1/2 right-4 -translate-y-1/2 cursor-pointer flex items-center justify-center w-7 h-7 border border-border dark:border-darkmode-border rounded-full text-xl transition-colors duration-200"
+        className="absolute top-1/2 right-4 flex h-7 w-7 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/70 bg-white/40 text-xl transition-colors duration-200 hover:bg-white/80 dark:border-white/15 dark:bg-white/5 dark:hover:bg-white/10"
         aria-label="Close announcement"
       >
         &times;

@@ -14,7 +14,44 @@
 
 /* translucent inner content cards */
 .glass-card {
-  @apply border border-white/60 bg-white/70 shadow-sm backdrop-blur-md dark:border-white/10 dark:bg-darkmode-body/55;
+  @apply border border-white/70 bg-white/55 backdrop-blur-xl dark:border-white/10 dark:bg-darkmode-body/55;
+  box-shadow:
+    0 24px 60px rgb(0 50 66 / 0.1),
+    inset 0 1px 0 rgb(255 255 255 / 0.8);
+}
+
+.dark .glass-card {
+  box-shadow:
+    0 24px 70px rgb(0 0 0 / 0.28),
+    inset 0 1px 0 rgb(255 255 255 / 0.08);
+}
+
+.glass-card:hover {
+  border-color: rgb(55 146 173 / 0.32);
+  box-shadow:
+    0 30px 70px rgb(0 50 66 / 0.15),
+    inset 0 1px 0 rgb(255 255 255 / 0.9);
+}
+
+.dark .glass-card:hover {
+  border-color: rgb(139 192 207 / 0.3);
+  box-shadow:
+    0 30px 80px rgb(0 0 0 / 0.36),
+    inset 0 1px 0 rgb(255 255 255 / 0.12);
+}
+
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .glass-card {
+    @apply bg-white/95 dark:bg-darkmode-body/95;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-card,
+  .btn,
+  .social-icons li a {
+    transform: none !important;
+  }
 }
 
 /* social icons */
@@ -25,7 +62,7 @@
   @apply inline-block;
 }
 .social-icons li a {
-  @apply flex h-9 w-9 items-center justify-center rounded-sm bg-primary text-center leading-9 text-white dark:bg-darkmode-primary dark:text-text-dark;
+  @apply flex h-9 w-9 items-center justify-center rounded-xl border border-white/40 bg-primary/85 text-center leading-9 text-white shadow-sm backdrop-blur-md transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-darkmode-primary/80 dark:text-text-dark;
 }
 .social-icons li a svg {
   @apply h-5 w-5;
@@ -117,7 +154,7 @@
 
 .people-hex-card__inner {
   clip-path: inherit;
-  @apply flex h-full w-full items-center justify-center bg-body dark:bg-darkmode-body;
+  @apply flex h-full w-full items-center justify-center bg-white/70 backdrop-blur-xl dark:bg-darkmode-body/70;
 }
 
 .people-hex-card__content {

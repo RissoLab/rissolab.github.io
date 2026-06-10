@@ -5,7 +5,7 @@ description: "Research areas and selected work from the Risso Lab."
 image: ""
 draft: false
 icons:
-  Spatial Transcriptomics: "FaTableCells"
+  Spatial Transcriptomics: "FaDna"
   Single-Cell Omics: "FaMicroscope"
   Bioconductor Software: "FaCode"
   Collaborative Work in Neurobiology, Development, and Cancer Biology: "FaBrain"

@@ -1,9 +1,10 @@
 .header {
-  @apply bg-body py-6 transition-[background-color,box-shadow,border-color] duration-300 dark:bg-darkmode-body;
+  @apply bg-transparent py-4 transition-[background-color,box-shadow,backdrop-filter] duration-300;
 }
 
 .header-scrolled {
-  @apply bg-body/80 shadow-sm backdrop-blur-xl dark:bg-darkmode-body/80;
+  @apply bg-white/45 backdrop-blur-xl dark:bg-darkmode-body/45;
+  box-shadow: 0 14px 40px rgb(0 50 66 / 0.08);
 }
 
 /* navbar items */
@@ -23,7 +24,7 @@
 }
 
 .nav-link {
-  @apply text-text-dark hover:text-primary dark:text-darkmode-text-dark dark:hover:text-darkmode-primary block p-3 cursor-pointer font-semibold transition lg:px-2 lg:py-3;
+  @apply text-text-dark hover:text-primary dark:text-darkmode-text-dark dark:hover:text-darkmode-primary block cursor-pointer rounded-xl p-3 font-semibold transition hover:bg-white/45 dark:hover:bg-white/5 lg:px-3 lg:py-2;
 }
 
 .nav-dropdown {
@@ -35,7 +36,7 @@
 }
 
 .nav-dropdown-list {
-  @apply bg-body dark:bg-darkmode-body z-10 min-w-[180px] rounded p-4 shadow-sm;
+  @apply z-10 min-w-[180px] rounded-2xl border border-white/70 bg-white/70 p-4 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-darkmode-body/75;
 }
 
 .nav-dropdown-item {

@@ -86,6 +86,7 @@ const parseBibtex = (source: string): BibPublication[] =>
         id,
         type,
         order,
+        bibtex: entry.trim(),
         ...parseFields(body),
       };
     })

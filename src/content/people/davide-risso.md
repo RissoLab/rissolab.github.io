@@ -3,7 +3,7 @@ title: "Davide Risso"
 role: "Professor of Statistics"
 description: "Department of Statistical Sciences, University of Padova."
 image: "/images/people/dr.webp"
-link: ""
+link: "https://drisso.github.io/index.html"
 group: "members"
 weight: 1
 social:

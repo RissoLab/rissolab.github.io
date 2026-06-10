@@ -129,7 +129,7 @@ const PeopleCard = ({
   }
 
   return (
-    <div className="h-full rounded bg-light p-8 text-center dark:bg-darkmode-light">
+    <div className="glass-card h-full rounded-3xl p-8 text-center">
       {link ? (
         <a
           aria-label={title}

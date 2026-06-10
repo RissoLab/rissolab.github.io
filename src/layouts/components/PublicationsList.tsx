@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { IoCheckmark, IoCopyOutline } from "react-icons/io5";
 
 export type BibPublication = {
   id: string;
   type: string;
   order: number;
+  bibtex: string;
   title?: string;
   author?: string;
   journal?: string;
@@ -51,7 +53,11 @@ const PublicationsList = ({
   const [openPublicationId, setOpenPublicationId] = useState<string | null>(
     null,
   );
+  const [copiedPublicationId, setCopiedPublicationId] = useState<string | null>(
+    null,
+  );
   const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const copyTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const clearHoverTimer = () => {
     if (hoverTimer.current) {
@@ -60,7 +66,33 @@ const PublicationsList = ({
     }
   };
 
-  useEffect(() => clearHoverTimer, []);
+  const copyBibtex = async (publication: BibPublication) => {
+    try {
+      await navigator.clipboard.writeText(publication.bibtex);
+    } catch {
+      const textarea = document.createElement("textarea");
+      textarea.value = publication.bibtex;
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      textarea.remove();
+    }
+
+    setCopiedPublicationId(publication.id);
+
+    if (copyTimer.current) clearTimeout(copyTimer.current);
+    copyTimer.current = setTimeout(() => setCopiedPublicationId(null), 2000);
+  };
+
+  useEffect(
+    () => () => {
+      clearHoverTimer();
+      if (copyTimer.current) clearTimeout(copyTimer.current);
+    },
+    [],
+  );
 
   return (
     <div className="not-prose space-y-5">
@@ -162,6 +194,26 @@ const PublicationsList = ({
                 </div>
               </div>
             )}
+            <div className="flex justify-end border-t border-white/60 px-5 py-3 dark:border-white/10">
+              <button
+                aria-label={`Copy BibTeX for ${publication.title}`}
+                className="inline-flex items-center gap-2 rounded-xl border border-white/70 bg-white/40 px-3 py-1.5 text-xs font-semibold text-text-dark shadow-sm backdrop-blur-md transition hover:-translate-y-0.5 hover:border-primary/30 hover:text-primary dark:border-white/10 dark:bg-white/5 dark:text-darkmode-text-dark dark:hover:border-darkmode-primary/30 dark:hover:text-darkmode-primary"
+                onClick={() => void copyBibtex(publication)}
+                type="button"
+              >
+                {copiedPublicationId === publication.id ? (
+                  <>
+                    <IoCheckmark aria-hidden="true" className="text-base" />
+                    Copied
+                  </>
+                ) : (
+                  <>
+                    <IoCopyOutline aria-hidden="true" className="text-base" />
+                    Copy BibTeX
+                  </>
+                )}
+              </button>
+            </div>
           </article>
         );
       })}
