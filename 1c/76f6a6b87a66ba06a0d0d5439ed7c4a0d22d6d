@@ -1,0 +1,18 @@
+src/app/layout.tsx
+  h_c24d027b38481a 21-22,61-65
+src/styles/base.css
+  h_c24d027b38481a 27
+.gitea/workflows/static-pages.yml
+  h_c24d027b38481a 48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "1c76f6a6b87a66ba06a0d0d5439ed7c4a0d22d6d",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
