@@ -1,0 +1,14 @@
+public/images/packages/stikers-resize.sh
+  h_c24d027b38481a 1-9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "9c7adcc14165632fd61a9f98c2474f291886c5a9",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
