@@ -45,6 +45,7 @@ jobs:
           OWNER="${{ gitea.repository_owner }}"
           REPO="$(basename "${{ gitea.repository }}")"
           export BASE_PATH="/gitea.io/${OWNER}/${REPO}"
+          export NEXT_PUBLIC_BASE_PATH="${BASE_PATH}"
           export SITE_URL="https://nowwhat.stat.unipd.it${BASE_PATH}"
 
           node -e '

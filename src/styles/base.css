@@ -24,7 +24,7 @@ body::after {
   z-index: -2;
   pointer-events: none;
   content: "";
-  background: url("/images/spatial-transcriptomics-background.webp") center / cover;
+  background: var(--background-image-url) center / cover;
   opacity: 0.12;
 }
 

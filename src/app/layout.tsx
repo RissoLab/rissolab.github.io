@@ -18,6 +18,8 @@ const inter = Inter({
   weight: ["400", "500", "600", "700", "800"],
 });
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html suppressHydrationWarning={true} lang="en" className={inter.variable}>
@@ -56,6 +58,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body
         suppressHydrationWarning={true}
         className="flex min-h-screen flex-col font-sans"
+        style={
+          {
+            "--background-image-url": `url("${basePath}/images/spatial-transcriptomics-background.webp")`,
+          } as React.CSSProperties
+        }
       >
         <Providers>
           <Announcement />
