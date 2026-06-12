@@ -71,6 +71,57 @@ const HoneycombPeople = ({
   );
 };
 
+type AlumniPerson = {
+  name: string;
+  position: string;
+  current_position: string;
+  link?: string;
+};
+
+const HoneycombAlumni = ({ alumni }: { alumni: AlumniPerson[] }) => {
+  const people = alumni.map((person) => ({
+    slug: person.name,
+    frontmatter: {
+      title: person.name,
+      role: person.position,
+      description: person.current_position,
+      link: person.link,
+    },
+  }));
+
+  const HoneycombRows = ({
+    className,
+    pattern,
+  }: {
+    className: string;
+    pattern: number[];
+  }) => (
+    <div className={`people-honeycomb people-honeycomb--alumni ${className}`}>
+      {chunkByPattern(people, pattern).map((row, rowIndex) => (
+        <div
+          className="people-honeycomb__row"
+          key={`${className}-${rowIndex}`}
+          style={{ "--hex-row-items": row.slots } as CSSProperties}
+        >
+          {row.people.map((person) => (
+            <div className="people-honeycomb__cell" key={person.slug}>
+              <PeopleCard data={person} cardShape="hexagon" />
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+
+  return (
+    <>
+      <HoneycombRows className="people-honeycomb--sm" pattern={[2, 3]} />
+      <HoneycombRows className="people-honeycomb--lg" pattern={[3, 4]} />
+      <HoneycombRows className="people-honeycomb--xl" pattern={[5, 6]} />
+    </>
+  );
+};
+
 const People = () => {
   const peopleIndex = getListPage("people/_index.md");
   const people = getSinglePage("people");
@@ -110,40 +161,8 @@ const People = () => {
       </section>
       <section className="section-sm">
         <div className="container">
-          <div className="content ">
-            <h2 className="text-center">Alumni</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Position in the lab</th>
-                  <th>Current position</th>
-                </tr>
-              </thead>
-              <tbody>
-                {alumni.map(
-                  (person: {
-                    name: string;
-                    position: string;
-                    current_position: string;
-                    link?: string;
-                  }) => (
-                    <tr key={person.name}>
-                      <td>
-                        {person.link ? (
-                          <a href={person.link}>{person.name}</a>
-                        ) : (
-                          person.name
-                        )}
-                      </td>
-                      <td>{person.position}</td>
-                      <td>{person.current_position}</td>
-                    </tr>
-                  ),
-                )}
-              </tbody>
-            </table>
-          </div>
+          <h2 className="mb-12 text-center">Alumni</h2>
+          <HoneycombAlumni alumni={alumni} />
         </div>
       </section>
     </>

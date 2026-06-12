@@ -114,7 +114,15 @@ const PeopleCard = ({
             ) : (
               portrait
             )}
-            <h4 className="people-hex-card__title">{title}</h4>
+            <h4 className="people-hex-card__title">
+              {link && !image ? (
+                <a href={link} target="_blank" rel="noopener noreferrer">
+                  {title}
+                </a>
+              ) : (
+                title
+              )}
+            </h4>
             {role && <p className="people-hex-card__role">{role}</p>}
             {description && (
               <p className="people-hex-card__description">{description}</p>
