@@ -149,12 +149,42 @@
 .people-hex-card {
   aspect-ratio: 0.8660254 / 1;
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-  @apply relative bg-primary p-[6px] text-center dark:bg-darkmode-primary;
+  filter: drop-shadow(0 24px 30px rgb(0 50 66 / 0.1));
+  @apply relative bg-white/70 p-[5px] text-center backdrop-blur-xl transition duration-200 dark:bg-white/10;
 }
 
 .people-hex-card__inner {
   clip-path: inherit;
-  @apply flex h-full w-full items-center justify-center bg-white/70 backdrop-blur-xl dark:bg-darkmode-body/70;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.8);
+  @apply flex h-full w-full items-center justify-center bg-white/55 backdrop-blur-xl dark:bg-darkmode-body/55;
+}
+
+.people-hex-card:hover {
+  background-color: rgb(55 146 173 / 0.32);
+  filter: drop-shadow(0 30px 35px rgb(0 50 66 / 0.15));
+}
+
+.dark .people-hex-card {
+  filter: drop-shadow(0 24px 35px rgb(0 0 0 / 0.28));
+}
+
+.dark .people-hex-card__inner {
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.08);
+}
+
+.dark .people-hex-card:hover {
+  background-color: rgb(139 192 207 / 0.3);
+  filter: drop-shadow(0 30px 40px rgb(0 0 0 / 0.36));
+}
+
+.dark .people-hex-card:hover .people-hex-card__inner {
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.12);
+}
+
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .people-hex-card__inner {
+    @apply bg-white/95 dark:bg-darkmode-body/95;
+  }
 }
 
 .people-hex-card__content {
