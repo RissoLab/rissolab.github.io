@@ -8,6 +8,6 @@
  *   Developer : Riccardo Ceccaroni
  *   Site      : rceccaroni.it
  *   Contact   : riccardo.ceccaroni.95@gmail.com
- *   Location  : Rome, Italy
+ *   Location  : Padova, Italy
  *   Year      : 2026
  */

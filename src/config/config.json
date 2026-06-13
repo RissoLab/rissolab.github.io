@@ -58,7 +58,7 @@
   },
 
   "llms": {
-    "generate_llms_txt": true,
+    "generate_llms_txt": false,
     "generate_llms_full_txt": false,
     "generate_individual_md": false,
     "include": [],
