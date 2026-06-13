@@ -1,37 +1,42 @@
 "use client";
 
 import searchData from ".json/search.json" with { type: "json" };
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SearchResult, { type ISearchItem } from "./SearchResult";
 
 const SearchModal = () => {
   const [searchString, setSearchString] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   // handle input change
   const handleSearch = (e: React.FormEvent<HTMLInputElement>) => {
-    setSearchString(e.currentTarget.value.replace("\\", "").toLowerCase());
+    setSearchString(e.currentTarget.value.toLowerCase());
+    setSelectedIndex(-1);
   };
 
   // generate search result
   const doSearch = (searchData: ISearchItem[]) => {
-    const regex = new RegExp(`${searchString}`, "gi");
     if (searchString === "") {
       return [];
     } else {
       const searchResult = searchData.filter((item) => {
-        const title = item.frontmatter.title.toLowerCase().match(regex);
+        const title = item.frontmatter.title
+          .toLowerCase()
+          .includes(searchString);
         const description = item.frontmatter.description
           ?.toLowerCase()
-          .match(regex);
+          .includes(searchString);
         const categories = item.frontmatter.categories
           ?.join(" ")
           .toLowerCase()
-          .match(regex);
+          .includes(searchString);
         const tags = item.frontmatter.tags
           ?.join(" ")
           .toLowerCase()
-          .match(regex);
-        const content = item.content.toLowerCase().match(regex);
+          .includes(searchString);
+        const content = item.content.toLowerCase().includes(searchString);
 
         if (title || content || description || categories || tags) {
           return item;
@@ -47,87 +52,68 @@ const SearchModal = () => {
   const endTime = performance.now();
   const totalTime = ((endTime - startTime) / 1000).toFixed(3);
 
-  // search dom manipulation
   useEffect(() => {
-    const searchModal = document.getElementById("searchModal");
-    const searchInput = document.getElementById("searchInput");
-    const searchModalOverlay = document.getElementById("searchModalOverlay");
-    const searchResultItems = document.querySelectorAll("#searchItem");
+    const openSearch = () => setIsOpen(true);
     const searchModalTriggers = document.querySelectorAll(
       "[data-search-trigger]",
     );
+    searchModalTriggers.forEach((button) =>
+      button.addEventListener("click", openSearch),
+    );
 
-    // search modal open
-    searchModalTriggers.forEach((button) => {
-      button.addEventListener("click", function () {
-        const searchModal = document.getElementById("searchModal");
-        searchModal!.classList.add("show");
-        searchInput!.focus();
-      });
-    });
-
-    // search modal close
-    searchModalOverlay!.addEventListener("click", function () {
-      searchModal!.classList.remove("show");
-    });
-
-    // keyboard navigation
-    let selectedIndex = -1;
-
-    const updateSelection = () => {
-      searchResultItems.forEach((item, index) => {
-        if (index === selectedIndex) {
-          item.classList.add("search-result-item-active");
-        } else {
-          item.classList.remove("search-result-item-active");
-        }
-      });
-
-      searchResultItems[selectedIndex]?.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-      });
-    };
-
-    document.addEventListener("keydown", function (event) {
+    const handleKeyDown = (event: KeyboardEvent) => {
       if ((event.metaKey || event.ctrlKey) && event.key === "k") {
-        searchModal!.classList.add("show");
-        searchInput!.focus();
-        updateSelection();
+        event.preventDefault();
+        setIsOpen(true);
       }
 
-      if (event.key === "ArrowUp" || event.key === "ArrowDown") {
-        event.preventDefault();
-      }
+      if (!isOpen) return;
 
       if (event.key === "Escape") {
-        searchModal!.classList.remove("show");
-      }
-
-      if (event.key === "ArrowUp" && selectedIndex > 0) {
-        selectedIndex--;
-      } else if (
-        event.key === "ArrowDown" &&
-        selectedIndex < searchResultItems.length - 1
-      ) {
-        selectedIndex++;
+        setIsOpen(false);
+      } else if (event.key === "ArrowUp") {
+        event.preventDefault();
+        setSelectedIndex((index) => Math.max(0, index - 1));
+      } else if (event.key === "ArrowDown") {
+        event.preventDefault();
+        setSelectedIndex((index) =>
+          Math.min(searchResult.length - 1, index + 1),
+        );
       } else if (event.key === "Enter") {
-        const activeLink = document.querySelector(
-          ".search-result-item-active a",
-        ) as HTMLAnchorElement;
-        if (activeLink) {
-          activeLink?.click();
-          searchModal!.classList.remove("show");
-        }
+        const activeLink = document.querySelector<HTMLAnchorElement>(
+          `[data-search-result-index="${selectedIndex}"] a`,
+        );
+        activeLink?.click();
       }
+    };
 
-      updateSelection();
-    });
-  }, [searchString]);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      searchModalTriggers.forEach((button) =>
+        button.removeEventListener("click", openSearch),
+      );
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, searchResult.length, selectedIndex]);
+
+  useEffect(() => {
+    if (isOpen) searchInputRef.current?.focus();
+  }, [isOpen]);
+
+  useEffect(() => {
+    document
+      .querySelector(`[data-search-result-index="${selectedIndex}"]`)
+      ?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }, [selectedIndex]);
 
   return (
-    <div id="searchModal" className="search-modal">
-      <div id="searchModalOverlay" className="search-modal-overlay" />
+    <div id="searchModal" className={`search-modal${isOpen ? " show" : ""}`}>
+      <button
+        type="button"
+        aria-label="Close search"
+        className="search-modal-overlay"
+        onClick={() => setIsOpen(false)}
+      />
       <div className="search-wrapper">
         <div className="search-wrapper-header">
           <label
@@ -163,6 +149,7 @@ const SearchModal = () => {
             )}
           </label>
           <input
+            ref={searchInputRef}
             id="searchInput"
             placeholder="Search..."
             className="search-wrapper-header-input"
@@ -170,11 +157,14 @@ const SearchModal = () => {
             name="search"
             value={searchString}
             onChange={handleSearch}
-            autoFocus
             autoComplete="off"
           />
         </div>
-        <SearchResult searchResult={searchResult} searchString={searchString} />
+        <SearchResult
+          searchResult={searchResult}
+          searchString={searchString}
+          selectedIndex={selectedIndex}
+        />
         <div className="search-wrapper-footer">
           <span className="flex items-center">
             <kbd>

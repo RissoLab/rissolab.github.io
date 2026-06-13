@@ -2,10 +2,10 @@ import { slug } from "github-slugger";
 import { marked } from "marked";
 
 const renderer = new marked.Renderer();
-const defaultLinkRenderer = renderer.link.bind(renderer);
+const defaultLinkRenderer = renderer.link;
 
-renderer.link = (link) => {
-  const html = defaultLinkRenderer(link);
+renderer.link = function (link) {
+  const html = defaultLinkRenderer.call(this, link);
 
   if (link.href.startsWith("#")) {
     return html;

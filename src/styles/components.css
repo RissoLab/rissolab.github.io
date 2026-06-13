@@ -223,15 +223,15 @@
 }
 
 .people-honeycomb--alumni .people-hex-card__title {
-  @apply text-[14px];
+  @apply text-[12px];
 }
 
 .people-honeycomb--alumni .people-hex-card__role {
-  @apply text-[11px];
+  @apply text-[9px];
 }
 
 .people-honeycomb--alumni .people-hex-card__description {
-  @apply text-[10px] leading-tight;
+  @apply text-[8px] leading-tight;
 }
 
 .people-hex-card__social {
