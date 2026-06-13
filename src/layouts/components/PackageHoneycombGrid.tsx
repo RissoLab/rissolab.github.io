@@ -6,6 +6,7 @@ import { CSSProperties, useEffect, useRef, useState } from "react";
 type Package = {
   name: string;
   image: string;
+  href?: string;
 };
 
 type Layout = {
@@ -119,15 +120,32 @@ const PackageHoneycombGrid = ({ packages }: { packages: Package[] }) => {
                   }`}
                   key={softwarePackage?.image ?? `empty-${slotIndex}`}
                 >
-                  {softwarePackage && (
-                    <ImageFallback
-                      src={softwarePackage.image}
-                      alt={`${softwarePackage.name} package sticker`}
-                      width={240}
-                      height={240}
-                      sizes="(max-width: 767px) 25vw, 10vw"
-                    />
-                  )}
+                  {softwarePackage &&
+                    (softwarePackage.href ? (
+                      <a
+                        href={softwarePackage.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open ${softwarePackage.name} package page`}
+                        className="block transition-transform hover:scale-110"
+                      >
+                        <ImageFallback
+                          src={softwarePackage.image}
+                          alt={`${softwarePackage.name} package sticker`}
+                          width={240}
+                          height={240}
+                          sizes="(max-width: 767px) 25vw, 10vw"
+                        />
+                      </a>
+                    ) : (
+                      <ImageFallback
+                        src={softwarePackage.image}
+                        alt={`${softwarePackage.name} package sticker`}
+                        width={240}
+                        height={240}
+                        sizes="(max-width: 767px) 25vw, 10vw"
+                      />
+                    ))}
                 </div>
               ),
             )}
