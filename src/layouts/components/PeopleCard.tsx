@@ -2,7 +2,18 @@
 
 import Social from "@/components/Social";
 import ImageFallback from "@/helpers/ImageFallback";
-import { KeyboardEvent, MouseEvent, useEffect, useState } from "react";
+import {
+  CSSProperties,
+  KeyboardEvent,
+  MouseEvent,
+  useEffect,
+  useState,
+} from "react";
+
+const hexagonMask = {
+  clipPath: "polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)",
+  WebkitClipPath: "polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)",
+} as CSSProperties;
 
 const PeopleCard = ({
   data,
@@ -98,9 +109,10 @@ const PeopleCard = ({
         onClick={handleHexClick}
         onKeyDown={handleHexKeyDown}
         role={hasSocial && canToggleHexSocial ? "button" : undefined}
+        style={hexagonMask}
         tabIndex={hasSocial && canToggleHexSocial ? 0 : undefined}
       >
-        <div className="people-hex-card__inner">
+        <div className="people-hex-card__inner" style={hexagonMask}>
           <div className="people-hex-card__content">
             {link ? (
               <a
