@@ -6,10 +6,8 @@ import Footer from "@/partials/Footer";
 import Header from "@/partials/Header";
 import Providers from "@/partials/Providers";
 import "@/styles/main.css";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
-
-const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,11 +21,10 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html suppressHydrationWarning={true} lang="en" className={inter.variable}>
-      {/* google tag manager */}
-      {config.google_tag_manager.enable && (
-        <GoogleTagManager gtmId={config.google_tag_manager.gtm_id} />
+      {/* google analytics */}
+      {config.google_analytics.enable && (
+        <GoogleAnalytics gaId={config.google_analytics.ga_id} />
       )}
-      {googleAnalyticsId && <GoogleAnalytics gaId={googleAnalyticsId} />}
 
       {/* head */}
       <head>

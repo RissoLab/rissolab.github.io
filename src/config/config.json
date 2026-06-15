@@ -40,9 +40,9 @@
     "link": "https://github.com/RissoLab"
   },
 
-  "google_tag_manager": {
+  "google_analytics": {
     "enable": true,
-    "gtm_id": "G-G1CYC8PD0S"
+    "ga_id": "G-G1CYC8PD0S"
   },
 
   "disqus": {
