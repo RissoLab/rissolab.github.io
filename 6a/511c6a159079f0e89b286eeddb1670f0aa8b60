@@ -1,0 +1,36 @@
+src/config/config.json
+  s_f1bfed088d0b64::t_89da06708a2d2e 43,45
+public/sitemap-0.xml
+  s_b664a149663ff0::t_03759f75ba68e6 19
+src/app/layout.tsx
+  s_f1bfed088d0b64::t_89da06708a2d2e 9,24-26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "6a511c6a159079f0e89b286eeddb1670f0aa8b60",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_b664a149663ff0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ebbf5-9621-7130-9293-8ddfccb55368",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    },
+    "s_f1bfed088d0b64": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec9f9-0a6a-7162-8058-7843a3b1de5e",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
