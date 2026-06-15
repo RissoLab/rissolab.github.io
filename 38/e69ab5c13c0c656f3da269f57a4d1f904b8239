@@ -1,0 +1,14 @@
+src/content/people/valerio-reffo.md
+  h_c24d027b38481a 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "38e69ab5c13c0c656f3da269f57a4d1f904b8239",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
