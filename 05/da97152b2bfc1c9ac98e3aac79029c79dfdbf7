@@ -1,0 +1,25 @@
+src/content/publications/pubs.bib
+  s_f1bfed088d0b64::t_ea071999110d0d 54,584,677,749,751-753,755-758
+  h_c24d027b38481a 29,543,576,852-853
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "05da97152b2bfc1c9ac98e3aac79029c79dfdbf7",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_f1bfed088d0b64": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec9f9-0a6a-7162-8058-7843a3b1de5e",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
