@@ -2,7 +2,7 @@
 title: "Matteo Calgaro"
 role: "Postdoctoral Researcher"
 description: "Department of Statistical Sciences, University of Padova."
-image: "/images/people/default.webp"
+image: "/images/people/mcalgaro.webp"
 group: "members"
 weight: 5
 social:
