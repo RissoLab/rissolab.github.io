@@ -1,0 +1,25 @@
+.github/workflows/deploy-new-gh-pages.yml
+  s_c12c43c19ed337::t_28ab67ee8a5f72 27,31,34,37-52
+  s_c12c43c19ed337::t_b3bd5dbec98e24 1-26,28-30,32-33,35-36,53-60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "4da3475f05a87e705f7bbfb6c7249fdbce9f10da",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_c12c43c19ed337": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ed5fe-e4db-7772-8ab4-1a033b418386",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
