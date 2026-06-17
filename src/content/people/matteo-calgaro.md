@@ -9,7 +9,7 @@ social:
     - name: "Github"
       id: "mcalgaro93"
     - name: "Google Scholar"
-      id: "6yCSQe8AAAAJ&hl"
+      id: "6yCSQe8AAAAJ"
     - name: "ORCID"
       id: "0000-0002-3056-518X"
     - name: "Email"
