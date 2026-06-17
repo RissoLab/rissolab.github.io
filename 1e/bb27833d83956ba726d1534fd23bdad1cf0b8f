@@ -1,0 +1,14 @@
+.github/workflows/deploy-new-gh-pages.yml
+  h_c24d027b38481a 6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "1ebb27833d83956ba726d1534fd23bdad1cf0b8f",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
