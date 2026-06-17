@@ -1,4 +1,4 @@
-name: Deploy static site to new-gh-pages
+name: Deploy static site to gh-pages
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: deploy-new-gh-pages
+  group: deploy-gh-pages
   cancel-in-progress: true
 
 jobs:
@@ -49,10 +49,10 @@ jobs:
 
           npm run build:static
 
-      - name: Publish to new-gh-pages
+      - name: Publish to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: new-gh-pages
+          publish_branch: gh-pages
           publish_dir: ./out
           force_orphan: true
