@@ -1,0 +1,60 @@
+name: Deploy static site to new-gh-pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-new-gh-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install --no-package-lock
+
+      - name: Build static site
+        shell: bash
+        env:
+          SITE_URL: https://rissolab.github.io/
+          BASE_PATH: /
+          NEXT_PUBLIC_BASE_PATH: /
+          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ vars.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}
+        run: |
+          set -euo pipefail
+
+          node -e '
+            const fs = require("fs");
+            const path = "src/config/config.json";
+            const config = JSON.parse(fs.readFileSync(path, "utf8"));
+            config.site.base_url = process.env.SITE_URL;
+            config.site.base_path = process.env.BASE_PATH;
+            fs.writeFileSync(path, `${JSON.stringify(config, null, 2)}\n`);
+          '
+
+          npm run build:static
+
+      - name: Publish to new-gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: new-gh-pages
+          publish_dir: ./out
+          force_orphan: true
