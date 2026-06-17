@@ -3,7 +3,7 @@ name: Deploy static site to new-gh-pages
 on:
   push:
     branches:
-      - new-website
+      - main
   workflow_dispatch:
 
 permissions:
