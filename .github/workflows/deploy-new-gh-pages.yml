@@ -34,7 +34,6 @@ jobs:
         env:
           SITE_URL: https://rissolab.github.io/
           BASE_PATH: /
-          NEXT_PUBLIC_BASE_PATH: /
           NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ vars.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}
         run: |
           set -euo pipefail
