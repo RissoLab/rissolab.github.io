@@ -7,7 +7,12 @@ link: "https://rceccaroni.it"
 group: "members"
 weight: 2
 social:
+  - name: "GitHub"
+    id: "riccardoc95"
+  - name: "Google Scholar"
+    id: "xNQoOAwAAAAJ"  
   - name: "Email"
     id: "riccardo.ceccaroni@unipd.it"
+    
 draft: false
 ---

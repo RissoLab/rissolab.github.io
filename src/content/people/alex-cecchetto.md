@@ -8,5 +8,7 @@ weight: 6
 social:
   - name: "Email"
     id: "alex.cecchetto@phd.unipd.it"
+  - name: "GitHub"
+    id: "alexcecchetto"
 draft: false
 ---

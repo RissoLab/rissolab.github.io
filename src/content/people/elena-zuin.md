@@ -6,6 +6,8 @@ image: "/images/people/default.webp"
 group: "members"
 weight: 8
 social:
+  - name: "GitHub"
+    id: "zuinelena3"
   - name: "Email"
     id: "@unipd.it"
 draft: false
