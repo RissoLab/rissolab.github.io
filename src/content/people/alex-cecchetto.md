@@ -6,9 +6,10 @@ image: "/images/people/default.webp"
 group: "members"
 weight: 6
 social:
-  - name: "Email"
-    id: "alex.cecchetto@phd.unipd.it"
   - name: "GitHub"
     id: "alexcecchetto"
+  - name: "Email"
+    id: "alex.cecchetto@phd.unipd.it"
+
 draft: false
 ---
