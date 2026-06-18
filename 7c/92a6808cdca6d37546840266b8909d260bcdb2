@@ -1,0 +1,14 @@
+src/content/publications/pubs.bib
+  h_c24d027b38481a 1063-1064
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "7c92a6808cdca6d37546840266b8909d260bcdb2",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
