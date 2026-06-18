@@ -1,0 +1,16 @@
+src/content/people/emma-menna.md
+  h_c24d027b38481a 4
+src/content/people/elena-zuin.md
+  h_c24d027b38481a 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "d8baf4e6d04d597cc061424ae6591bcbfa804fc6",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
