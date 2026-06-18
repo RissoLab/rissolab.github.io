@@ -1,0 +1,14 @@
+src/content/people/carissa-chen.md
+  h_c24d027b38481a 5,9-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "97ebfa69df19f19f9c658be8373ded214afae3bb",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
