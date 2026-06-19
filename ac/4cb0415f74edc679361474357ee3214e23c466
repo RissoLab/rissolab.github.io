@@ -1,0 +1,28 @@
+src/layouts/components/PeopleCard.tsx
+  s_b40fd71c95a81d::t_975dde887e54cf 18-19,21,71-77,79-84
+  s_b40fd71c95a81d::t_b8e97da9d4a009 20
+  h_c24d027b38481a 78
+next.config.mjs
+  s_b40fd71c95a81d::t_b3ca547d32fddd 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "ac4cb0415f74edc679361474357ee3214e23c466",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_b40fd71c95a81d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019edee7-69cf-7041-a0af-8e36423babbb",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
