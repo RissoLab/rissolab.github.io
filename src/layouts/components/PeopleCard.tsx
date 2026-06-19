@@ -15,6 +15,10 @@ const hexagonMask = {
   WebkitClipPath: "polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)",
 } as CSSProperties;
 
+const hexagonImageSize = 224;
+const hexagonImageSizes =
+  "(min-width: 1280px) 224px, (min-width: 1024px) 192px, 160px";
+
 const PeopleCard = ({
   data,
   imageShape = "circle",
@@ -64,9 +68,21 @@ const PeopleCard = ({
       src={image}
       alt={title}
       width={
-        cardShape === "hexagon" ? 76 : imageShape === "rectangle" ? 180 : 120
+        cardShape === "hexagon"
+          ? hexagonImageSize
+          : imageShape === "rectangle"
+            ? 180
+            : 120
       }
-      height={cardShape === "hexagon" ? 76 : 120}
+      height={cardShape === "hexagon" ? hexagonImageSize : 120}
+      quality={cardShape === "hexagon" ? 95 : 90}
+      sizes={
+        cardShape === "hexagon"
+          ? hexagonImageSizes
+          : imageShape === "rectangle"
+            ? "180px"
+            : "120px"
+      }
     />
   );
 
