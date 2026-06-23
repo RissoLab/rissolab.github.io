@@ -1,0 +1,14 @@
+src/content/people/elena-zuin.md
+  h_c24d027b38481a 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.10",
+  "base_commit_sha": "fb59756e02313d170c9a0d8d22465071dad416b7",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
