@@ -1,7 +1,7 @@
 ---
 title: "Elena Zuin"
 role: "PhD Student"
-description: "Department of Biomedical Sciences, University of Padova."
+description: "Department of Biology, University of Padova."
 image: "/images/people/default.webp"
 group: "members"
 weight: 8
