@@ -1,0 +1,29 @@
+package.json
+  s_b40fd71c95a81d::t_435c10af83c5a7 9-11
+src/layouts/components/PeopleCard.tsx
+  s_b40fd71c95a81d::t_228efda55987b9 47-50,146-150
+  s_b40fd71c95a81d::t_0a0fc9f3950dab 56,61,90,167
+  s_b40fd71c95a81d::t_842dcc38a00f28 5,9,24-46,51-55,57-60,62-65,67-69,72-76,83,89,92-96,139-145,151-153,155-166,168-185
+  s_b40fd71c95a81d::t_496f917a17ab6e 66,70-71,91
+  s_b40fd71c95a81d::t_00d68bba4bef16 77-82,84-88
+.gitignore
+  s_b40fd71c95a81d::t_435c10af83c5a7 27
+scripts/generatePeopleImages.mjs
+  s_b40fd71c95a81d::t_435c10af83c5a7 1-94
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.13",
+  "base_commit_sha": "d19bcb667f7dedfcdefc039fae18248b44a530bc",
+  "prompts": {},
+  "sessions": {
+    "s_b40fd71c95a81d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019edee7-69cf-7041-a0af-8e36423babbb",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
