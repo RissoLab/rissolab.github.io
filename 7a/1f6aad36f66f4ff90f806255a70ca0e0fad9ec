@@ -1,0 +1,38 @@
+src/content/news-events/csama-2026.md
+  s_3f7b189d72000d::t_9022ccd9d4fef4 7-9
+src/types/index.d.ts
+  s_3f7b189d72000d::t_9022ccd9d4fef4 20-22
+src/app/news-events/[single]/page.tsx
+  s_3f7b189d72000d::t_9022ccd9d4fef4 43-44,51-60,78-79,81
+src/layouts/components/BlogCard.tsx
+  s_3f7b189d72000d::t_9022ccd9d4fef4 11-15,20-26
+  s_3f7b189d72000d::t_a4e7599805e3ac 18-19,27-28
+public/sitemap-0.xml
+  s_3f7b189d72000d::t_d0356e512d6426 3-21
+src/content/news-events/bioconductor-venice-hackathon-2026.md
+  s_3f7b189d72000d::t_d4394a815b4410 1-4,10-12,14-15,17,19,21-26,28,31-36
+  s_3f7b189d72000d::t_9022ccd9d4fef4 7-9
+  s_3f7b189d72000d::t_e6cdbeeeff1575 16,18,20,27,29-30
+  h_c24d027b38481a 5-6,13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.13",
+  "base_commit_sha": "7a1f6aad36f66f4ff90f806255a70ca0e0fad9ec",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_3f7b189d72000d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ef886-2e74-7e10-b3b0-68add890d329",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
