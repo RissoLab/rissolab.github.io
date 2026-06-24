@@ -40,12 +40,24 @@ const PostSingle = async (props: { params: Promise<{ single: string }> }) => {
     meta_title,
     description,
     image,
+    single_image_fit,
+    single_image_width,
     author,
     categories,
     date,
     tags,
   } = frontmatter;
   const similarPosts = similarItems(post, posts, post.slug!)?.slice(0, 3);
+  const imageFitClass =
+    single_image_fit === "cover" ? "object-cover" : "object-contain";
+  const imageWidthClass =
+    single_image_width === "full"
+      ? "w-full"
+      : single_image_width === "wide"
+        ? "w-full max-w-4xl"
+        : "w-auto max-w-full";
+  const imageHeightClass =
+    single_image_fit === "cover" ? "h-[360px] md:h-[460px]" : "max-h-[320px]";
 
   return (
     <>
@@ -63,10 +75,10 @@ const PostSingle = async (props: { params: Promise<{ single: string }> }) => {
                 <div className="mb-10">
                   <ImageFallback
                     src={image}
-                    height={320}
-                    width={640}
+                    height={460}
+                    width={960}
                     alt={title}
-                    className="mx-auto max-h-[320px] w-auto rounded-3xl object-contain"
+                    className={`mx-auto rounded-3xl ${imageWidthClass} ${imageHeightClass} ${imageFitClass}`}
                   />
                 </div>
               )}

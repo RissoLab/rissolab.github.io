@@ -4,6 +4,9 @@ meta_title: "CSAMA 2026"
 description: "Brixen (Bressanone), Italy, 24-30 May, 2026."
 date: 2025-12-15T00:00:00Z
 image: "/images/news/CSAMA2026.webp"
+list_image_fit: "contain"
+single_image_fit: "contain"
+single_image_width: "compact"
 categories: ["Events", "Bioconductor"]
 author: "Davide Risso"
 tags: ["csama", "bioconductor", "summer-school"]

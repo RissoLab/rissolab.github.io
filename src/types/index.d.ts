@@ -17,6 +17,9 @@ export type Post = {
     meta_title?: string;
     description?: string;
     image?: string;
+    list_image_fit?: "contain" | "cover";
+    single_image_fit?: "contain" | "cover";
+    single_image_width?: "compact" | "wide" | "full";
     categories: string[];
     author: string;
     tags: string[];

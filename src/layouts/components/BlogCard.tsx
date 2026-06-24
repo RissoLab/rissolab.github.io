@@ -8,18 +8,24 @@ import { FaRegFolder, FaRegUserCircle } from "react-icons/fa";
 
 const BlogCard = ({ data }: { data: Post }) => {
   const { summary_length, blog_folder } = config.settings;
-  const { title, image, author, categories, date } = data.frontmatter;
+  const { title, image, list_image_fit, author, categories, date } =
+    data.frontmatter;
+  const imageFitClass =
+    list_image_fit === "cover" ? "object-cover" : "object-contain";
+
   return (
     <div className="glass-card h-full rounded-3xl p-6 transition-transform duration-200 hover:-translate-y-1">
-      {image && (
-        <ImageFallback
-          className="mb-6 max-h-[240px] w-full rounded-3xl object-contain sm:max-h-[360px]"
-          src={image}
-          alt={title}
-          width={445}
-          height={230}
-        />
-      )}
+      <div className="mb-6 h-48 w-full overflow-hidden rounded-3xl sm:h-56">
+        {image && (
+          <ImageFallback
+            className={`h-full w-full ${imageFitClass}`}
+            src={image}
+            alt={title}
+            width={445}
+            height={230}
+          />
+        )}
+      </div>
       <h4 className="mb-3">
         <Link href={`/${blog_folder}/${data.slug}`}>{title}</Link>
       </h4>
