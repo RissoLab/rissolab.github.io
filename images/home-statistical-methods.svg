@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 480" role="img" aria-labelledby="title desc">
+  <title id="title">Statistical methods illustration</title>
+  <desc id="desc">A minimal transparent illustration of biomedical data points, axes and a fitted curve.</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M94 388h332M94 388V92" stroke="#003242" stroke-width="8"/>
+    <path d="M112 332c58-88 104-122 158-102 50 19 79 2 138-102" stroke="#3792ad" stroke-width="12"/>
+    <path d="M112 332c58-88 104-122 158-102 50 19 79 2 138-102" stroke="#add2dd" stroke-width="4"/>
+    <g stroke="#8aca25" stroke-width="7">
+      <circle cx="132" cy="318" r="16" fill="#f3fae9"/>
+      <circle cx="180" cy="264" r="13" fill="#f3fae9"/>
+      <circle cx="231" cy="226" r="18" fill="#f3fae9"/>
+      <circle cx="284" cy="237" r="12" fill="#f3fae9"/>
+      <circle cx="334" cy="203" r="16" fill="#f3fae9"/>
+      <circle cx="390" cy="139" r="14" fill="#f3fae9"/>
+    </g>
+    <g stroke="#add2dd" stroke-width="5">
+      <path d="M146 388v-24M198 388v-24M250 388v-24M302 388v-24M354 388v-24M406 388v-24"/>
+      <path d="M94 330h24M94 272h24M94 214h24M94 156h24"/>
+    </g>
+  </g>
+</svg>
