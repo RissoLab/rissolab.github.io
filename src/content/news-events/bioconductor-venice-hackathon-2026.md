@@ -10,7 +10,7 @@ single_image_width: "wide"
 categories: ["Events", "Bioconductor"]
 author: "Davide Risso"
 tags: ["bioconductor", "hackathon", "spatial-omics", "image-analysis"]
-draft: true
+draft: false
 ---
 
 A Bioconductor-centric hackathon dedicated to spatial omics and image-derived data took place on San Servolo island, Venice, on 19-22 April 2026.
