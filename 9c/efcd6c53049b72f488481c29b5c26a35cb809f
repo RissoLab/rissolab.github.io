@@ -1,0 +1,14 @@
+src/content/news-events/bioconductor-venice-hackathon-2026.md
+  h_c24d027b38481a 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "9cefcd6c53049b72f488481c29b5c26a35cb809f",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
