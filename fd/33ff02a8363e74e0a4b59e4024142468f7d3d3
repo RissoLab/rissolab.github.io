@@ -1,0 +1,16 @@
+src/content/ai-guidelines/_index.md
+  h_c24d027b38481a 1-77
+src/app/ai-guidelines/page.tsx
+  h_c24d027b38481a 1-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "fd33ff02a8363e74e0a4b59e4024142468f7d3d3",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
