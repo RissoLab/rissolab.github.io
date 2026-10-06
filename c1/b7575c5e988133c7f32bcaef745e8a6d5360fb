@@ -1,0 +1,34 @@
+scripts/buildWiki.mjs
+  s_8dd8f33ea06837::t_d250415ec97116 108-109
+  s_8dd8f33ea06837::t_2843370e102fd4 92-107,110-113
+  s_8dd8f33ea06837::t_00ddeebced2c16 14-15,17-21,23
+  s_8dd8f33ea06837::t_e35917612e7503 124-125,128-138,140
+  s_8dd8f33ea06837::t_541f28f5515631 121,123,126-127,139
+  s_8dd8f33ea06837::t_d193ee4f1384ff 1-7,13,16,22,24-46,50,120,141
+  s_8dd8f33ea06837::t_f3b36cedbfdf42 48,142
+  s_8dd8f33ea06837::t_341075007bd71d 49,118
+  s_8dd8f33ea06837::t_f441c14849dbdf 8-10,12
+  s_8dd8f33ea06837::t_f67485d891d7a9 47,51-91,114-117,119,122
+  s_8dd8f33ea06837::t_39a0a494999ed4 11
+scripts/updateWiki.sh
+  s_8dd8f33ea06837::t_30d06a83734e4f 16-17,33
+  s_8dd8f33ea06837::t_92c0a017453e59 31
+  s_8dd8f33ea06837::t_bebb9596e725bb 1-2,4,7,10-15,18-25,29,34
+  s_8dd8f33ea06837::t_d8647d5fdb09fb 3,5-6,8-9,26-28,30,32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c1b7575c5e988133c7f32bcaef745e8a6d5360fb",
+  "prompts": {},
+  "sessions": {
+    "s_8dd8f33ea06837": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_eeffbdee6fferxV7xfe88SXr4P",
+        "model": "nw-full"
+      },
+      "human_author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
