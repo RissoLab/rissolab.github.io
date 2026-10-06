@@ -1,3 +1,0 @@
-[submodule "vendor/wiki"]
-	path = vendor/wiki
-	url = ssh://sc-gitea@nowwhat.stat.unipd.it:2223/NowWhat/docs.git

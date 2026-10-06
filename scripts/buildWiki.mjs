@@ -5,22 +5,24 @@ import path from "path";
 const root = process.cwd();
 const wikiDir = path.join(root, "vendor", "wiki");
 const wikiOut = path.join(wikiDir, "out");
+const sourceFile = path.join(root, "wiki-source.txt");
+const WIKI_URL = "http://nowwhat.stat.unipd.it/gitea/NowWhat/docs.git";
 // public/wiki: served as-is (directory indexes) - used by the static export.
 // public/.wiki-dev: flattened mirror (dir/index.html -> dir.html) - used by
 // the dev-only rewrites in next.config.mjs.
 const destDir = path.join(root, "public", "wiki");
 const devMirrorDir = path.join(root, "public", ".wiki-dev");
 
-// In CI the submodule is not initialized (the wiki source lives on Gitea).
-// There, the committed public/wiki build is used as-is.
+// vendor/wiki is a local-only clone of the Gitea repo (gitignored), so in CI
+// it does not exist and the committed public/wiki build is used as-is.
 if (!fs.existsSync(path.join(wikiDir, "package.json"))) {
   if (fs.existsSync(path.join(destDir, "index.html"))) {
-    console.log("vendor/wiki not checked out; using committed public/wiki build.");
+    console.log("vendor/wiki not present; using committed public/wiki build.");
     process.exit(0);
   }
 
   console.error(
-    "vendor/wiki is not checked out and no committed wiki build found. Run: git submodule update --init vendor/wiki",
+    "vendor/wiki is not present and no committed wiki build found. Run: npm run update:wiki",
   );
   process.exit(1);
 }
@@ -137,6 +139,15 @@ const flattenIndexFiles = (dir) => {
   }
 };
 flattenIndexFiles(devMirrorDir);
+
+// Record the Gitea source commit this build came from (committed alongside
+// public/wiki so the history stays traceable).
+const sha = execSync(`git -C "${wikiDir}" rev-parse HEAD`, { encoding: "utf8" }).trim();
+fs.writeFileSync(
+  sourceFile,
+  `url: ${WIKI_URL}\nsha: ${sha}\nbuilt: ${new Date().toISOString()}\n`,
+);
+console.log(`Source: ${sha} (${WIKI_URL}) -> ${path.relative(root, sourceFile)}`);
 
 console.log(`\nWiki (original template) copied to ${path.relative(root, destDir)}`);
 console.log("It is served at /wiki in dev and included in the static export.");
