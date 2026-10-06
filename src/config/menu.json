@@ -25,6 +25,10 @@
       "url": "/publications"
     },
     {
+      "name": "Wiki",
+      "url": "/wiki"
+    },
+    {
       "name": "Contact",
       "url": "/contact"
     }
@@ -41,6 +45,10 @@
     {
       "name": "Publications",
       "url": "/publications"
+    },
+    {
+      "name": "Wiki",
+      "url": "/wiki"
     },
     {
       "name": "Contact",

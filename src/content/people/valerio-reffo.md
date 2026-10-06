@@ -1,6 +1,6 @@
 ---
 title: "Valerio Reffo"
-role: "Research Assistant"
+role: "PhD Student"
 description: "Department of Statistical Sciences, University of Padova."
 image: "/images/people/vreffo.webp"
 group: "members"
