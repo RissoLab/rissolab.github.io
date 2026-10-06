@@ -1,0 +1,34 @@
+tsconfig.json
+  s_8dd8f33ea06837::t_2a765a00263768 54-55
+next.config.mjs
+  s_8dd8f33ea06837::t_f381d50a174857 6
+  s_8dd8f33ea06837::t_6b08d56e9be241 2-3,8-48
+  s_8dd8f33ea06837::t_daaa4a64cf46ad 56
+  s_8dd8f33ea06837::t_b203bec1da192f 7
+package.json
+  s_8dd8f33ea06837::t_738c5bfe25e0ea 12
+  s_8dd8f33ea06837::t_5bb41c7f50f734 20
+  s_8dd8f33ea06837::t_f2876c8aaa3695 19
+scripts/finalizeStaticBuild.mjs
+  s_8dd8f33ea06837::t_c736c5402a38b8 25-27
+.gitignore
+  s_8dd8f33ea06837::t_23b44a7ef512cd 29-31
+  s_8dd8f33ea06837::t_77ed2af71ff29f 33
+  s_8dd8f33ea06837::t_9c88a7632d4225 32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "48b13eb29f53a4bb8814e8d75ae9627585ff977c",
+  "prompts": {},
+  "sessions": {
+    "s_8dd8f33ea06837": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_eeffbdee6fferxV7xfe88SXr4P",
+        "model": "nw-full"
+      },
+      "human_author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
