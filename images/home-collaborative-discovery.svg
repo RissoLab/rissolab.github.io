@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 480" role="img" aria-labelledby="title desc">
+  <title id="title">Collaborative discovery illustration</title>
+  <desc id="desc">A minimal transparent illustration of collaborators connected around a biological discovery network.</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#add2dd" stroke-width="8">
+      <path d="M168 190l92-58 92 58M168 290l92 58 92-58M168 190v100M352 190v100M260"/>
+    </g>
+    <g stroke="#3792ad" stroke-width="8" fill="#ebf4f7">
+      <circle cx="260" cy="132" r="34"/>
+      <circle cx="168" cy="190" r="34"/>
+      <circle cx="352" cy="190" r="34"/>
+      <circle cx="168" cy="290" r="34"/>
+      <circle cx="352" cy="290" r="34"/>
+      <circle cx="260" cy="348" r="34"/>
+    </g>
+
+  </g>
+</svg>
