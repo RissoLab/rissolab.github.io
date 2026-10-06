@@ -26,6 +26,11 @@ public/llms.txt
 public/llms-full.txt
 public/images/people/generated/
 
+# wiki static build: public/wiki and public/wiki.html are committed
+# artifacts (generated locally by scripts/buildWiki.mjs, see updateWiki.sh).
+# Only the dev mirror is ignored.
+/public/.wiki-dev/
+
 # misc
 .DS_Store
 *.pem
