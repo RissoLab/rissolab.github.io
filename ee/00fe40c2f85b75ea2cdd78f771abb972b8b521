@@ -1,0 +1,19 @@
+wiki-local-changes.patch
+  s_8dd8f33ea06837::t_f5ad771d3d1455 1-101664
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ee00fe40c2f85b75ea2cdd78f771abb972b8b521",
+  "prompts": {},
+  "sessions": {
+    "s_8dd8f33ea06837": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_eeffbdee6fferxV7xfe88SXr4P",
+        "model": "nw-full"
+      },
+      "human_author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
