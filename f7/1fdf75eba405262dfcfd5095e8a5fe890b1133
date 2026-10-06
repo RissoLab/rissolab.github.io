@@ -1,0 +1,76 @@
+src/content/wiki/access.mdx
+  h_c24d027b38481a 1-82
+src/content/wiki/ai/index.mdx
+  h_c24d027b38481a 1-284
+src/content/wiki/apptainer/apptainer-utils.mdx
+  h_c24d027b38481a 1-47
+src/content/wiki/apptainer/containers.mdx
+  h_c24d027b38481a 1-1909
+src/content/wiki/apptainer/index.mdx
+  h_c24d027b38481a 1-356
+src/content/wiki/apptainer/troubleshooting.mdx
+  h_c24d027b38481a 1-23
+src/content/wiki/apptainer/wrappers.mdx
+  h_c24d027b38481a 1-52
+src/content/wiki/community/index.mdx
+  h_c24d027b38481a 1-16
+src/content/wiki/community/scripts.mdx
+  h_c24d027b38481a 1-53
+src/content/wiki/faq.mdx
+  h_c24d027b38481a 1-41
+src/content/wiki/file-transfer.mdx
+  h_c24d027b38481a 1-135
+src/content/wiki/get-started.mdx
+  h_c24d027b38481a 1-60
+src/content/wiki/index.mdx
+  h_c24d027b38481a 1-43
+src/content/wiki/jobs.mdx
+  h_c24d027b38481a 1-266
+src/content/wiki/nowwhathub.mdx
+  h_c24d027b38481a 1-100
+src/content/wiki/software/environments.mdx
+  h_c24d027b38481a 1-5623
+src/content/wiki/software/index.mdx
+  h_c24d027b38481a 1-19
+src/content/wiki/software/installed-software.mdx
+  h_c24d027b38481a 1-60
+src/content/wiki/software/modules.mdx
+  h_c24d027b38481a 1-182
+src/content/wiki/storage.mdx
+  h_c24d027b38481a 1-93
+src/content/wiki/tools/ide/index.mdx
+  h_c24d027b38481a 1-31
+src/content/wiki/tools/ide/positron.mdx
+  h_c24d027b38481a 1-368
+src/content/wiki/tools/ide/pycharm.mdx
+  h_c24d027b38481a 1-10
+src/content/wiki/tools/ide/vscode.mdx
+  h_c24d027b38481a 1-478
+src/content/wiki/tools/index.mdx
+  h_c24d027b38481a 1-18
+src/content/wiki/tools/jupyter.mdx
+  h_c24d027b38481a 1-122
+src/content/wiki/tools/rstudio-server.mdx
+  h_c24d027b38481a 1-116
+src/content/wiki/tutorials/index.mdx
+  h_c24d027b38481a 1-21
+src/content/wiki/tutorials/my-first-project.mdx
+  h_c24d027b38481a 1-268
+src/content/wiki/tutorials/slurm-resource-tuning.mdx
+  h_c24d027b38481a 1-430
+src/content/wiki/tutorials/snakemake-singlecell-spatial.mdx
+  h_c24d027b38481a 1-235
+vendor/wiki
+  h_c24d027b38481a 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f71fdf75eba405262dfcfd5095e8a5fe890b1133",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
