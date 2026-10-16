@@ -1,0 +1,19 @@
+src/content/publications/pubs.bib
+  s_8054c9c3295f1c::t_afe6db81521e88 1140-1157
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "fd63258ae1dc00a24d07b23e28db76c9117f7d0c",
+  "prompts": {},
+  "sessions": {
+    "s_8054c9c3295f1c": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_ebbaeb604ffe2A4XOfo2aaSRsu",
+        "model": "nw-full"
+      },
+      "human_author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
