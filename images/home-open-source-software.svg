@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 480" role="img" aria-labelledby="title desc">
+  <title id="title">Open-source software illustration</title>
+  <desc id="desc">A minimal transparent illustration of code, connected modules and reusable software packages.</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="108" y="104" width="304" height="238" rx="28" stroke="#003242" stroke-width="8"/>
+    <path d="M108 162h304" stroke="#add2dd" stroke-width="8"/>
+    <g fill="#8aca25">
+      <circle cx="144" cy="132" r="8"/>
+      <circle cx="174" cy="132" r="8"/>
+      <circle cx="204" cy="132" r="8"/>
+    </g>
+    <path d="M192 220l-44 40 44 40M328 220l44 40-44 40" stroke="#3792ad" stroke-width="12"/>
+    <path d="M284 210l-48 104" stroke="#8aca25" stroke-width="12"/>
+    <g stroke="#add2dd" stroke-width="6">
+      <path d="M165 382h190"/>
+      <path d="M212 342v40M308 342v40"/>
+    </g>
+  </g>
+</svg>

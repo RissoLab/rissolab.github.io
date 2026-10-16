@@ -1,0 +1,12 @@
+{
+  "benchdamic": "https://bioconductor.org/packages/benchdamic/",
+  "Bioconductor": "https://bioconductor.org/",
+  "DEScan2": "https://bioconductor.org/packages/DEScan2/",
+  "imageTCGA": "https://bioconductor.org/packages/imageTCGA/",
+  "mbkmeans": "https://bioconductor.org/packages/mbkmeans/",
+  "RUVSeq": "https://bioconductor.org/packages/RUVSeq/",
+  "SingleCellExperiment": "https://bioconductor.org/packages/SingleCellExperiment/",
+  "SingleCellMultiModal": "https://bioconductor.org/packages/SingleCellMultiModal/",
+  "slingshot": "https://bioconductor.org/packages/slingshot/",
+  "zinbwave": "https://bioconductor.org/packages/zinbwave/"
+}
