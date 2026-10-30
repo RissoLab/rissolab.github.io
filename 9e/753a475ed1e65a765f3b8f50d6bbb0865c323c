@@ -1,0 +1,30 @@
+src/app/shiny/page.tsx
+  s_e5a97ae57e148c::t_03939de479db5e 2-5,8-12,14-15,18-20,32-46,50,56-74
+  s_e5a97ae57e148c::t_57729ae60c5fef 6-7
+  s_e5a97ae57e148c::t_3fefd1cd13d056 47-49,51-55
+  s_e5a97ae57e148c::t_fcec58e81d61e6 1,13,16-17,21-31
+src/content/shiny/apps.json
+  h_c24d027b38481a 7-10
+  s_e5a97ae57e148c::t_9674d41a1c9e01 1-6,11-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9e753a475ed1e65a765f3b8f50d6bbb0865c323c",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_e5a97ae57e148c": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e732baf2effeLgVH1R1lbCZ5S8",
+        "model": "nw-full"
+      },
+      "human_author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
