@@ -1,0 +1,13 @@
+{
+  "title": "Shiny Apps",
+  "meta_title": "Shiny Apps",
+  "description": "Interactive Shiny applications developed at the Risso Lab.",
+  "apps": [
+    {
+      "title": "CachexiaAtlas",
+      "url": "https://rissolab.stat.unipd.it/shiny/CachexiaAtlas/",
+      "description": "CachexiaAtlas: visualization of gene expression in cachexia condition.",
+      "image": "/images/shiny/cachexiaAtlas.webp"
+    }
+  ]
+}
