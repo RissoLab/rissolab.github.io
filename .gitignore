@@ -26,11 +26,11 @@ public/llms.txt
 public/llms-full.txt
 public/images/people/generated/
 
-# wiki: public/wiki and public/wiki.html are committed artifacts (generated
-# locally by scripts/buildWiki.mjs, see updateWiki.sh). vendor/wiki is a
-# disposable local clone of the Gitea source, .wiki-dev the dev mirror.
-/vendor/
-/public/.wiki-dev/
+# generated on every build
+public/pubs.bib
+public/sitemap.xml
+public/sitemap-0.xml
+public/robots.txt
 
 # misc
 .DS_Store

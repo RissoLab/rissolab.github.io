@@ -7,7 +7,6 @@ export type BibPublication = {
   id: string;
   type: string;
   order: number;
-  bibtex: string;
   title?: string;
   author?: string;
   journal?: string;
@@ -45,6 +44,63 @@ const publicationLink = (publication: BibPublication) => {
   return null;
 };
 
+// The BibTeX source is served at /pubs.bib (copied from
+// src/content/publications/pubs.bib by scripts/jsonGenerator.mjs) and is
+// fetched only when the user copies a citation, keeping the page light.
+let bibSource: string | null = null;
+
+const loadBibSource = async () => {
+  if (bibSource === null) {
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+    const response = await fetch(`${basePath}/pubs.bib`, {
+      cache: "force-cache",
+    });
+    if (!response.ok) {
+      throw new Error(`Failed to load BibTeX source (${response.status})`);
+    }
+    bibSource = await response.text();
+  }
+
+  return bibSource;
+};
+
+const escapeRegExp = (value: string) =>
+  value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+const extractBibtexEntry = (source: string, id: string) => {
+  const start = source.search(
+    new RegExp(`@\\w+\\s*\\{\\s*${escapeRegExp(id)}\\s*,`),
+  );
+  if (start === -1) return null;
+
+  let depth = 0;
+  for (let i = start; i < source.length; i += 1) {
+    const char = source[i];
+    if (char === "{") depth += 1;
+    if (char === "}") {
+      depth -= 1;
+      if (depth === 0) return source.slice(start, i + 1);
+    }
+  }
+
+  return null;
+};
+
+const writeToClipboard = async (text: string) => {
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    textarea.remove();
+  }
+};
+
 const PublicationsList = ({
   publications,
 }: {
@@ -68,16 +124,17 @@ const PublicationsList = ({
 
   const copyBibtex = async (publication: BibPublication) => {
     try {
-      await navigator.clipboard.writeText(publication.bibtex);
-    } catch {
-      const textarea = document.createElement("textarea");
-      textarea.value = publication.bibtex;
-      textarea.style.position = "fixed";
-      textarea.style.opacity = "0";
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand("copy");
-      textarea.remove();
+      const source = await loadBibSource();
+      const entry = extractBibtexEntry(source, publication.id);
+      if (!entry) {
+        console.error(`No BibTeX entry found for ${publication.id}`);
+        return;
+      }
+
+      await writeToClipboard(entry);
+    } catch (error) {
+      console.error("Failed to copy BibTeX", error);
+      return;
     }
 
     setCopiedPublicationId(publication.id);

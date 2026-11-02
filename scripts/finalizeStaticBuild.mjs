@@ -22,7 +22,4 @@ copyIfExists("robots.txt");
 copyIfExists("llms.txt");
 fs.writeFileSync(path.join(outDir, ".nojekyll"), "");
 
-// The wiki dev mirror (public/.wiki-dev) is only used by next dev rewrites.
-fs.rmSync(path.join(outDir, ".wiki-dev"), { recursive: true, force: true });
-
 console.log("Finalized static export in out/");

@@ -54,7 +54,7 @@ export const plainify = (content: string) => {
   const filterBrackets = parseMarkdown.replace(/<\/?[^>]+(>|$)/gm, "");
   const filterSpaces = filterBrackets.replace(/[\r\n]\s*[\r\n]/gm, "");
   const stripHTML = htmlEntityDecoder(filterSpaces);
-  return stripHTML;
+  return stripHTML.trim();
 };
 
 // strip entities for plainify

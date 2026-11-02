@@ -6,7 +6,9 @@ const rootDir = process.cwd();
 const contentDir = path.join(rootDir, "src", "content");
 const publicDir = path.join(rootDir, "public");
 const outputDir = path.join(publicDir, "images", "people", "generated");
-const sizes = [120, 180, 224, 240, 360, 448, 540, 672];
+// Only the hexagon card variant is used (see PeopleCard.tsx); the circle and
+// rectangle variants are no longer generated.
+const sizes = [224, 448, 672];
 
 const imagePattern = /image:\s*["'](\/images\/people\/[^"']+)["']/g;
 

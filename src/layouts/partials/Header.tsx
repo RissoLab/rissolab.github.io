@@ -23,6 +23,35 @@ export interface INavigationLink {
   children?: IChildNavigationLink[];
 }
 
+// The /wiki section is a separate prebuilt app served alongside this one, so
+// next/link would trigger RSC prefetches/transitions against a route that
+// does not exist in this app (404 + console noise). Render plain anchors for
+// it: full page navigation, which is what would happen anyway.
+const NavHref = ({
+  href,
+  onClick,
+  className,
+  children,
+}: {
+  href: string;
+  onClick?: () => void;
+  className?: string;
+  children: React.ReactNode;
+}) => {
+  if (href.startsWith("/wiki")) {
+    return (
+      <a href={href} onClick={onClick} className={className}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link href={href} onClick={onClick} className={className}>
+      {children}
+    </Link>
+  );
+};
+
 const Header = () => {
   // distructuring the main menu from menu object
   const { main }: { main: INavigationLink[] } = menu;
@@ -134,7 +163,7 @@ const Header = () => {
                   <ul className="nav-dropdown-list hidden peer-checked:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
                     {menu.children?.map((child, i) => (
                       <li className="nav-dropdown-item" key={`children-${i}`}>
-                        <Link
+                        <NavHref
                           href={child.url}
                           onClick={closeMobileNav}
                           className={`nav-dropdown-link block ${
@@ -144,14 +173,14 @@ const Header = () => {
                           }`}
                         >
                           {child.name}
-                        </Link>
+                        </NavHref>
                       </li>
                     ))}
                   </ul>
                 </li>
               ) : (
                 <li className="nav-item">
-                  <Link
+                  <NavHref
                     href={menu.url}
                     onClick={closeMobileNav}
                     className={`nav-link block ${
@@ -160,7 +189,7 @@ const Header = () => {
                     }`}
                   >
                     {menu.name}
-                  </Link>
+                  </NavHref>
                 </li>
               )}
             </React.Fragment>

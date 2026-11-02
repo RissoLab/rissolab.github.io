@@ -51,7 +51,6 @@
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    "vendor"
+    "node_modules"
   ]
 }

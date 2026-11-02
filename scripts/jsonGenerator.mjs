@@ -4,6 +4,22 @@ import path from "path";
 const configPath = path.join(process.cwd(), "src", "config", "config.json");
 const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
 
+// Expose the BibTeX source at /pubs.bib so the publications page can
+// lazy-load entries on demand (see PublicationsList.tsx).
+const pubsBibPath = path.join(
+  process.cwd(),
+  "src",
+  "content",
+  "publications",
+  "pubs.bib",
+);
+if (fs.existsSync(pubsBibPath)) {
+  fs.copyFileSync(
+    pubsBibPath,
+    path.join(process.cwd(), "public", "pubs.bib"),
+  );
+}
+
 const CONTENT_DEPTH = 2;
 const JSON_FOLDER = "./.json";
 const SEARCHABLE_FOLDERS = config.settings.searchable_folders;

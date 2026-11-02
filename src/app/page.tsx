@@ -14,14 +14,18 @@ const Home = () => {
   const {
     banner,
     features,
+    meta_title,
+    description,
   }: {
     banner: { title: string; image: string; content?: string; button?: Button };
     features: Feature[];
+    meta_title?: string;
+    description?: string;
   } = frontmatter;
 
   return (
     <>
-      <SeoMeta />
+      <SeoMeta title={meta_title} description={description} />
       <section className="section pt-14">
         <div className="container">
           <div className="row justify-center">

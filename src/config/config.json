@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "RissoLab",
-    "base_url": "https://rissolab.github.io/",
+    "base_url": "https://rissolab.stat.unipd.it/",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.webp",
@@ -25,7 +25,7 @@
 
   "announcement": {
     "enable": false,
-    "content": "<span class='text-center block'>♥️ Loving Nextplate? <a class='underline' href='https://github.com/zeon-studio/nextplate' target='_blank' rel='noopener'>Please ⭐️ on Github</a></span>",
+    "content": "",
     "expire_days": 7
   },
 
@@ -54,7 +54,8 @@
   "metadata": {
     "meta_author": "RissoLab",
     "meta_image": "/images/og-image.webp",
-    "meta_description": "RissoLab"
+    "meta_description":
+      "The Risso Lab at the Department of Statistical Sciences, University of Padua: statistical and computational methods for single-cell and spatial omics data, and open-source bioinformatics."
   },
 
   "llms": {
