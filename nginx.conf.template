@@ -1,0 +1,33 @@
+server {
+    listen ${PORT};
+    server_name _;
+
+    root /usr/share/nginx/html;
+    charset utf-8;
+
+    gzip on;
+    gzip_comp_level 5;
+    gzip_min_length 1024;
+    gzip_types text/plain text/css text/javascript application/javascript application/json application/xml text/xml image/svg+xml;
+
+    # Hashed build assets (debranded _next) — safe to cache indefinitely.
+    location /static/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        try_files $uri =404;
+    }
+
+    location /images/ {
+        expires 30d;
+        add_header Cache-Control "public";
+        try_files $uri =404;
+    }
+
+    location / {
+        # Static export layout with trailingSlash: false:
+        # /foo resolves to foo.html, /foo/ to foo/index.html.
+        try_files $uri $uri.html $uri/ =404;
+    }
+
+    error_page 404 /404.html;
+}

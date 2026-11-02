@@ -1,0 +1,15 @@
+# VCS / IDE / editor noise
+.git
+.github
+.idea
+.Rhistory
+.DS_Store
+
+# Local build artifacts — the Docker build regenerates everything from source
+.next
+node_modules
+out
+.json
+.generated
+public/images/people/generated
+*.tsbuildinfo
