@@ -45,7 +45,7 @@ features:
     content: "Our projects span methodological research and applied data analysis in collaboration with experimental biologists and international partners."
     bulletpoints:
       - "Developmental biology, neuroscience and cancer biology"
-      - "ERC Consolidator Grant SPECOLA"
+      - "[ERC Consolidator Grant SPECOLA](https://erc-specola.stat.unipd.it)"
       - "CZI EOSS Grant GPU-accelerated Computing in Bioconductor"
     button:
       enable: false
