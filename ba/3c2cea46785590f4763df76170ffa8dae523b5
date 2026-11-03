@@ -1,0 +1,56 @@
+src/config/menu.json
+  s_3e38675f3f7c49::t_0b52b59a4c5bc2 28-37,40-41
+  s_3e38675f3f7c49::t_af956e09e0a0da 62-64,67-68
+  s_3e38675f3f7c49::t_a4cd5cd3568f12 27
+  s_3e38675f3f7c49::t_2e0941f6c89ac2 61
+src/layouts/partials/Header.tsx
+  s_3e38675f3f7c49::t_8462cb86ab11fb 17,25
+  s_3e38675f3f7c49::t_507240e78a6ed7 241
+  s_3e38675f3f7c49::t_14fb12656a9780 187
+  s_3e38675f3f7c49::t_aa26746efb0606 190-193
+  s_3e38675f3f7c49::t_16b7f486eaa6ee 254
+  s_3e38675f3f7c49::t_5030275a947917 222
+  s_3e38675f3f7c49::t_e1532e65b81b4c 209-210
+  s_3e38675f3f7c49::t_28dbffe364094d 125
+  s_3e38675f3f7c49::t_c9282e7f8e532f 31-34,37,43,48,50-56,58-59,61-63
+  s_3e38675f3f7c49::t_f3e9f27e468f86 182
+  s_3e38675f3f7c49::t_695e5da5459e97 169-172
+  s_3e38675f3f7c49::t_42165ed4e16266 211-212
+  s_3e38675f3f7c49::t_292dba76fe0163 151
+  s_3e38675f3f7c49::t_9f5c957e3729b6 206
+  s_3e38675f3f7c49::t_373abf9be0f2eb 10
+  s_3e38675f3f7c49::t_3e67ee6c8243e7 60
+src/styles/base.css
+  s_3e38675f3f7c49::t_5c4efd06c1cb50 3
+  s_3e38675f3f7c49::t_16b7f486eaa6ee 10-19,26-35
+src/content/homepage/_index.md
+  s_3e38675f3f7c49::t_049df51deaf6cc 58
+src/layouts/helpers/MDXContent.tsx
+  s_3e38675f3f7c49::t_6349446663760a 10,15-16
+src/styles/navigation.css
+  s_3e38675f3f7c49::t_c266be23cb3173 23
+  s_3e38675f3f7c49::t_42aceef4217f0a 27
+tsconfig.json
+  s_3e38675f3f7c49::t_c00088fd796473 54-55
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ba3c2cea46785590f4763df76170ffa8dae523b5",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_3e38675f3f7c49": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e5e321a18ffe2XR1ks10m3oGij",
+        "model": "nw-full"
+      },
+      "human_author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
