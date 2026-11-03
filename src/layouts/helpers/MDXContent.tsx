@@ -7,13 +7,13 @@ const MarkdownLink = ({
   href = "",
   ...props
 }: AnchorHTMLAttributes<HTMLAnchorElement>) => {
-  const isHashLink = href.startsWith("#");
+  const isExternal = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(href);
 
   return (
     <a
       href={href}
-      rel={isHashLink ? undefined : "noopener noreferrer"}
-      target={isHashLink ? undefined : "_blank"}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      target={isExternal ? "_blank" : undefined}
       {...props}
     />
   );

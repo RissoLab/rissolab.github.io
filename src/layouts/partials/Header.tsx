@@ -7,12 +7,14 @@ import menu from "@/config/menu.json";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { IoSearch } from "react-icons/io5";
 
 //  child navigation link interface
 export interface IChildNavigationLink {
   name: string;
   url: string;
+  external?: boolean;
 }
 
 // navigation link interface
@@ -20,28 +22,45 @@ export interface INavigationLink {
   name: string;
   url: string;
   hasChildren?: boolean;
+  external?: boolean;
   children?: IChildNavigationLink[];
 }
 
 // The /wiki section is a separate prebuilt app served alongside this one, so
 // next/link would trigger RSC prefetches/transitions against a route that
-// does not exist in this app (404 + console noise). Render plain anchors for
-// it: full page navigation, which is what would happen anyway.
+// does not exist in this app (404 + console noise). Items marked as external
+// are rendered as plain anchors (optionally in a new tab) with an
+// "opens externally" icon: full page navigation, which is what would happen
+// anyway.
 const NavHref = ({
   href,
+  external,
   onClick,
   className,
   children,
 }: {
   href: string;
+  external?: boolean;
   onClick?: () => void;
   className?: string;
   children: React.ReactNode;
 }) => {
-  if (href.startsWith("/wiki")) {
+  if (href.startsWith("/wiki") || external) {
     return (
-      <a href={href} onClick={onClick} className={className}>
+      <a
+        href={href}
+        onClick={onClick}
+        className={className}
+        target={external ? "_blank" : undefined}
+        rel={external ? "noopener noreferrer" : undefined}
+      >
         {children}
+        {external && (
+          <FaArrowUpRightFromSquare
+            className="ml-1.5 inline-block text-[11px]"
+            aria-hidden="true"
+          />
+        )}
       </a>
     );
   }
@@ -103,7 +122,7 @@ const Header = () => {
         />
         <label
           htmlFor="nav-toggle"
-          className="order-3 cursor-pointer flex items-center lg:hidden text-text-dark dark:text-white lg:order-1"
+          className="order-3 cursor-pointer flex items-center text-text-dark dark:text-white xl:hidden xl:order-1"
         >
           <svg
             id="show-button"
@@ -129,7 +148,7 @@ const Header = () => {
 
         <ul
           id="nav-menu"
-          className="navbar-nav order-3 hidden w-full pb-6 lg:order-1 lg:flex lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8"
+          className="navbar-nav order-3 hidden w-full pb-6 xl:order-1 xl:flex xl:w-auto xl:pb-0 xl:space-x-4"
         >
           {main.map((menu, i) => (
             <React.Fragment key={`menu-${i}`}>
@@ -147,10 +166,10 @@ const Header = () => {
                   <label
                     htmlFor={`submenu-${menu.name}`}
                     className={`nav-link inline-flex items-center ${
-                      menu.children?.map(({ url }) => url).includes(pathname) ||
-                      menu.children
-                        ?.map(({ url }) => `${url}/`)
-                        .includes(pathname)
+                      menu.children?.some(
+                        ({ url }) =>
+                          pathname === url || pathname.startsWith(`${url}/`),
+                      )
                         ? "active"
                         : ""
                     }`}
@@ -160,16 +179,18 @@ const Header = () => {
                       <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                     </svg>
                   </label>
-                  <ul className="nav-dropdown-list hidden peer-checked:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
+                  <ul className="nav-dropdown-list hidden peer-checked:block xl:invisible xl:absolute xl:block xl:opacity-0 xl:group-hover:visible xl:group-hover:opacity-100">
                     {menu.children?.map((child, i) => (
                       <li className="nav-dropdown-item" key={`children-${i}`}>
                         <NavHref
                           href={child.url}
+                          external={child.external}
                           onClick={closeMobileNav}
                           className={`nav-dropdown-link block ${
-                            (pathname === `${child.url}/` ||
-                              pathname === child.url) &&
-                            "active"
+                            pathname === child.url ||
+                            pathname.startsWith(`${child.url}/`)
+                              ? "active"
+                              : ""
                           }`}
                         >
                           {child.name}
@@ -182,10 +203,13 @@ const Header = () => {
                 <li className="nav-item">
                   <NavHref
                     href={menu.url}
+                    external={menu.external}
                     onClick={closeMobileNav}
                     className={`nav-link block ${
-                      (pathname === `${menu.url}/` || pathname === menu.url) &&
-                      "active"
+                      pathname === menu.url ||
+                      pathname.startsWith(`${menu.url}/`)
+                        ? "active"
+                        : ""
                     }`}
                   >
                     {menu.name}
@@ -195,7 +219,7 @@ const Header = () => {
             </React.Fragment>
           ))}
           {navigation_button.enable && (
-            <li className="mt-4 inline-block lg:hidden">
+            <li className="mt-4 inline-block xl:hidden">
               <Link
                 className="btn btn-outline-primary btn-sm"
                 href={navigation_button.link}
@@ -214,7 +238,7 @@ const Header = () => {
             </li>
           )}
         </ul>
-        <div className="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+        <div className="order-1 ml-auto flex items-center md:order-2 xl:ml-0">
           {settings.search && (
             <button
               className="border-border text-text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
@@ -227,7 +251,7 @@ const Header = () => {
           <ThemeSwitcher className="mr-5" />
           {navigation_button.enable && (
             <Link
-              className="btn btn-outline-primary btn-sm hidden lg:inline-block"
+              className="btn btn-outline-primary btn-sm hidden xl:inline-block"
               href={navigation_button.link}
               target={
                 navigation_button.link.startsWith("http") ? "_blank" : "_self"

@@ -1,21 +1,38 @@
 html {
   @apply text-base-sm md:text-base;
+  scrollbar-gutter: stable;
 }
 
 body {
   @apply bg-body text-base dark:bg-darkmode-body font-primary font-normal leading-relaxed text-text dark:text-darkmode-text;
   background-image:
     radial-gradient(circle at 8% 4%, rgb(55 146 173 / 0.22), transparent 28rem),
-    radial-gradient(circle at 92% 22%, rgb(138 202 37 / 0.16), transparent 26rem),
-    radial-gradient(circle at 50% 100%, rgb(55 146 173 / 0.12), transparent 34rem);
+    radial-gradient(
+      circle at 92% 22%,
+      rgb(138 202 37 / 0.16),
+      transparent 26rem
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgb(55 146 173 / 0.12),
+      transparent 34rem
+    );
   background-attachment: fixed;
 }
 
 .dark body {
   background-image:
     radial-gradient(circle at 8% 4%, rgb(55 146 173 / 0.28), transparent 30rem),
-    radial-gradient(circle at 92% 22%, rgb(138 202 37 / 0.12), transparent 28rem),
-    radial-gradient(circle at 50% 100%, rgb(55 146 173 / 0.14), transparent 38rem);
+    radial-gradient(
+      circle at 92% 22%,
+      rgb(138 202 37 / 0.12),
+      transparent 28rem
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgb(55 146 173 / 0.14),
+      transparent 38rem
+    );
 }
 
 body::after {

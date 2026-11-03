@@ -55,6 +55,6 @@ features:
 
 We are located at the [Department of Statistical Sciences](https://stat.unipd.it) of the [University of Padova](https://unipd.it), Italy, and led by Prof. Davide Risso.
 
-We work at the intersection of statistics, bioinformatics and computational biology, with a strong emphasis on reproducible research and open-source software development. Our projects span from methodological research to applied data analysis in collaboration with experimental biologists and a large network of international collaborators.
+We work at the intersection of statistics, bioinformatics and computational biology, with a strong emphasis on reproducible research and open-source software development. Our projects span from methodological research to applied data analysis in collaboration with experimental biologists and a large network of international collaborators. We also develop and maintain interactive [Shiny web applications](/shiny) for data exploration and visualization.
 
 Current funded projects include the ERC Consolidator Grant [SPECOLA](https://cordis.europa.eu/project/id/101171662) and the CZI EOSS Grant [GPU-accelerated Computing in Bioconductor](https://waldronlab.io/czieoss6-biocgpu/).

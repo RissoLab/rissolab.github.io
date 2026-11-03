@@ -25,8 +25,20 @@
       "url": "/publications"
     },
     {
+      "name": "Applications",
+      "url": "/shiny",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Shiny Apps",
+          "url": "/shiny"
+        }
+      ]
+    },
+    {
       "name": "Wiki",
-      "url": "/wiki"
+      "url": "/wiki",
+      "external": true
     },
     {
       "name": "Contact",
@@ -47,8 +59,13 @@
       "url": "/publications"
     },
     {
+      "name": "Shiny Apps",
+      "url": "/shiny"
+    },
+    {
       "name": "Wiki",
-      "url": "/wiki"
+      "url": "/wiki",
+      "external": true
     },
     {
       "name": "Contact",

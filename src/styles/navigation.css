@@ -20,11 +20,11 @@
 }
 
 .navbar-nav {
-  @apply text-center lg:text-left;
+  @apply text-center xl:text-left;
 }
 
 .nav-link {
-  @apply text-text-dark hover:text-primary dark:text-darkmode-text-dark dark:hover:text-darkmode-primary block cursor-pointer rounded-xl p-3 font-semibold transition hover:bg-white/45 dark:hover:bg-white/5 lg:px-3 lg:py-2;
+  @apply text-text-dark hover:text-primary dark:text-darkmode-text-dark dark:hover:text-darkmode-primary block cursor-pointer rounded-xl p-3 font-semibold transition hover:bg-white/45 dark:hover:bg-white/5 xl:px-2 xl:py-2;
 }
 
 .nav-dropdown {
