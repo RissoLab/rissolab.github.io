@@ -65,5 +65,3 @@ Write the news content here using Markdown.
 Images should be placed in `public/images/news` and referenced as `/images/news/file-name.webp`.
 
 Set `draft: true` to hide a news item. News dated in the future are not shown until that date.
-
-Test Autoupdate and Registry
