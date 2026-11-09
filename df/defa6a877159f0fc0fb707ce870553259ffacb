@@ -1,0 +1,32 @@
+src/config/config.json
+  h_c24d027b38481a 58
+README.md
+  h_c24d027b38481a 57
+src/content/news-events/_index.md
+  h_c24d027b38481a 4
+src/content/people/_index.md
+  h_c24d027b38481a 4
+src/content/work-with-us/_index.md
+  h_c24d027b38481a 4
+src/content/homepage/_index.md
+  h_c24d027b38481a 3,8
+src/content/contact/_index.md
+  h_c24d027b38481a 4
+src/content/publications/_index.md
+  h_c24d027b38481a 4
+src/content/ai-guidelines/_index.md
+  h_c24d027b38481a 4
+src/content/research/_index.md
+  h_c24d027b38481a 4,15,37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "dfdefa6a877159f0fc0fb707ce870553259ffacb",
+  "prompts": {},
+  "humans": {
+    "h_c24d027b38481a": {
+      "author": "Riccardo Ceccaroni <riccardo.ceccaroni.95@gmail.com>"
+    }
+  }
+}
