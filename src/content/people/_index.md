@@ -1,7 +1,7 @@
 ---
 title: "People"
 meta_title: "People"
-description: "Members, collaborators and alumni of the Risso Lab."
+description: "Members, collaborators and alumni of the RissoLab."
 image: ""
 alumni:
   - name: "Daniela Corbetta"

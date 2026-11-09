@@ -1,7 +1,7 @@
 ---
 title: "Contact"
 meta_title: "Contact"
-description: "Contact information for Prof. Davide Risso and the Risso Lab."
+description: "Contact information for Prof. Davide Risso and the RissoLab."
 image: ""
 contact:
   name: "Davide Risso"

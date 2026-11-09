@@ -55,7 +55,7 @@
     "meta_author": "RissoLab",
     "meta_image": "/images/og-image.webp",
     "meta_description":
-      "The Risso Lab at the Department of Statistical Sciences, University of Padua: statistical and computational methods for single-cell and spatial omics data, and open-source bioinformatics."
+      "The RissoLab at the Department of Statistical Sciences, University of Padua: statistical and computational methods for single-cell and spatial omics data, and open-source bioinformatics."
   },
 
   "llms": {

@@ -54,7 +54,7 @@ description: "Short summary shown in listings and metadata."
 date: 2026-06-17T00:00:00Z
 image: "/images/news/my-image.webp"
 categories: ["News"]
-author: "Risso Lab"
+author: "RissoLab"
 tags: ["news"]
 draft: false
 ---

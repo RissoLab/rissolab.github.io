@@ -1,7 +1,7 @@
 ---
 title: "Work with Us"
 meta_title: "Work with Us"
-description: "Open positions, PhD scholarships and collaboration opportunities at the Risso Lab."
+description: "Open positions, PhD scholarships and collaboration opportunities at the RissoLab."
 image: ""
 draft: false
 icons:

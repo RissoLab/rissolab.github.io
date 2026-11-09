@@ -1,11 +1,11 @@
 ---
 # SEO
-meta_title: "Risso Lab — Computational Biology & Spatial Omics | University of Padua"
+meta_title: "RissoLab - Computational Biology & Spatial Omics | University of Padua"
 description: "We develop, implement and apply statistical models to high-throughput biomedical data, with a current focus on single-cell and spatial transcriptomics."
 
 # Banner
 banner:
-  title: "Welcome to the Risso Lab"
+  title: "Welcome to the RissoLab"
   content: "We develop, implement and apply statistical models to high-throughput biomedical data, with a current focus on single-cell and spatial transcriptomics."
   image: "/images/sticker.webp"
   button:

@@ -1,7 +1,7 @@
 ---
 title: "AI Guidelines"
 meta_title: "AI Guidelines"
-description: "How the Risso Lab uses generative AI in research and software development - and how we track provenance with git-ai."
+description: "How the RissoLab uses generative AI in research and software development - and how we track provenance with git-ai."
 image: ""
 draft: true
 ---

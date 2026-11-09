@@ -1,7 +1,7 @@
 ---
 title: "Research Interests"
 meta_title: "Research Interests"
-description: "Research areas and selected work from the Risso Lab."
+description: "Research areas and selected work from the RissoLab."
 image: ""
 draft: false
 icons:
@@ -12,7 +12,7 @@ icons:
   Graphical Models: "FaCircleNodes"
 ---
 
-The Risso Lab has extensive expertise in the analysis of high-throughput biological data, both from a method development and a collaborative perspective. Currently, our main focus is on single-cell and spatial omics, including transcriptomics, epigenomics and proteomics.
+The RissoLab has extensive expertise in the analysis of high-throughput biological data, both from a method development and a collaborative perspective. Currently, our main focus is on single-cell and spatial omics, including transcriptomics, epigenomics and proteomics.
 
 A diverse network of collaborators allows us to work with real data, tackling problems of significance for biomedical research, while being embedded in a statistics department allows us to leverage the latest developments in statistical methodology and computational techniques.
 
@@ -34,7 +34,7 @@ Here is a selected list of our latest work in our main areas of interest.
 
 - [Orchestrating Spatial Transcriptomics Analysis with Bioconductor](https://bioconductor.org/books/release/OSTA/)
 - [GPU-accelerated Computing in Bioconductor](https://waldronlab.io/czieoss6-biocgpu/)
-- Selected [Bioconductor](https://bioconductor.org/) packages developed in the Risso Lab: [SingleCellExperiment](https://bioconductor.org/packages/SingleCellExperiment/), [SpatialExperiment](https://bioconductor.org/packages/SpatialExperiment/), [SpaceTrooper](https://bioconductor.org/packages/SpaceTrooper/), [RUVSeq](https://bioconductor.org/packages/RUVSeq/), [zinbwave](https://bioconductor.org/packages/zinbwave/), [scone](https://bioconductor.org/packages/scone/).
+- Selected [Bioconductor](https://bioconductor.org/) packages developed in the RissoLab: [SingleCellExperiment](https://bioconductor.org/packages/SingleCellExperiment/), [SpatialExperiment](https://bioconductor.org/packages/SpatialExperiment/), [SpaceTrooper](https://bioconductor.org/packages/SpaceTrooper/), [RUVSeq](https://bioconductor.org/packages/RUVSeq/), [zinbwave](https://bioconductor.org/packages/zinbwave/), [scone](https://bioconductor.org/packages/scone/).
 
 ## Collaborative Work in Neurobiology, Development, and Cancer Biology
 
