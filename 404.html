@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Risso Lab - Website Moved</title>
+
+    <meta name="robots" content="noindex, follow">
+
+    <script>
+        const newDomain = "https://rissolab.stat.unipd.it";
+
+        const newURL =
+            newDomain +
+            window.location.pathname +
+            window.location.search +
+            window.location.hash;
+
+        window.location.replace(newURL);
+    </script>
+
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #0d1117;
+            color: #e6edf3;
+            text-align: center;
+        }
+
+        a {
+            color: #58a6ff;
+        }
+    </style>
+</head>
+
+<body>
+<main>
+    <h1>Risso Lab has moved!</h1>
+
+    <p>You are being redirected to our new website.</p>
+
+    <p>
+        If you are not redirected automatically,
+        <a id="redirect-link"
+           href="https://rissolab.stat.unipd.it/">
+            click here
+        </a>.
+    </p>
+</main>
+
+<script>
+    document.getElementById("redirect-link").href =
+        "https://rissolab.stat.unipd.it" +
+        window.location.pathname +
+        window.location.search +
+        window.location.hash;
+</script>
+</body>
+</html>
